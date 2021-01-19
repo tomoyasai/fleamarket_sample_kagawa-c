@@ -1,0 +1,203 @@
+* {
+  box-sizing: border-box;
+}
+
+
+
+.main {
+  margin: 0;
+  padding: 0;
+  .one{
+    width: 100%;
+    height: 560px;
+    background-image: image-url('bg-mainVisual-pict_pc.jpg');
+    background-size:  cover;
+    position: relative;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    &__box{
+      max-width: 1280px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 35px 0 0 0;
+      &__top{
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        font-size: 60px;
+        line-height: 1.2;
+        color: #fff;
+      }
+      &__middle{
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        font-size: 18px;
+        color: #fff;
+        line-height: 1.77778;
+        margin: 16px 0 0 0;
+      }
+    }
+  }
+
+    
+  .two{
+    // width: 100%;
+    height: 560px;
+    background-color: white;
+    padding: 60px 20px;
+    display: block;
+    .reason-title{
+      text-align: center;
+      font-size: 26px;
+      line-height: 1.4;
+      font-weight: bold;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      position: relative;
+    }
+    .reason-box{
+      text-align: center;
+      display: flex;
+      max-width: 1020px;
+      width: 100%;
+      margin: 0 auto;
+      .content{
+        width: 30%;
+        margin: 16px 5% 0 0;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .content__top{
+          position: relative;
+          margin-bottom: 20px;
+          &__corner{
+            font-size: 30px;
+            color: #fff;
+            background-color: #3CCACE;
+            position: absolute;
+            margin: 0 5px 0 0;
+            padding: 10px 20px;
+
+          }
+          &__image{
+            width: 100%;
+            height: 240px;
+          }
+        }
+        .content__middle{
+          font-size: 24px;
+          font-weight: bold;
+          &-blue {
+            color: #3CCACE;
+          }
+        }
+        .content__bottom{
+          font-size: 18px;
+          // line-height: 1.5;
+          margin: 16px 0 0;
+
+          
+        }
+      }
+    }
+  }
+
+
+  .three{
+    height: 400px;
+    background-image: image-url('bg-topMiddleDl-pict.jpg');
+    background-size:  cover;
+    background-position: bottom right;
+    display: flex;
+    align-items: center;
+    &__box{
+      color: #fff;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      text-align: left;
+      max-width: 1040px;
+      width: 100%;
+      margin: 0 auto;
+      &__top{
+        font-size: 27px;
+        font-weight: bold;
+        line-height: 1.4;
+      }
+      &__middle{
+        font-size: 18px;
+        margin: 20px 0 30px;
+        line-height: 1.5;
+      }
+      &__icons{
+        display: flex;
+        &__apple{
+        }
+      }
+    }
+  }
+
+  .four{
+    width: 100%;
+    height: 560px;
+    background-color: white;
+    padding: 0 60px;
+    .Feature-title{
+      text-align: center;
+      font-size: 26px;
+      line-height: 1.4;
+      font-weight: bold;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      position: relative;
+    }
+    .Feature-box{
+      text-align: center;
+      display: flex;
+      max-width: 1020px;
+      width: 100%;
+      margin: 0 auto;
+      .Feature-content{
+        width: 30%;
+        margin: 16px 5% 0 0;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__top{
+          position: relative;
+          margin-bottom: 20px;
+        }
+        &__image{
+            width: 100%;
+            height: 240px;
+        }
+      }
+        .content__middle{
+          font-size: 24px;
+          font-weight: bold;
+          &-blue {
+            color: #3CCACE;
+          }
+        }
+        .content__bottom{
+          font-size: 18px;
+          // line-height: 1.5;
+          margin: 16px 0 0;
+        }
+      }
+    }
+  }
+
+  .five{
+    width: 100%;
+    height: 560px;
+    background-color: purple;
+    padding: 0 60px;
+  }
+  
+  .six{
+    width: 100%;
+    height: 560px;
+    background-color: orange;
+    padding: 0 60px;
+  }
+}
