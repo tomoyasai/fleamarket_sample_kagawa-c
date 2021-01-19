@@ -33,13 +33,12 @@ Things you may want to cover:
 |pass_A|string|null: false|
 |birthday|data|null: false|
 |personal_id|integer|null: false,foreign_key: true|
-|card_id|integer,foreign_key: true|
 ### Association
 - has_many :personals
-- belongs_to :cards
+- has_one :card,dependent: :destroy
 - has_many :buy_data
 - has_many :display_data
-- belongs_to :items
+- belongs_to :item
 
 ## personalsテーブル
 |Column|Type|Options|
@@ -56,35 +55,34 @@ Things you may want to cover:
 |building_name|string|
 |user_id|integer|null: false,foreign_key: true|
 ### Association
-- belongs_to :users
+- belongs_to :user
 
 ## cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|number|string|null: false|
-|expiry_date|string|null: false|
-|security_code|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false,foreign_key: true|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 ### Association
-- belongs_to :users
+- belongs_to :user
 
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 |info|text|null: false|
-|category_id|references|null: false|
+|category_id|references|null: false,foreign_key: true|
 |status|string|null: false|
 |delivery_fee|string|null: false|
-|delivery_fee|string|null: false|
-|delivery_fee|string|null: false|
+|delivery_area|string|null: false|
+|delivery_days|string|null: false|
 |image_id|integer|null: false,foreign_key: true|
 |user_id|integer|null: false,foreign_key: true|
 |price|integer|null: false|
 |sales_comm|integer|null: false|
 |sale|string|null: false|
 ### Association
-- belongs_to :users
+- belongs_to :user
 - belongs_to :buy_data
 - belongs_to :display_data
 - has_many :images
@@ -95,16 +93,17 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
+|item_id|integer|null: false,foreign_key: true|
 ### Association
-- belongs_to :items
+- belongs_to :item
 
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string||
+|name|string|null: false|
 |ancestry|string||
 ### Association
-- belongs_to :items
+- belongs_to :item
 
 ## commentsテーブル
 |Column|Type|Options|
@@ -113,7 +112,7 @@ Things you may want to cover:
 |user_id|integer|null: false,foreign_key: true|
 |item_id|integer|null: false,foreign_key: true|
 ### Association
-- belongs_to :items
+- belongs_to :item
 
 ## buy_dataテーブル
 |Column|Type|Options|
@@ -121,8 +120,8 @@ Things you may want to cover:
 |user_id|integer|null: false,foreign_key: true|
 |item_id|integer|null: false,foreign_key: true|
 ### Association
-- belongs_to :users
-- belongs_to :items
+- belongs_to :user
+- belongs_to :item
 
 ## display_dataテーブル
 |Column|Type|Options|
@@ -130,5 +129,5 @@ Things you may want to cover:
 |user_id|integer|null: false,foreign_key: true|
 |item_id|integer|null: false,foreign_key: true|
 ### Association
-- belongs_to :users
-- belongs_to :items
+- belongs_to :user
+- belongs_to :item
