@@ -29,9 +29,8 @@ Things you may want to cover:
 |------|----|-------|
 |nick_name|string|null: false,unique: true|
 |email|string|null: false|
-|pass|string|null: false|
-|pass_A|string|null: false|
-|birthday|data|null: false|
+|encrypted_password|string|null: false|
+|birthday|date|null: false|
 |family|string|null: false|
 |first|string|null: false|
 |family_kana|string|null: false|
@@ -70,7 +69,7 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false|
 |info|text|null: false|
-|category_id|references|null: false,foreign_key: true|
+|category|references|null: false,foreign_key: true|
 |status_id|integer|null: false|
 |delivery_fee_id|integer|null: false|
 |delivery_area_id|integer|null: false|
@@ -79,7 +78,7 @@ Things you may want to cover:
 |price|integer|null: false|
 ### Association
 - belongs_to :user
-- belongs_to :buy_data
+- has_one :buy_data
 - has_many :images
 - belongs_to :category
 - has_many :comments
