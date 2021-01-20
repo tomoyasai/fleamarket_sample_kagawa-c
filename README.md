@@ -36,20 +36,19 @@ Things you may want to cover:
 |first|string|null: false|
 |family_kana|string|null: false|
 |first_kana|string|null: false|
-|teladd_id|integer|null: false,foreign_key: true|
 ### Association
-- has_many :personals
+- has_one :address,dependent: :destroy
 - has_one :card,dependent: :destroy
 - has_many :buy_data
-- has_many :display_data
-- belongs_to :item
+- has_many :items
+- has_many :comments
 
-## teladdテーブル
+## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |tel|string|unique: true|
 |post_code|string|null: false|
-|prefecture|integer|null: false|
+|prefecture_id|integer|null: false|
 |city|string|null: false|
 |block_number|string|null: false|
 |building_name|string|
@@ -72,19 +71,17 @@ Things you may want to cover:
 |name|string|null: false|
 |info|text|null: false|
 |category_id|references|null: false,foreign_key: true|
-|status|integer|null: false|
-|delivery_fee|integer|null: false|
-|delivery_area|integer|null: false|
-|delivery_days|integer|null: false|
-|image_id|integer|null: false,foreign_key: true|
+|status_id|integer|null: false|
+|delivery_fee_id|integer|null: false|
+|delivery_area_id|integer|null: false|
+|delivery_days_id|integer|null: false|
 |user_id|integer|null: false,foreign_key: true|
 |price|integer|null: false|
 ### Association
 - belongs_to :user
 - belongs_to :buy_data
-- belongs_to :display_data
 - has_many :images
-- belongs_to :categories
+- belongs_to :category
 - has_many :comments
 
 ## imagesテーブル
@@ -110,9 +107,10 @@ Things you may want to cover:
 |user_id|integer|null: false,foreign_key: true|
 |item_id|integer|null: false,foreign_key: true|
 ### Association
+- belongs_to :user
 - belongs_to :item
 
-## buy_dataテーブル
+## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false,foreign_key: true|
@@ -121,7 +119,7 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :item
 
-## display_dataテーブル
+## buy_dataテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false,foreign_key: true|
