@@ -36,7 +36,7 @@ Things you may want to cover:
 |first|string|null: false|
 |family_kana|string|null: false|
 |first_kana|string|null: false|
-|personal_id|integer|null: false,foreign_key: true|
+|teladd_id|integer|null: false,foreign_key: true|
 ### Association
 - has_many :personals
 - has_one :card,dependent: :destroy
@@ -44,12 +44,12 @@ Things you may want to cover:
 - has_many :display_data
 - belongs_to :item
 
-## personalsテーブル
+## teladdテーブル
 |Column|Type|Options|
 |------|----|-------|
 |tel|string|unique: true|
 |post_code|string|null: false|
-|prefecture|string|null: false|
+|prefecture|integer|null: false|
 |city|string|null: false|
 |block_number|string|null: false|
 |building_name|string|
@@ -62,7 +62,7 @@ Things you may want to cover:
 |------|----|-------|
 |user_id|integer|null: false,foreign_key: true|
 |customer_id|string|null: false|
-|card_id|string|null: false|
+|paycard_id|string|null: false|
 ### Association
 - belongs_to :user
 
@@ -72,21 +72,19 @@ Things you may want to cover:
 |name|string|null: false|
 |info|text|null: false|
 |category_id|references|null: false,foreign_key: true|
-|status|string|null: false|
-|delivery_fee|string|null: false|
-|delivery_area|string|null: false|
-|delivery_days|string|null: false|
+|status|integer|null: false|
+|delivery_fee|integer|null: false|
+|delivery_area|integer|null: false|
+|delivery_days|integer|null: false|
 |image_id|integer|null: false,foreign_key: true|
 |user_id|integer|null: false,foreign_key: true|
 |price|integer|null: false|
-|sales_comm|integer|null: false|
-|sale|string|null: false|
 ### Association
 - belongs_to :user
 - belongs_to :buy_data
 - belongs_to :display_data
 - has_many :images
-- has_many :categories
+- belongs_to :categories
 - has_many :comments
 
 ## imagesテーブル
