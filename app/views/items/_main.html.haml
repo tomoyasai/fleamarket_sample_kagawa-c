@@ -2,10 +2,10 @@
 .main
   .one
     .one__box
-      .one__box__top
-        %h2 人生を変えるフリマアプリ
-      .one__box__middle
-        %p FURIMAはだれでもかんたんに出品・購入ができる
+      %h2.one__box__top
+        人生を変えるフリマアプリ
+      %p.one__box__middle
+        FURIMAはだれでもかんたんに出品・購入ができる
         フリマアプリです
       .one__box__bottom
         .one__box__bottom__apple
@@ -84,7 +84,7 @@
       .three__box__middle
         %h2 FURIMAは、フリマアプリで最も人気。
         %h2 出品・購入回数も業界最多です！
-        %h２ ほしかったあの商品に出会えるかもしれません
+        %h2 ほしかったあの商品に出会えるかもしれません
       .three__box__icons
         .three__box__icons__apple
         apple
@@ -92,42 +92,40 @@
         google
 
   .four
-    .Feature-title
+    %h2.Feature-title
       FURIMAの特徴
-    %ul.Feature-box
-      %li.Feature-content
+    .Feature-box
+      .Feature-content
         .Feature-content__top
           .Feature-content__top__image 
-            = image_tag "pict-reason-01.jpg", size: "240x240"
-        .Feature-content__middle
+            = image_tag "icon-01.png", size: "221x286"
+        %h3.Feature-content__middle
           簡単に売り買いできる
         %p.Feature-content__bottom
           スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
 
-    .Feature-title
-      FURIMAの特徴
-    %ul.Feature-box
-      %li.Feature-content
+      .Feature-content
         .Feature-content__top
           .Feature-content__top__image 
-            = image_tag "pict-reason-01.jpg", size: "240x240"
-        .Feature-content__middle
-          簡単に売り買いできる
+            = image_tag "icon-03.png", size: "221x286"
+        %h3.Feature-content__middle
+          売上金は即日振込みに対応
         %p.Feature-content__bottom
-          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+          午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
 
-    .Feature-title
-      FURIMAの特徴
-    %ul.Feature-box
-      %li.Feature-content
+      .Feature-content
         .Feature-content__top
           .Feature-content__top__image 
-            = image_tag "pict-reason-01.jpg", size: "240x240"
-        .Feature-content__middle
-          簡単に売り買いできる
+            = image_tag "icon-04.png", size: "221x286"
+        %h3.Feature-content__middle
+          様々な支払いに対応
         %p.Feature-content__bottom
-          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+
+
+          
   .five
+
   .six
 
   -# .group__info__left__name
