@@ -214,13 +214,18 @@
     max-width: 1020px;
     margin: 26px auto;
     display: flex;
+    flex-wrap: wrap;
   }
-  
+  .itembrock{
+    padding: 10px;
+    width: 20%;
+  }
+
   .itemlist{
     background-color: #fff;
     display: inline-block;
     width: 100%;
-    box-shadow: 0 10px 25px 0 green;
+    box-shadow: 0 10px 25px 0 ;
     &__image{
       position: absolute;
       top: 0;
