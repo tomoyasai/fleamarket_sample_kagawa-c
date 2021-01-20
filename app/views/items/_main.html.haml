@@ -18,7 +18,7 @@
     -# = link_to "/items/new", class: "user__box__icons__new" do
     -#   = icon('far', 'edit')
 
-    .iX1dbR
+    -# .iX1dbR
     -# .h2 class='iX1dbR__dtm5jd'
     -#     "人生を変えるフリマアプリ"
     -#     </h2>
@@ -125,6 +125,72 @@
 
           
   .five
+    %h2.Pickup-title
+      ピックアップカテゴリー
+    .Pickup-box
+      -# %h3.new-title
+      -#   = link_to '新規登録商品', '#'
+      = link_to '新規登録商品', root_path, class: 'new-title'
+
+      .itemlists
+        
+        .itemlist
+          = link_to root_path, class: 'new-title' do
+            .itemlist__image
+            = image_tag "icon-01.png", size: "148x150"
+            .itemlist__info
+              %h3.itemlist__info__name
+                バッグ
+              .itemlist__info__price
+                500円
+              %p.itemlist__info__yen
+                (税込)
+            .itemlist__info__price__star
+              ★１
+
+        .itemlist
+          .itemlist__image
+          = image_tag "icon-01.png", size: "148x150"
+          .itemlist__info
+            %h3.itemlist__info__name
+              バッグ
+            .itemlist__info__price
+              500円
+            .itemlist__info__yen
+              (税込)
+          .itemlist__info__price__star
+            ★１
+
+        .itemlist
+          .itemlist__image
+          = image_tag "icon-01.png", size: "148x150"
+          .itemlist__info
+            %h3.itemlist__info__name
+              バッグ
+            .itemlist__info__price
+              500円
+            .itemlist__info__yen
+              (税込)
+          .itemlist__info__price__star
+            ★１        
+
+        .itemlist
+          .itemlist__image
+          = image_tag "icon-01.png", size: "148x150"
+          .itemlist__info
+            %h3.itemlist__info__name
+              バッグ
+            .itemlist__info__price
+              500円
+            .itemlist__info__yen
+              (税込)
+          .itemlist__info__price__star
+            ★１
+
+
+
+
+
 
   .six
 
