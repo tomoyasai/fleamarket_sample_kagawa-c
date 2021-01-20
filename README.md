@@ -32,6 +32,10 @@ Things you may want to cover:
 |pass|string|null: false|
 |pass_A|string|null: false|
 |birthday|data|null: false|
+|family|string|null: false|
+|first|string|null: false|
+|family_kana|string|null: false|
+|first_kana|string|null: false|
 |personal_id|integer|null: false,foreign_key: true|
 ### Association
 - has_many :personals
@@ -43,10 +47,6 @@ Things you may want to cover:
 ## personalsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|family|string|null: false|
-|first|string|null: false|
-|family_yomi|string|null: false|
-|first_yomi|string|null: false|
 |tel|string|unique: true|
 |post_code|string|null: false|
 |prefecture|string|null: false|
