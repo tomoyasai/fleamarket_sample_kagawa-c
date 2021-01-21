@@ -199,8 +199,6 @@
   }
 
   .Pickup-box{
-
-
   }
 
   .new-title{
@@ -236,6 +234,17 @@
       position: relative;
       overflow: hidden;
       margin: 0;
+      &__picture{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: auto;
+        height: 150px;
+        object-fit: cover;
+      }
     }
     &__info{
       background-color: #fff;
@@ -292,8 +301,6 @@
   .brand-box{
     margin: 0;
     padding: 0;
-
-
   }
 
   .brand-title{
@@ -304,3 +311,8 @@
     text-align: center;
     display: block;
   }
+
+
+
+
+
