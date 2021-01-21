@@ -7,6 +7,8 @@
 .main {
   margin: 0;
   padding: 0;
+}
+
   .one{
     width: 100%;
     height: 560px;
@@ -216,6 +218,7 @@
     display: flex;
     flex-wrap: wrap;
   }
+
   .itembrock{
     padding: 10px;
     width: 20%;
@@ -225,19 +228,18 @@
     background-color: #fff;
     display: inline-block;
     width: 100%;
-    box-shadow: 0 10px 25px 0 ;
+    box-shadow: 0 10px 25px 0 gold;
     &__image{
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
       width: 100%;
-      z-index: auto;
       height: 150px;
-      object-fit: cover;
+      position: relative;
+      overflow: hidden;
+      margin: 0;
     }
     &__info{
+      background-color: #fff;
+      color: #333;
+      padding: 16px;
       &__name{
 
       }
@@ -256,4 +258,3 @@
     background-color: orange;
     padding: 0 60px;
   }
-}
