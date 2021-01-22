@@ -1,40 +1,40 @@
 -# ログイン画面！！
 
 -# %h2 ログイン画面
--# <!DOCTYPE html>
+<!DOCTYPE html>
 
--# .header
--#   %h1
--#     = image_tag 'logo.png', alt: '', height: '49px', width: '185px', class: ''
--# .main 
--#   .main__top
--#     .main__top--inner
--#       %p アカウントをお持ちでない方はこちら
--#       %p.main__top--inner__newBtn
--#         = link_to('新規会員登録', {})
--#   .main__bottom
--#     .main__bottom--inner
--#       .main__bottom--inner--mail
--#         メールアドレス
--#       .main__bottom--inner--pass
--#         パスワード
--#       .main__bottom--inner--in
--#         ログイン
--#       .main__bottom--inner--memo
--#         パスワードをお忘れの方
--# .footer
--#   .footer__inner
--#     .ul
--#       プライバシーポリシー
--#       フリマ利用規約
--#       特定商取引に関する表記
--#     %h1 
+.header
+  %h1
+    = image_tag 'logo.png', alt: '', height: '49px', width: '185px', class: ''
+.main
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .main__top
+      .main__top--inner
+        %p アカウントをお持ちでない方はこちら
+        %p.main__top--inner__newBtn
+          = link_to('新規会員登録', {})
+    .main__bottom
+      .main__bottom--inner
+        = f.email_field :email, class: "main__bottom--inner--mail", autofocus: true, autocomplete: "email", placeholder: 'メールアドレス'
+      .main__bottom--inner
+        = f.password_field :password, class: "main__bottom--inner--pass", autocomplete: "current-password", placeholder: 'パスワード'
+        .main__bottom--inner--in
+          = f.submit "ログイン"
+        .main__bottom--inner--memo
+          パスワードをお忘れの方
+.footer
+  .footer__inner
+    .ul
+      プライバシーポリシー
+      フリマ利用規約
+      特定商取引に関する表記
+    %h1 
 
 
 
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .field
-    = f.label :email
+    = f.label :emailll
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
   .field

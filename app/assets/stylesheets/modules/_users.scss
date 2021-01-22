@@ -9,7 +9,7 @@
 }
 
 .main {
-  height: 488px;
+  // height: 488px;
   text-align: center;
   background-color: #f8f8f8;
   display: flex;
@@ -51,6 +51,7 @@
       
       &--mail {
         height: 48px;
+        width: 328px;
         margin: 8px 0 24px 0;
         border-radius: 4px;
         padding: 10px 16px 8px;
@@ -58,6 +59,7 @@
       }
       &--pass {
         height: 48px;
+        width: 328px;
         margin: 8px 0 0;
         border-radius: 4px;
         padding: 10px 16px 8px;
@@ -65,7 +67,9 @@
        
       }
       &--in {
+        input {
         height: 48px;
+        width: 328px;
         background-color: #3ccace;
         color: white;
         border: 1px solid #3ccace;
@@ -73,10 +77,13 @@
         border-radius: 4px;
         font-size: 14px;
         text-align: center;
+        }       
       }
       &--memo {
         color: #0099e8;
         font-size: 14px;
+        margin: 40px 0 0;
+        text-align: left;
       }
     }
   }
