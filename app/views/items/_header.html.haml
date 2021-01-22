@@ -1,3 +1,23 @@
-.header
-  .item
-    %h1 ヘッダー
+.toppage-header
+  .header-brock
+    .header-top
+      %h1.left-top
+        = link_to root_path, class: 'left-top__icon' do
+          = image_tag "logo.png", size: "140x41", class: 'left-top__icon__image'
+      .right-top
+    .header-bottom
+      %ul.left-bottom
+        %li.left-bottom__category
+          = link_to root_path, class: 'left-bottom__category__icon' do
+            = icon('fas', 'list-ul') 
+            %span.left-bottom__category__icon__letter
+              カテゴリーから探す
+            %span
+            
+        %li.left-bottom__brand
+          = link_to 'ブランドから探す', root_path
+      %ul.right-bottom
+        %li.right-bottom__login
+          = link_to 'ログイン', root_path
+        %li.right-bottom__registration
+          = link_to '新規会員登録', root_path

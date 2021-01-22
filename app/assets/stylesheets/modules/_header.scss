@@ -1,0 +1,84 @@
+.toppage-header{
+  padding: 0 60px;
+  // background-color: #fff;
+  // box-shadow: 0 3px 3px 0 rgb(0 0 0 / 16%);
+  // -webkit-box-shadow: 0 3px 3px 0 rgb(0 0 0 / 16%);
+}
+.header-brock{
+  max-width: 1040px;
+  width: 100%;
+  min-height: 82px;
+  margin: 0 auto;
+  padding: 15px 0 0;
+}
+.header-top{
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.left-top {
+  padding-bottom: 10px;
+  margin-right: 30px;
+  border-radius: 4px;
+  &__icon{
+    width: 140px;
+    display: block;
+    &__image{
+      width: 100%;
+      vertical-align: bottom;
+    }
+  }
+}
+
+.right-top{
+
+}
+
+.header-bottom{
+  font-size: 14px;
+  display: flex;
+  min-height: 42px;
+}
+
+.left-bottom{
+  position: relative;
+  display: flex;
+  &__category{
+    line-height: 38px;
+    padding: 0 0 0 16px;
+    position: relative;
+    &__icon{
+      color: #333;
+      text-decoration: none;
+      line-height: 32px;
+      background-position: center right;
+      background-repeat: no-repeat;
+      background-size: 18px;
+      padding-right: 30px;
+      i{
+        color: #3CCACE;
+      }
+      &__letter{
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+
+
+// .header-bottom
+// %ul.left-bottom
+//   %li.left-bottom__category
+//     = link_to root_path, class: 'left-bottom__category__icon' do
+//       = icon('fas', 'list-ul') 
+//       %span カテゴリーから探す
+//       %span
+//   %li.left-bottom__brand
+//     = link_to 'ブランドから探す', root_path
+// %ul.right-bottom
+//   %li.right-bottom__login
+//     = link_to 'ログイン', root_path
+//   %li.right-bottom__registration
+//     = link_to '新規会員登録', root_path
