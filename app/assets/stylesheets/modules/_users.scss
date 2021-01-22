@@ -1,12 +1,13 @@
 .header {
   height: 128px;
   text-align: center;
-  background-color: #f8f8f8;
-  h1 {
-    margin: 40px 0 0;
-    display: inline-block;
-  }
+  background-color: #f8f8f8; 
 }
+h1 {
+  margin: 40px 0 0;
+  display: inline-block;
+}
+
 
 .main {
   // height: 488px;
@@ -102,4 +103,8 @@
 }
 .ul {
   font-size: 12px;
+}
+
+.small {
+  font-size: 11px;
 }

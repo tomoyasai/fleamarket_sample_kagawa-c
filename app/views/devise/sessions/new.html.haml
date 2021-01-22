@@ -28,8 +28,10 @@
       プライバシーポリシー
       フリマ利用規約
       特定商取引に関する表記
-    %h1 
-
+    %h1
+      = image_tag 'logo.png', alt: '', height: '49px', width: '185px', class: ''
+    .small
+      @FURIMA
 
 
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
