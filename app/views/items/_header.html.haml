@@ -8,14 +8,18 @@
     .header-bottom
       %ul.left-bottom
         %li.left-bottom__category
-          = link_to root_path, class: 'left-bottom__category__icon' do
+          = link_to '#', class: 'left-bottom__category__icon' do
             = icon('fas', 'list-ul') 
             %span.left-bottom__category__icon__letter
               カテゴリーから探す
             %span
+        %li.left-bottom__category
+          = link_to '#', class: 'left-bottom__category__icon' do
+            = icon('fas', 'tags') 
+            %span.left-bottom__category__icon__letter
+              ブランドから探す
+            %span
             
-        %li.left-bottom__brand
-          = link_to 'ブランドから探す', root_path
       %ul.right-bottom
         %li.right-bottom__login
           = link_to 'ログイン', root_path
