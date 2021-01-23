@@ -36,11 +36,13 @@ h1 {
     text-align: left;
   }
 }
-label {
-  font-size: 14px;
-  font-weight: 600;
+
+.field {
+  margin: 0 auto;
+  max-width: 343px;
 }
-.span {
+
+span {
   margin: 0 0 0 8px;
   padding: 2px 4px;
   border-radius: 2px;
@@ -49,6 +51,10 @@ label {
   color: white;
   width: 32px;
   display: inline-block;
+}
+
+.second {
+  margin: 24px 0 0;
 }
 
 input {
@@ -62,13 +68,8 @@ input {
   background-color: white;
 
 }
-.field {
-  margin: 0 auto;
-  max-width: 343px;
-}
-
-.second {
-  margin: 24px 0 0;
+.div {
+  width: 100%;
 }
 
 h2 {
@@ -76,7 +77,12 @@ h2 {
   font-weight: bold;
 }
 
-bun {
+.bun {
   margin: 8px 0 0;
   font-size: 14px;
+}
+
+.name {
+  width: 165.5px;
+  display: inline-block;
 }
