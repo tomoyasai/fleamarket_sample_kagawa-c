@@ -1,33 +1,56 @@
 -# 新規登録画面！
 <!DOCTYPE html>
-.aaa 新規登録画面
+.header
+  %h1
+    = image_tag 'logo.png', alt: '', height: '49px', width: '185px', class: ''
+
+.up__main
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    .up__main__top
+      .up__main__top--inner
+        会員情報入力
+    .up__main__bottom
+      .field
+        = f.label :ニックネーム
+        .span
+          必須
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: '例) フリマ太郎'
+        
+
+.footer
+  .footer__inner
+    %ul
+      プライバシーポリシー
+      %li
+      フリマ利用規約
+      %li
+      特定商取引に関する表記
+    %h1
+      = image_tag 'logo.png', alt: '', height: '49px', width: '185px', class: ''
+    .small
+      @FURIMA
+
+
 
 -# <h2>Sign up</h2>
 
--# <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
--#   <%= render "devise/shared/error_messages", resource: resource %>
-
--#   <div class="field">
--#     <%= f.label :email %><br />
--#     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
--#   </div>
-
--#   <div class="field">
--#     <%= f.label :password %>
--#     <% if @minimum_password_length %>
--#     <em>(<%= @minimum_password_length %> characters minimum)</em>
--#     <% end %><br />
--#     <%= f.password_field :password, autocomplete: "new-password" %>
--#   </div>
-
--#   <div class="field">
--#     <%= f.label :password_confirmation %><br />
--#     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
--#   </div>
-
--#   <div class="actions">
--#     <%= f.submit "Sign up" %>
--#   </div>
--# <% end %>
-
--# <%= render "devise/shared/links" %>
+-# = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+-#   = render "devise/shared/error_messages", resource: resource
+-#   .field
+-#     = f.label :email
+-#     %br/
+-#     = f.email_field :email, autofocus: true, autocomplete: "email"
+-#   .field
+-#     = f.label :password
+-#     - if @minimum_password_length
+-#       %em
+-#         (#{@minimum_password_length} characters minimum)
+-#     %br/
+-#     = f.password_field :password, autocomplete: "new-password"
+-#   .field
+-#     = f.label :password_confirmation
+-#     %br/
+-#     = f.password_field :password_confirmation, autocomplete: "new-password"
+-#   .actions
+-#     = f.submit "Sign up"
+-# = render "devise/shared/links"
