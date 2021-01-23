@@ -2,36 +2,61 @@
   .Header__logo
     FURIMA
 .Breadbar
-  フリマ ＞ マイページ
+  .Breadbar_info
+    フリマ ＞ マイページ
 .Mypages
   .Mypages_main
-    .Mypages_main_side
-      %nav.Mypages_main_side_list
-        .Mypages_main_side_list_name
-          %ul
-            %li マイページ
-  
+    %nav.Mypages_main_side
+      %ul.Mypages_main_side__lists
+        %li.Mypages_main_side_list
+          .Mypages_main_side_list_name
+            %p マイページ
+            %p >
+        %li.Mypages_main_side_list
+          .Mypages_main_side_list_name
+            %p マイページ 
+            %p >
+      %p 設定      
+      %ul.Mypages_main_side__lists
+        %li.Mypages_main_side_list
+          .Mypages_main_side_list_name
+            %p 支払い方法
+            %p >
+        %li.Mypages_main_side_list
+          .Mypages_main_side_list_name
+            %p ログアウト
+            %p >       
     .Mypages_right
       .Mypages_right_top
         .Mypages_right_top_inside
           .Mypages_right_top_inside_face
+            =image_tag "member_photo_noimage_thumb.png"
           .Mypages_right_top_inside_name
-            %h2 Masami
+            %p Masami
           .Mypages_right_top_inside_count
-            %h2 評価 ２  出品数 ２
+            %p 評価 ２  出品数 ２
 
       .Mypages_right_middle
         .Mypages_right_middle_tabs
           .Mypages_right_middle_tabs_tab1
-            %h2 お知らせ
+            %p お知らせ
           .Mypages_right_middle_tabs_tab2
-            %h2 やることリスト
-          .Mypages_right_middle_tabs_panels
-            .Mypages_right_middle_tabs_panels_show
+            %p やることリスト
+        .Mypages_right_middle_panels
+          .Mypages_right_middle_panels_show
+            %p 一覧を見る
             
             
-      .Mypages_right-bottom
-        .Mypages_right-bottom_tabs
-          .Mypages_right-bottom_tab3
-          .Mypages_right-bottom_tab4
-        .Mypages_right-bottom_box
+      .Mypages_right_bottom
+        .Mypages_right_bottom_list
+          %p 購入した商品
+        .Mypages_right_bottom_tabs
+          .Mypages_right_bottom_tabs_tab3
+            %p 取引中
+          .Mypages_right_bottom_tabs_tab4
+            %p 過去の取引
+        .Mypages_right_bottom_box
+
+-# .Mypages_right_down
+
+-# .Footer
