@@ -1,0 +1,33 @@
+.toppage-header
+  .header-brock
+    .header-top
+      %h1.left-top
+        = link_to root_path, class: 'left-top__icon' do
+          = image_tag "logo.png", size: "140x41", class: 'left-top__icon__image'
+      .right-top  
+        =form_with html: {class: "search-form"}do |f|
+          = f.text_field :hogehoge, class: 'search-form__name',placeholder: 'キーワードから探す'
+          = link_to '#', class: "search-form__send" do
+            = image_tag "icon-search 1.png", size: "20x20", class: 'search-form__send__image'
+  
+
+    .header-bottom
+      %ul.left-bottom
+        %li.left-bottom__category
+          = link_to '#', class: 'left-bottom__category__icon' do
+            = icon('fas', 'list-ul') 
+            %span.left-bottom__category__icon__letter
+              カテゴリーから探す
+            %span
+        %li.left-bottom__category
+          = link_to '#', class: 'left-bottom__category__icon' do
+            = icon('fas', 'tags') 
+            %span.left-bottom__category__icon__letter
+              ブランドから探す
+            %span
+            
+      %ul.right-bottom
+        %li.right-bottom__button
+          = link_to 'ログイン', root_path, class: 'right-bottom__button__login'
+        %li.right-bottom__button
+          = link_to '新規会員登録', root_path, class: 'right-bottom__button__registration'
