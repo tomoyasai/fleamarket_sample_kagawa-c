@@ -35,22 +35,26 @@
             本人確認
           .bun
             安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+        
+        -# この下が全角名前
         .second
           .name
             = f.label :お名前（全角）
             %span
               必須
-            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: '例) 香川'
+            = f.text_field :email, autofocus: true, autocomplete: "email", placeholder: '例) 香川'
           .name
-            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: '例) 太郎'   
+            = f.text_field :email, autofocus: true, autocomplete: "email", placeholder: '例) 太郎'   
+       
+        -# この下がカタカナ全角名前
         .second
           .name
             = f.label :お名前カナ（全角）
             %span
               必須
-            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: '例) カガワ'
+            = f.text_field :email, autofocus: true, autocomplete: "email", placeholder: '例) カガワ'
           .name
-            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: '例) タロウ'
+            = f.text_field :email, autofocus: true, autocomplete: "email", placeholder: '例) タロウ'
 
         
 

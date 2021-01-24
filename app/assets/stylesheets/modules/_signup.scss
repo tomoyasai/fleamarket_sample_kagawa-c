@@ -1,12 +1,11 @@
 .header {
   height: 128px;
   text-align: center;
-  background-color: #f8f8f8; 
-}
-
-h1 {
-  margin: 40px 0 0;
-  display: inline-block;
+  background-color: #f8f8f8;
+  h1 {
+    margin: 40px 0 0;
+    display: inline-block;
+  }
 }
 
 .up__main {
@@ -40,21 +39,31 @@ h1 {
 .field {
   margin: 0 auto;
   max-width: 343px;
-}
-
-span {
-  margin: 0 0 0 8px;
-  padding: 2px 4px;
-  border-radius: 2px;
-  font-size: 12px;
-  background-color: #EA352D;
-  color: white;
-  width: 32px;
-  display: inline-block;
-}
-
-.second {
-  margin: 24px 0 0;
+  span {
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-size: 12px;
+    background-color: #EA352D;
+    color: white;
+    width: 32px;
+    display: inline-block;
+  } 
+  .second {
+    margin: 24px 0 0;
+  }
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .bun {
+    margin: 8px 0 0;
+    font-size: 14px;
+  }
+  label {
+    font-weight: 600;
+    font-size: 14px;
+  }
 }
 
 input {
@@ -66,20 +75,10 @@ input {
   border: 1px solid #ccc;
   line-height: 1.5;
   background-color: white;
-
 }
+
 .div {
   width: 100%;
-}
-
-h2 {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.bun {
-  margin: 8px 0 0;
-  font-size: 14px;
 }
 
 .name {
@@ -87,7 +86,7 @@ h2 {
   display: inline-block;
 }
 
-label {
-  font-weight: 600;
-  font-size: 14px;
+.aaaaa {
+  color: blue;
+
 }
