@@ -66,6 +66,39 @@
   }
 }
 
+.right-bottom{
+  margin-left: auto;
+  display: flex;
+  &__button{
+    position: relative;
+    cursor: pointer;
+    color: #333;
+    padding-left: 16px;
+    &__login{
+      background-color: white;
+      border: 1px solid #0095ee;
+      border-radius: 4px;
+      color: #0095ee;
+      display: block;
+      font-size: 14px;
+      padding: 5px 10px;
+      text-decoration: none;
+      transition: all 0.3s ease-out 0s;
+    }
+    &__registration{
+      background-color: #3CCACE;
+      border: 1px solid #3CCACE;
+      border-radius: 4px;
+      color: white;
+      display: block;
+      font-size: 14px;
+      padding: 5px 10px;
+      text-decoration: none;
+      transition: all 0.3s ease-out 0s;
+    }
+  }
+}
+
 
 
 // .header-bottom
