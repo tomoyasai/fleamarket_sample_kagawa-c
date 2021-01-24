@@ -49,6 +49,16 @@
     width: 32px;
     display: inline-block;
   } 
+  .span__two {
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-size: 12px;
+    background-color: #bfbfbf;
+    color: white;
+    width: 32px;
+    display: inline-block;
+  } 
   .second {
     margin: 24px 0 0;
     .name {
@@ -56,6 +66,24 @@
       display: inline-block;
     }
   }
+  .date {
+    display: flex;
+    margin: 8px 0 0;
+    select {
+    height: 48px;
+    width: calc((100% - 48px) / 3);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    }
+  }
+
+  .info {
+    margin: 8px 0 0;
+    color: #888;
+    line-height: 1.5;
+    font-size: 14px;
+  }
+
   h2 {
     font-size: 16px;
     font-weight: bold;

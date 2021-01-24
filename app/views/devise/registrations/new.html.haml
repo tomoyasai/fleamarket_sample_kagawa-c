@@ -60,8 +60,12 @@
           = f.label :生年月日
           %span
             必須
-          = f.password_field :password, autocomplete: "new-password" ,placeholder: '6文字以上の半角英数字'
+        .date
+          = f.date_select :password, with_css_classes:'XXXXX',prompt:"--",start_year:Time.now.year,end_year:Time.now.year-100,use_month_numbers:true, autocomplete: "new-password" 
 
+        .info
+          ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+        
         .second
           %h2
             配送先住所
@@ -70,38 +74,37 @@
           = f.label :郵便番号
           %span
             必須
-          = f.password_field :password, autocomplete: "new-password" ,placeholder: '例）760-0019'
+          = f.text_field :password, autocomplete: "new-password" ,placeholder: '例）760-0019'
 
         .second
           = f.label :都道府県
           %span
             必須
-          = f.password_field :password, autocomplete: "new-password" ,placeholder: '6文字以上の半角英数字'
+          = f.text_field :password, autocomplete: "new-password" ,placeholder: '6文字以上の半角英数字'
 
         .second
           = f.label :市区町村
           %span
             必須
-          = f.password_field :password, autocomplete: "new-password" ,placeholder: '例）高松市'
+          = f.text_field :password, autocomplete: "new-password" ,placeholder: '例）高松市'
 
         .second
           = f.label :番地
           %span
             必須
-          = f.password_field :password, autocomplete: "new-password" ,placeholder: '例）サンポート2-1'
+          = f.text_field :password, autocomplete: "new-password" ,placeholder: '例）サンポート2-1'
 
         .second
           = f.label :建物名
-          %span
-            必須
-          = f.password_field :password, autocomplete: "new-password" ,placeholder: '例）高松シンボルタワー タワー棟4・5階'
+          .span__two
+            任意
+          = f.text_field :password, autocomplete: "new-password" ,placeholder: '例）高松シンボルタワー タワー棟4・5階'
 
         .second
           = f.label :電話番号
           %span
             必須
-          = f.password_field :password, autocomplete: "new-password" ,placeholder: '例）0878220111'
-
+          = f.text_field :password, autocomplete: "new-password" ,placeholder: '例）0878220111'
 
 .footer
   .footer__inner
