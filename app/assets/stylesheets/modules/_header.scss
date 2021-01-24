@@ -1,5 +1,6 @@
 .toppage-header{
   padding: 0 60px;
+  --my-color: #3CCACE;
 }
 
 .header-brock{
@@ -48,7 +49,7 @@
     height: 36px;
     border: 0;
     cursor: pointer;
-    background-color: #3CCACE;
+    background-color: var(--my-color);
     padding: 8px;
     &__image{
       width: 100%;
@@ -78,7 +79,7 @@
       background-size: 18px;
       padding-right: 30px;
       i{
-        color: #3CCACE;
+        color: var(--my-color);
       }
       &__letter{
         font-weight: 700;
@@ -107,8 +108,8 @@
       transition: all 0.3s ease-out 0s;
     }
     &__registration{
-      background-color: #3CCACE;
-      border: 1px solid #3CCACE;
+      background-color: var(--my-color);
+      border: 1px solid var(--my-color);
       border-radius: 4px;
       color: white;
       display: block;
