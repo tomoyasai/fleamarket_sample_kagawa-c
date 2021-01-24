@@ -4,7 +4,13 @@
       %h1.left-top
         = link_to root_path, class: 'left-top__icon' do
           = image_tag "logo.png", size: "140x41", class: 'left-top__icon__image'
-      .right-top
+      .right-top  
+        =form_with html: {class: "search-form"}do |f|
+          = f.text_field :hogehoge, class: 'search-form__name',placeholder: 'キーワードから探す'
+          = link_to '#', class: "search-form__send" do
+            = image_tag "icon-search 1.png", size: "20x20", class: 'search-form__send__image'
+  
+
     .header-bottom
       %ul.left-bottom
         %li.left-bottom__category

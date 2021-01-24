@@ -32,8 +32,44 @@
 }
 
 .right-top{
+  margin-left: auto;
+  width: 100%;
+}
+
+.search-form{
+  width: 100%;
+  display: flex;
+  margin-bottom: 5px;
+  &__name{
+    width: calc(100% - 26px);
+    height: 36px;
+    padding: 0 0 0 5px;
+  }
+  &__send{
+    width: 36px;
+    height: 36px;
+    border: 0;
+    cursor: pointer;
+    background-color: #3CCACE;
+    padding: 8px;
+    &__image{
+      width: 100%;
+    }
+  }
 
 }
+
+
+// .search-form__send{
+//   width: 36px;
+//   height: 36px;
+//   border: 0;
+//   cursor: pointer;
+//   background-color: #3CCACE;
+//   padding: 8px;
+// }
+
+// search-form__send__image'
 
 .header-bottom{
   font-size: 14px;
