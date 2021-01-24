@@ -77,6 +77,18 @@
     }
   }
 
+  .prefecture {
+    select {
+    width: 343px;
+    height: 48px;
+    display: flex;
+    margin: 8px 0 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px 16px 8px;
+    }
+  }
+
   .info {
     margin: 8px 0 0;
     color: #888;
@@ -95,6 +107,18 @@
   label {
     font-weight: 600;
     font-size: 14px;
+  }
+  .btn_aaa {
+    input {
+      height: 48px;
+      width: 343px;
+      background-color: #3ccace;
+      color: white;
+      border: 1px solid #3ccace;
+      margin: 40px 0 0;
+      border-radius: 4px;
+      font-size: 14px;
+    } 
   }
 }
 
