@@ -56,7 +56,52 @@
         .name
           = f.text_field :email, autofocus: true, autocomplete: "email", placeholder: '例) タロウ'
 
+        .second
+          = f.label :生年月日
+          %span
+            必須
+          = f.password_field :password, autocomplete: "new-password" ,placeholder: '6文字以上の半角英数字'
+
+        .second
+          %h2
+            配送先住所
         
+        .second
+          = f.label :郵便番号
+          %span
+            必須
+          = f.password_field :password, autocomplete: "new-password" ,placeholder: '例）760-0019'
+
+        .second
+          = f.label :都道府県
+          %span
+            必須
+          = f.password_field :password, autocomplete: "new-password" ,placeholder: '6文字以上の半角英数字'
+
+        .second
+          = f.label :市区町村
+          %span
+            必須
+          = f.password_field :password, autocomplete: "new-password" ,placeholder: '例）高松市'
+
+        .second
+          = f.label :番地
+          %span
+            必須
+          = f.password_field :password, autocomplete: "new-password" ,placeholder: '例）サンポート2-1'
+
+        .second
+          = f.label :建物名
+          %span
+            必須
+          = f.password_field :password, autocomplete: "new-password" ,placeholder: '例）高松シンボルタワー タワー棟4・5階'
+
+        .second
+          = f.label :電話番号
+          %span
+            必須
+          = f.password_field :password, autocomplete: "new-password" ,placeholder: '例）0878220111'
+
 
 .footer
   .footer__inner
