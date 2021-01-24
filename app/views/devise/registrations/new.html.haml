@@ -61,7 +61,7 @@
           %span
             必須
         .date
-          = f.date_select :password, with_css_classes:'XXXXX',prompt:"--",start_year:Time.now.year,end_year:Time.now.year-100,use_month_numbers:true, autocomplete: "new-password" 
+          != sprintf(f.date_select(:password, with_css_classes:'XXXXX',prompt:"--",start_year:Time.now.year,end_year:Time.now.year-100,use_month_numbers:true, autocomplete: "new-password",date_separator:'%s'),'年','月')+'日'
 
         .info
           ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
