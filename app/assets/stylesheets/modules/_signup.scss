@@ -1,7 +1,9 @@
+$back-color: #f8f8f8;
+
 .in__header {
   height: 128px;
   text-align: center;
-  background-color: #f8f8f8;
+  background-color: $back-color;
   h1 {
     margin: 40px 0 0;
     display: inline-block;
@@ -10,7 +12,7 @@
 
 .up__main {
   text-align: center;
-  background-color: #f8f8f8;
+  background-color: $back-color;
   display: flex;
   flex-direction: column;
   &__top {
@@ -141,7 +143,7 @@
 .in__footer {
   height: 220px;
   text-align: center;
-  background-color: #f8f8f8;
+  background-color: $back-color;
   &--inner {
     width: 456px;
     height: 220px;
