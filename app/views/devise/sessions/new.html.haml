@@ -1,6 +1,6 @@
 .in__header
   %h1
-    = image_tag 'logo.png', alt: '', height: '49px', width: '185px', class: ''
+    = image_tag 'logo.png', alt: 'no,image', class:'logo__image'
 .main
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .main__top
@@ -26,6 +26,6 @@
       %li
       特定商取引に関する表記
     %h1
-      = image_tag 'logo.png', alt: '', height: '49px', width: '185px', class: ''
+      = image_tag 'logo.png', alt: 'no,image', class:'logo__image'
     .small
       @FURIMA
