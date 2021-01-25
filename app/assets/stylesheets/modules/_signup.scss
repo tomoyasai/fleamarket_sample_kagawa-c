@@ -1,4 +1,4 @@
-.header {
+.in__header {
   height: 128px;
   text-align: center;
   background-color: #f8f8f8;
@@ -138,11 +138,11 @@
   }
 }
 
-.footer {
+.in__footer {
   height: 220px;
   text-align: center;
   background-color: #f8f8f8;
-  &__inner {
+  &--inner {
     width: 456px;
     height: 220px;
     margin: 0 auto;

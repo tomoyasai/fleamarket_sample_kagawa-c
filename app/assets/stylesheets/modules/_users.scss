@@ -1,11 +1,11 @@
-.header {
+.in__header {
   height: 128px;
   text-align: center;
-  background-color: #f8f8f8; 
-}
-h1 {
-  margin: 40px 0 0;
-  display: inline-block;
+  background-color: #f8f8f8;
+  h1 {
+    margin: 40px 0 0;
+    display: inline-block;
+  }
 }
 
 .main {
@@ -91,11 +91,11 @@ h1 {
   }
 }
 
-.footer {
+.in__footer {
   height: 220px;
   text-align: center;
   background-color: #f8f8f8;
-  &__inner {
+  &--inner {
     width: 456px;
     height: 220px;
     margin: 0 auto;
