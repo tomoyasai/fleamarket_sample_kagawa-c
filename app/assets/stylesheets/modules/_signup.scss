@@ -1,0 +1,131 @@
+$back-color: #f8f8f8;
+
+.up__main {
+  text-align: center;
+  background-color: $back-color;
+  display: flex;
+  flex-direction: column;
+  &__top {
+    height: 97px;
+    width: 700px;
+    background-color:white;
+    margin: 0 auto;
+    border-bottom: solid 1px #eee;
+    &--inner {
+      font-size: 22px;
+      padding: 32px;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+  &__bottom {
+    height: 100%;
+    width: 700px;
+    padding: 40px 40px 64px;
+    background-color:white;
+    margin: 0 auto;
+    text-align: left;
+  }
+}
+
+.field {
+  margin: 0 auto;
+  max-width: 343px;
+  span {
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-size: 12px;
+    background-color: #EA352D;
+    color: white;
+    width: 32px;
+    display: inline-block;
+  } 
+  .span__two {
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-size: 12px;
+    background-color: #bfbfbf;
+    color: white;
+    width: 32px;
+    display: inline-block;
+  } 
+  .second {
+    margin: 24px 0 0;
+  }
+
+  .name {
+    width: 165.5px;
+    display: inline-block;
+  }
+  
+  .date {
+    display: flex;
+    margin: 8px 0 0;
+    font-size: 14px;
+    line-height: 48px;
+    select {
+    height: 48px;
+    width: calc((100% - 48px) / 3);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    }
+  }
+
+  .prefecture {
+    select {
+    width: 343px;
+    height: 48px;
+    display: flex;
+    margin: 8px 0 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px 16px 8px;
+    }
+  }
+
+  .info {
+    margin: 8px 0 0;
+    color: #888;
+    line-height: 1.5;
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .bun {
+    margin: 8px 0 0;
+    font-size: 14px;
+  }
+  label {
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  input {
+    height: 48px;
+    width: 100%;
+    padding: 10px 16px 8px;
+    margin: 8px 0 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    line-height: 1.5;
+    background-color: white;
+  }
+
+  .btn_aaa {
+    input {
+      height: 48px;
+      width: 343px;
+      background-color: #3ccace;
+      color: white;
+      border: 1px solid #3ccace;
+      margin: 40px 0 0;
+      border-radius: 4px;
+      font-size: 14px;
+    } 
+  }
+}
