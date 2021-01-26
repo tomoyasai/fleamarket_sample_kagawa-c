@@ -1,0 +1,13 @@
+.in__header {
+  height: 128px;
+  text-align: center;
+  background-color: $back-color;
+  h1 {
+    margin: 40px 0 0;
+    display: inline-block;
+  }
+  .logo__image {
+    height: 49px;
+    width: 185px;
+  }
+}

@@ -1,0 +1,24 @@
+.link-button{
+  color: #0099e8;
+  text-decoration: none;
+  &__icon{
+    width: 120px;
+    background: $main-color;
+    text-align: center;
+    border-radius: 4%;
+    bottom: 32px;
+    right: 32px;
+    position: fixed;
+    padding: 15px;
+    &__letter{
+      color: #fff;
+      display: block;
+      font-size: 18px;
+      text-decoration: none;
+      margin-bottom: 5px;
+    } 
+    &__image{
+      width: 60%;
+    }
+  }
+}

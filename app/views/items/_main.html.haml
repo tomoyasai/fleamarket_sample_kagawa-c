@@ -1,0 +1,231 @@
+.main
+  .one
+    .one__box
+      %h2.one__box__top
+        人生を変えるフリマアプリ
+      %p.one__box__middle
+        FURIMAはだれでもかんたんに出品・購入ができる
+        %br フリマアプリです
+      .one__box__bottom
+        .one__box__bottom__apple
+        .one__box__bottom__google
+        
+  .two
+    .reason-title
+      FURIMAが選ばれる3つの理由
+    %ul.reason-box
+      %li.content
+        .content__top
+          .content__top__corner
+            １
+          .content__top__image 
+            = image_tag "pict-reason-01.jpg", size: "240x240"
+        .content__middle
+          %span.content__middle-blue
+            3分 
+          %span
+            ですぐに出品
+        .content__bottom
+          スマホで入力するだけで簡単に
+          %p 出品できる！
+
+      %li.content
+        .content__top
+          .content__top__corner
+            2
+          .content__top__image
+            = image_tag "pict-reason-02.jpg", size: "240x240"
+        .content__middle
+          %span.content__middle-blue
+            シンプル
+          %span
+            で使いやすい
+        .content__bottom
+          めんどくさい入力は必要なく、検索も購入もスムーズ！
+
+      %li.content
+        .content__top
+          .content__top__corner
+            3
+          .content__top__image
+            = image_tag "pict-reason-03.jpg", size: "240x240"
+        .content__middle
+          手数料
+          %span.content__middle-blue
+            業界最安
+          %span
+        .content__bottom
+          10%でお得に出品&購入！
+
+  .three
+    .three__box
+      .three__box__top
+        会員数日本一位
+      .three__box__middle
+        %h2 FURIMAは、フリマアプリで最も人気。
+        %h2 出品・購入回数も業界最多です！
+        %h2 ほしかったあの商品に出会えるかもしれません
+      .three__box__icons
+
+  .four
+    %h2.Feature-title
+      FURIMAの特徴
+    .Feature-box
+      .Feature-content
+        .Feature-content__top
+          .Feature-content__top__image 
+            = image_tag "icon-01.png", size: "221x286"
+        %h3.Feature-content__middle
+          簡単に売り買いできる
+        %p.Feature-content__bottom
+          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+
+      .Feature-content
+        .Feature-content__top
+          .Feature-content__top__image 
+            = image_tag "icon-03.png", size: "221x286"
+        %h3.Feature-content__middle
+          売上金は即日振込みに対応
+        %p.Feature-content__bottom
+          午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+
+      .Feature-content
+        .Feature-content__top
+          .Feature-content__top__image 
+            = image_tag "icon-04.png", size: "221x286"
+        %h3.Feature-content__middle
+          様々な支払いに対応
+        %p.Feature-content__bottom
+          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+
+  .five
+    %h2.Pickup-title
+      ピックアップカテゴリー
+    .Pickup-box
+      = link_to '新規登録商品', root_path, class: 'new-title'
+      .itemlists
+        .itembrock
+          = link_to root_path, class: 'itemlist' do
+            .itemlist__image
+              = image_tag "sunrise.23822337000181.jpg", size: "100x150", class: 'itemlist__image__picture'
+            .itemlist__info
+              %h3.itemlist__info__name
+                バッグ1
+              .itemlist__info__detail
+                %ul.itemlist__info__detail__number
+                  %li 500円
+                  %li.itemlist__info__detail__number__icon
+                    = icon('far', 'star') 
+                    0
+                %p.itemlist__info__detail__yen
+                  (税込)
+
+        .itembrock
+          = link_to root_path, class: 'itemlist' do
+            .itemlist__image
+              = image_tag "sunrise.23822337000181.jpg", size: "148x150", class: 'itemlist__image__picture'
+            .itemlist__info
+              %h3.itemlist__info__name
+                バッグ1
+              .itemlist__info__detail
+                %ul.itemlist__info__detail__number
+                  %li 1000円
+                  %li.itemlist__info__detail__number__icon
+                    = icon('far', 'star') 
+                    0
+                %p.itemlist__info__detail__yen
+                  (税込)
+
+        .itembrock
+          = link_to root_path, class: 'itemlist' do
+            .itemlist__image
+              = image_tag "sunrise.23822337000181.jpg", size: "148x150", class: 'itemlist__image__picture'
+            .itemlist__info
+              %h3.itemlist__info__name
+                バッグ1
+              .itemlist__info__detail
+                %ul.itemlist__info__detail__number
+                  %li 500円
+                  %li.itemlist__info__detail__number__icon
+                    = icon('far', 'star') 
+                    0
+                %p.itemlist__info__detail__yen
+                  (税込)
+
+        .itembrock
+          = link_to root_path, class: 'itemlist' do
+            .itemlist__image
+              = image_tag "sunrise.23822337000181.jpg", size: "148x150", class: 'itemlist__image__picture'
+            .itemlist__info
+              %h3.itemlist__info__name
+                バッグ1
+              .itemlist__info__detail
+                %ul.itemlist__info__detail__number
+                  %li 500円
+                  %li.itemlist__info__detail__number__icon
+                    = icon('far', 'star') 
+                    0
+                %p.itemlist__info__detail__yen
+                  (税込)
+
+        .itembrock
+          = link_to root_path, class: 'itemlist' do
+            .itemlist__image
+              = image_tag "sunrise.23822337000181.jpg", size: "148x150", class: 'itemlist__image__picture'
+            .itemlist__info
+              %h3.itemlist__info__name
+                バッグ1
+              .itemlist__info__detail
+                %ul.itemlist__info__detail__number
+                  %li 500円
+                  %li.itemlist__info__detail__number__icon
+                    = icon('far', 'star') 
+                    0
+                %p.itemlist__info__detail__yen
+                  (税込)
+
+        .itembrock
+          = link_to root_path, class: 'itemlist' do
+            .itemlist__image
+              = image_tag "sunrise.23822337000181.jpg", size: "148x150", class: 'itemlist__image__picture'
+            .itemlist__info
+              %h3.itemlist__info__name
+                バッグ1
+              .itemlist__info__detail
+                %ul.itemlist__info__detail__number
+                  %li 500円
+                  %li.itemlist__info__detail__number__icon
+                    = icon('far', 'star') 
+                    0
+                %p.itemlist__info__detail__yen
+                  (税込)
+
+  .six
+    %h2.Pickup-brand
+      ピックアップブランド
+    .brand-box
+      = link_to 'アーカイブ', root_path, class: 'brand-title'
+      .itemlists
+        .itembrock
+          = link_to root_path, class: 'itemlist' do
+            .itemlist__image
+              = image_tag "sunrise.23822337000181.jpg", size: "148x150", class: 'itemlist__image__picture'
+            .itemlist__info
+              %h3.itemlist__info__name
+                バッグ1
+              .itemlist__info__detail
+                %ul.itemlist__info__detail__number
+                  %li 500円
+                  %li.itemlist__info__detail__number__icon
+                    = icon('far', 'star') 
+                    0
+                %p.itemlist__info__detail__yen
+                  (税込)
+
+  .seven
+    .seven__box
+      %h2.seven__box__top
+        だれでもかんたん、人生を変えるフリマアプリ
+      %p.seven__box__middle
+        今すぐ無料ダウンロード！
+      .seven__box__bottom
