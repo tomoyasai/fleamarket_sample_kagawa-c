@@ -1,5 +1,5 @@
-.header
-.breadCrumbs
+= render "header"
+.breadCrumbs フリマ ＞ テレワーク
 .base
   .base__main
     .base__main__top
@@ -47,22 +47,29 @@
       .base__main__others__list
         .base__main__others__list__image1
           =image_tag "出品.png"
-        .base__main__others__list__image2
+        .base__main__others__list__image1
           =image_tag "出品.png"
-        .base__main__others__list__image3
+        .base__main__others__list__image1
           =image_tag "出品.png"
-        .base__main__others__list__image4
+        .base__main__others__list__image1
           =image_tag "出品.png"
     .base__main__listing
       %a.base__main__listing__title 画材（おもちゃ・ホビー・グッズ）その他の商品
       .base__main__listing__list
         .base__main__listing__list__image1
           =image_tag "出品.png"
-        .base__main__listing__list__image2
+        .base__main__listing__list__image1
           =image_tag "出品.png"
-        .base__main__listing__list__image3
+        .base__main__listing__list__image1
           =image_tag "出品.png"
-        .base__main__listing__list__image4
+        .base__main__listing__list__image1
           =image_tag "出品.png"
-.image
-.footer
+.eight
+  .eight__box
+    %h2.eight__box__top
+      だれでもかんたん、人生を変えるフリマアプリ
+    %p.eight__box__middle
+      今すぐ無料ダウンロード！
+    .eight__box__bottom
+= render "footer"
+= render "button" 
