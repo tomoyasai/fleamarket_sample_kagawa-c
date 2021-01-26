@@ -1,0 +1,297 @@
+.header {
+  height: 141px;
+  width: 912px;
+  background-color: white;
+}
+.base {
+  height: 3000px;
+  width: 912px;
+  background-color: whitesmoke;
+  padding: 40px;
+  &__main {
+    height: 3000px;
+    width: 700px;
+    background-color: whitesmoke;
+    &__top {
+      height: 1294px;
+      width: 100%;
+      padding: 24px 40px 40px;
+      // margin-bottom: 10px;
+      background-color: white;
+      &__name {
+        height: 36px;
+        font-size: 24px;
+        text-align: center;
+        font-weight: bold;
+        background-color: #FFFFFF;
+      }
+      &__photo {
+        height: 360px;
+        margin-top: 16px;
+        &__image {
+          height: 300px;
+          width: 300px;
+          margin: 0 auto;
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+      &__value {
+        height: 78px;
+        margin: 24px 0 24px;
+        display: flex;
+        flex-direction: column;
+        &__price {
+          height: 54px;
+          font-size: 46px;
+          font-weight: bold;
+          text-align: center;
+        }
+        &__tax {
+          height: 17px;
+          font-size: 16px;
+          text-align: center;
+          margin-top: 7px;
+        }
+      }
+      &__btn {
+        height: 50px;
+        margin: 10px 0px;
+        background-color: #3CCACE;
+        border: 1px solid #3CCACE;
+        color: #fff;
+        border-radius: 4px;
+        font-size: 14px;
+        text-align: center;
+        line-height: 48px;
+      }
+      &__info {
+        height: 81px;
+        margin: 0px 0px 30px;
+      }
+      &__table {
+        height: 454px;
+        margin-bottom: 20px;
+        &__box1 {
+          height: 52px;
+          display: flex;
+          &__left {
+            width: 152px;
+            padding: 15px 15px;
+            background-color: #eee;
+            border: 1px solid #dedede;
+            font-weight: 400;
+            font-size: 14px;
+            text-align: center;
+          }
+          &__right {
+            width: 467px;
+            padding: 15px 15px;
+            border: 1px solid #dedede;
+            font-size: 14px;
+            color: #0099e8;
+            background-color: white;
+          }
+        }
+        &__box2 {
+          height: 94px;
+          display: flex;
+          &__left {
+            width: 152px;
+            padding: 40px 40px;
+            background-color: #eee;
+            border: 1px solid #dedede;
+            font-weight: 400;
+            font-size: 14px;
+            text-align: center;
+          }
+          &__right {
+            width: 467px;
+            padding: 40px 15px;
+            border: 1px solid #dedede;
+            font-size: 14px;
+            color: #0099e8;
+            background-color: white;
+          }
+        }
+        &__box3 {
+          height: 52px;
+          display: flex;
+          &__left {
+            width: 152px;
+            padding: 15px 15px;
+            background-color: #eee;
+            border: 1px solid #dedede;
+            font-weight: 400;
+            font-size: 14px;
+            text-align: center;
+          }
+          &__right {
+            width: 467px;
+            padding: 15px 15px;
+            border: 1px solid #dedede;
+            font-size: 14px;
+            background-color: white;
+          }
+        }
+      }
+      &__mark {
+        height: 48px;
+        width: 100%;
+        background-color: #c4e4d5;
+      }
+    }
+    &__comment {
+      height: 300px;
+      width: 100%;
+      padding: 24px;
+      background-color: #FFFFFF;
+      margin-top: 10px;
+      &__text {
+        width: 100%;
+        min-height: 104px;
+        padding: 10px;
+      }
+      &__info {
+        width: 100%;
+        height: 58px;
+        font-size: 14px;
+        padding: 8px;
+        margin: 15px 0px 25px 0px;
+        background-color: #F8F8F8
+      }
+      &__btn {
+        width: 60%;
+        height: 52px;
+        font-size: 18px;
+        background-color: #3CCACE;
+        border: 1px solid #3CCACE;
+        border-radius: 100px;
+        color: #fff;
+        padding: 14px;
+        text-align: center;
+        margin: 0 auto;
+      }
+    }
+    &__others {
+      height: 613px;
+      width: 100%;
+      margin-top: 20px;
+      &__title {
+        height: 33px;
+        width: 100%;
+        margin: 24px 0px 8px;
+        color: #3CCACE;
+        font-size: 22px;
+        font-weight: bold;
+      }
+      &__list {
+        height: 554px;
+        margin: 26px auto;
+        display: flex;
+        flex-wrap: wrap;
+        &__image1 {
+          height: 245px;
+          width: 220px;
+          margin-right: 20px;
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+        &__image2 {
+          height: 245px;
+          width: 220px;
+          margin-right: 20px;
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+        &__image3 {
+          height: 245px;
+          width: 220px;
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+        &__image4 {
+          height: 245px;
+          width: 220px;
+          margin-top: 20px;
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+    }
+    &__listing {
+      height: 613px;
+      width: 100%;
+      margin-top: 20px;
+      &__title {
+        height: 33px;
+        width: 100%;
+        margin: 24px 0px 8px;
+        color: #3CCACE;
+        font-size: 22px;
+        font-weight: bold;
+      }
+      &__list {
+        height: 554px;
+        margin: 26px auto;
+        display: flex;
+        flex-wrap: wrap;
+        &__image1 {
+          height: 245px;
+          width: 220px;
+          margin-right: 20px;
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+        &__image2 {
+          height: 245px;
+          width: 220px;
+          margin-right: 20px;
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+        &__image3 {
+          height: 245px;
+          width: 220px;
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+        &__image4 {
+          height: 245px;
+          width: 220px;
+          margin-top: 20px;
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+.image {
+  height: 360px;
+  width: 912px;
+  background-color: rgb(191, 201, 172);
+}
+.footer {
+  height: 356px;
+  width: 912px;
+  background-color: yellowgreen;
+}
