@@ -1,19 +1,5 @@
 $back-color: #f8f8f8;
 
-.in__header {
-  height: 128px;
-  text-align: center;
-  background-color: $back-color;
-  h1 {
-    margin: 40px 0 0;
-    display: inline-block;
-  }
-  .logo__image {
-    height: 49px;
-    width: 185px;
-  }
-}
-
 .main {
   text-align: center;
   background-color: $back-color;
@@ -94,37 +80,5 @@ $back-color: #f8f8f8;
         text-align: left;
       }
     }
-  }
-}
-
-.in__footer {
-  height: 220px;
-  text-align: center;
-  background-color: $back-color;
-  &--inner {
-    width: 456px;
-    height: 220px;
-    margin: 0 auto;
-    padding: 40px 0;
-  }
-  h1 {
-    margin: 40px 0 0;
-    display: inline-block;
-  }
-  .logo__image {
-    height: 49px;
-    width: 185px;
-  }
-
-  ul {
-    font-size: 12px;
-  }
-  
-  li {
-    display: inline-block;
-    margin: 0 0 0 16px;
-  }
-  .small {
-    font-size: 11px;
   }
 }

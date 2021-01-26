@@ -1,6 +1,4 @@
-.in__header
-  %h1
-    = image_tag 'logo.png', alt: '', height: '49px', width: '185px', class: ''
+= render partial: 'devise/sessions/new_header'
 
 .up__main
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
@@ -106,15 +104,4 @@
         .btn_aaa
           = f.submit "登録する"
 
-.in__footer
-  .in__footer--inner
-    %ul
-      プライバシーポリシー
-      %li
-      フリマ利用規約
-      %li
-      特定商取引に関する表記
-    %h1
-      = image_tag 'logo.png', alt: '', height: '49px', width: '185px', class: ''
-    .small
-      @FURIMA
+= render partial: 'devise/sessions/new_footer'

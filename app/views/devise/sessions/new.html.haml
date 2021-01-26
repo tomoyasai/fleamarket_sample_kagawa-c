@@ -1,6 +1,5 @@
-.in__header
-  %h1
-    = image_tag 'logo.png', alt: 'no,image', class:'logo__image'
+= render partial: 'new_header'
+
 .main
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .main__top
@@ -17,15 +16,5 @@
           = f.submit "ログイン"
         .main__bottom--inner--memo
           パスワードをお忘れの方
-.in__footer
-  .in__footer--inner
-    %ul
-      プライバシーポリシー
-      %li
-      フリマ利用規約
-      %li
-      特定商取引に関する表記
-    %h1
-      = image_tag 'logo.png', alt: 'no,image', class:'logo__image'
-    .small
-      @FURIMA
+
+= render partial: 'new_footer'
