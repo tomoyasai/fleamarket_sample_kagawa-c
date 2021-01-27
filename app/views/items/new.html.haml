@@ -33,7 +33,7 @@
       .base__main__detail__status
         %label 商品の状態
         %span.base__main__detail__status__mark 必須
-        =f.select :hoge, [],{include_blank:"選択してください"},{class: "base__main__detail__status__form",required: "required"}
+        = f.collection_select :status_id, Status.all, :id, :name,{include_blank:"選択してください"},{class: "base__main__detail__status__form",required: "required"}
     .base__main__delivery
       %p.base__main__delivery__title
         配送について
@@ -42,15 +42,15 @@
       .base__main__delivery__fee
         %label 配送料の負担
         %span.base__main__delivery__fee__mark 必須
-        =f.select :hoge, [],{include_blank:"選択してください"},{class: "base__main__delivery__fee__form",required: "required"}
+        = f.collection_select :delivery_fee_id, DeliveryFee.all, :id, :name,{include_blank:"選択してください"},{class: "base__main__delivery__fee__form",required: "required"}
       .base__main__delivery__area
         %label 配送元の地域
         %span.base__main__delivery__area__mark 必須
-        =f.select :hoge, [],{include_blank:"選択してください"},{class: "base__main__delivery__area__form",required: "required"}
+        = f.collection_select :prefecture_id, Prefecture.all, :id, :name,{include_blank:"選択してください"},{class: "base__main__delivery__area__form",required: "required"}
       .base__main__delivery__date
         %label 発送までの日数
         %span.base__main__delivery__date__mark 必須
-        =f.select :hoge, [],{include_blank:"選択してください"},{class: "base__main__delivery__date__form",required: "required"}
+        = f.collection_select :delivery_days_id, DeliveryDays.all, :id, :name,{include_blank:"選択してください"},{class: "base__main__delivery__date__form",required: "required"}
     .base__main__price
       %p.base__main__price__title
         価格（￥300〜9,999,999)
