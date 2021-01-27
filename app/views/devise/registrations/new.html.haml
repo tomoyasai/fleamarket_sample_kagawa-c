@@ -10,7 +10,7 @@
         = f.label :ニックネーム
         %span
           必須
-        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: '例) フリマ太郎'
+        = f.email_field :nick_name, autofocus: true, autocomplete: "email", placeholder: '例) フリマ太郎'
         .second
           = f.label :メールアドレス
           %span
@@ -37,18 +37,18 @@
           %span
             必須
         .name
-          = f.text_field :email, autofocus: true, autocomplete: "email", placeholder: '例) 香川'
+          = f.text_field :family, autofocus: true, autocomplete: "email", placeholder: '例) 香川'
         .name
-          = f.text_field :email, autofocus: true, autocomplete: "email", placeholder: '例) 太郎'   
+          = f.text_field :first, autofocus: true, autocomplete: "email", placeholder: '例) 太郎'   
       
         .second
           = f.label :お名前カナ（全角）
           %span
             必須
         .name
-          = f.text_field :email, autofocus: true, autocomplete: "email", placeholder: '例) カガワ'
+          = f.text_field :family_kana, autofocus: true, autocomplete: "email", placeholder: '例) カガワ'
         .name
-          = f.text_field :email, autofocus: true, autocomplete: "email", placeholder: '例) タロウ'
+          = f.text_field :first_kana, autofocus: true, autocomplete: "email", placeholder: '例) タロウ'
 
         .second
           = f.label :生年月日
