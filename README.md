@@ -72,7 +72,7 @@ Things you may want to cover:
 |category|references|null: false,foreign_key: true|
 |status_id|integer|null: false|
 |delivery_fee_id|integer|null: false|
-|delivery_area_id|integer|null: false|
+|prefecture_id|integer|null: false,foreign_key: true|
 |delivery_days_id|integer|null: false|
 |user_id|integer|null: false,foreign_key: true|
 |price|integer|null: false|
@@ -103,15 +103,6 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |comment|text|null: false|
-|user_id|integer|null: false,foreign_key: true|
-|item_id|integer|null: false,foreign_key: true|
-### Association
-- belongs_to :user
-- belongs_to :item
-
-## addressesテーブル
-|Column|Type|Options|
-|------|----|-------|
 |user_id|integer|null: false,foreign_key: true|
 |item_id|integer|null: false,foreign_key: true|
 ### Association
