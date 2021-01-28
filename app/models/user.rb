@@ -9,5 +9,6 @@ class User < ApplicationRecord
   has_many :items
   has_many :comments
 
-  validates :nick_name,presence: true
+  # validates :nick_name,presence: true
+
 end
