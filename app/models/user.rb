@@ -7,5 +7,7 @@ class User < ApplicationRecord
   has_one :card,dependent: :destroy
   has_many :buy_data
   has_many :items
-  has_many :comments     
+  has_many :comments
+
+  validates :nick_name,presence: true
 end
