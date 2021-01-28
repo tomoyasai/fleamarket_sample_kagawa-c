@@ -25,7 +25,7 @@
       .base__main__detail__category
         %label カテゴリー
         %span.base__main__detail__category__mark 必須
-        =f.select :hoge, [],{include_blank:"選択してください"},{class: "base__main__detail__category__form",required: "required"}
+        =f.select :hoge, ["仮","メンズ","レディース"],{include_blank:"選択してください"},{class: "base__main__detail__category__form",required: "required"}
       .base__main__detail__brand
         %label ブランド
         %span.base__main__detail__brand__mark 任意
