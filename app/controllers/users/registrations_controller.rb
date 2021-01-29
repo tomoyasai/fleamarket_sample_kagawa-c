@@ -8,6 +8,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.new
   end
 
+  # private
+
+  # def address_params
+  #   params.require(:address).permit(:name,:prefecture_id)
+  # end
+
   
   # GET /resource/sign_up
   # def new

@@ -60,46 +60,47 @@
         .info
           ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
         
-        -# .second
-        -#   %h2
-        -#     配送先住所
+        .second
+          %h2
+            配送先住所
         
-        -# .second
-        -#   = f.label :郵便番号
-        -#   %span
-        -#     必須
-        -#   = f.text_field :password, autocomplete: "postal-code" ,placeholder: '例）760-0019'
+        .second
+          = f.label :郵便番号
+          %span
+            必須
+          = f.text_field :password, autocomplete: "postal-code" ,placeholder: '例）760-0019'
 
-        -# .second
-        -#   = f.label :都道府県
-        -#   %span
-        -#     必須
-        -# .prefecture
-        -#   = f.select :password, [['北海道'], ['沖縄県']]
+        .second
+          = f.label :都道府県
+          %span
+            必須
+        .prefecture
+          -# = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "---"}, {class: ""}
+          = f.select :password, [['北海道'], ['沖縄県']]
 
-        -# .second
-        -#   = f.label :市区町村
-        -#   %span
-        -#     必須
-        -#   = f.text_field :password, autocomplete: "new-password" ,placeholder: '例）高松市'
+        .second
+          = f.label :市区町村
+          %span
+            必須
+          = f.text_field :password, autocomplete: "new-password" ,placeholder: '例）高松市'
 
-        -# .second
-        -#   = f.label :番地
-        -#   %span
-        -#     必須
-        -#   = f.text_field :password, autocomplete: "new-password" ,placeholder: '例）サンポート2-1'
+        .second
+          = f.label :番地
+          %span
+            必須
+          = f.text_field :password, autocomplete: "new-password" ,placeholder: '例）サンポート2-1'
 
-        -# .second
-        -#   = f.label :建物名
-        -#   .span__two
-        -#     任意
-        -#   = f.text_field :password, autocomplete: "new-password" ,placeholder: '例）高松シンボルタワー タワー棟4・5階'
+        .second
+          = f.label :建物名
+          .span__two
+            任意
+          = f.text_field :password, autocomplete: "new-password" ,placeholder: '例）高松シンボルタワー タワー棟4・5階'
 
-        -# .second
-        -#   = f.label :電話番号
-        -#   %span
-        -#     必須
-        -#   = f.text_field :password, autocomplete: "new-password" ,placeholder: '例）0878220111'
+        .second
+          = f.label :電話番号
+          %span
+            必須
+          = f.text_field :password, autocomplete: "new-password" ,placeholder: '例）0878220111'
 
         .btn_aaa
           = f.submit "登録する"
