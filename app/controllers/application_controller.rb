@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  def create
+    Team.create(team_params)
+  end
   
   private
   def configure_permitted_parameters
