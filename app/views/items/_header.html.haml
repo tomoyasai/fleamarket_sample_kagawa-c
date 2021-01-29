@@ -14,7 +14,8 @@
     .header-bottom
       %ul.left-bottom
         %li.left-bottom__category
-          = link_to '#', class: 'left-bottom__category__icon' do
+          = link_to 'ログアウト', destroy_user_session_path, class: 'left-bottom__category__icon'
+          -# = link_to '#', class: 'left-bottom__category__icon' do
             = icon('fas', 'list-ul') 
             %span.left-bottom__category__icon__letter
               カテゴリーから探す

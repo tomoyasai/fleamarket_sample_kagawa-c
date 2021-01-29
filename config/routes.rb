@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :items
   get 'mypage',to: 'users#show'
+  
+  # devise_scope :user do
+  #   get '/users/sign_out#destroy'
+  # end
 
   # resources :users
   # root 'users#new
