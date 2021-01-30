@@ -10,11 +10,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
     # @user.addresses.build
   end
 
-  # private
-
-  # def address_params
-  #   params.require(:address).permit(:name,:prefecture_id)
-  # end
+  private
+  def address_params
+    params.require(:address).permit(:name,:prefecture_id)
+  end
 
   
   # GET /resource/sign_up
