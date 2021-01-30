@@ -7,8 +7,12 @@
       %span.base__main__image__mark 必須
       %p.base__main__image__info 最大５枚までアップロードできます
       .base__main__image__file
-        .base__main__image__file__upload
-          %i.fas.fa-camera
+        -# .base__main__image__file__upload
+          -# %i.fas.fa-camera
+          -# %p= f.file_field :image, class: 'Hidden'
+        = f.label :image, class: 'base__main__image__file__upload' do
+          = icon('fas', 'camera', class: 'base__main__image__file__upload__icon')
+          = f.file_field :image, class: 'base__main__image__file__upload__file'
           %p.base__main__image__file__upload__info クリックしてファイルをアップロード
     .base__main__list
       .base__main__list__item
