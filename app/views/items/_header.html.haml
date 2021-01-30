@@ -14,8 +14,7 @@
     .header-bottom
       %ul.left-bottom
         %li.left-bottom__category
-          = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'left-bottom__category__icon'
-          -# = link_to '#', class: 'left-bottom__category__icon' do
+          = link_to '#', class: 'left-bottom__category__icon' do
             = icon('fas', 'list-ul') 
             %span.left-bottom__category__icon__letter
               カテゴリーから探す
@@ -28,7 +27,18 @@
             %span
             
       %ul.right-bottom
-        %li.right-bottom__button
-          = link_to 'ログイン', new_user_session_path, class: 'right-bottom__button__login'
-        %li.right-bottom__button
-          = link_to '新規会員登録', new_user_registration_path, class: 'right-bottom__button__registration'
+        - if user_signed_in?
+          %li.right-bottom__button
+            = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'right-bottom__button__login'
+          %li.right-bottom__button
+            = link_to 'マイページ', mypage_path, class: 'right-bottom__button__registration'
+        - else
+          %li.right-bottom__button
+            = link_to 'ログイン', new_user_session_path, class: 'right-bottom__button__login'
+          %li.right-bottom__button
+            = link_to '新規会員登録', new_user_registration_path, class: 'right-bottom__button__registration'
+      -# %ul.right-bottom
+      -#   %li.right-bottom__button
+      -#     = link_to 'ログイン', new_user_session_path, class: 'right-bottom__button__login'
+      -#   %li.right-bottom__button
+      -#     = link_to '新規会員登録', new_user_registration_path, class: 'right-bottom__button__registration'
