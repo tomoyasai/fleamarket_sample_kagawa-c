@@ -4,7 +4,11 @@ class Item < ApplicationRecord
   has_many :images
   belongs_to :category
   has_many :comments
+  mount_uploader :image, ImageUploader
+  
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :status
+
+
 end
