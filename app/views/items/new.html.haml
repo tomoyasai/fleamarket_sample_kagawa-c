@@ -19,6 +19,7 @@
         %label 商品名
         %span.base__main__list__item__mark 必須
         =f.text_field :name, class: "base__main__list__item__form",required: "required", placeholder:"４０文字まで"
+        = render 'layouts/error_messages', model: f.object
       .base__main__list__info
         %label 商品の説明
         %span.base__main__list__info__mark 必須
