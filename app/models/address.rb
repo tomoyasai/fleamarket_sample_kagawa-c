@@ -5,14 +5,15 @@ class Address < ApplicationRecord
 
   # # 以下、バリデーションの記述とちゅう
   # with_options presence: true do
-  #   validates :post_code
+  #   validates :post_code, format: { with: /\A\d{7}\z/ }
   #   validates :prefecture_id
-  #   validates :
-  #   validates :
-  #   validates :
-  #   validates :
+  #   validates :city
+  #   validates :block_number
+  #   validates :user_id
+  # end
 
-  #   validates :tel
-  #   validates :building_name
+  # validates :tel, uniqueness: true, format: { with: /\A\d{10,11}\z/ }
+  #  string型なのでto_sで文字列にすること
+  # validates :building_name
   # end
 end

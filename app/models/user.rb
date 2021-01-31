@@ -21,9 +21,13 @@ class User < ApplicationRecord
   #   validates :encrypted_password, length: { minimum: 7 }
   #   validates :nick_name, uniqueness: true
   #   validates :birthday
-  #   validates :family, format: { with:/\A[一-龥ぁ-ん]/ }
-  #   validates :first, format: { with:/\A[一-龥ぁ-ん]/ }
-  #   validates :family_kana, format: { with:/\A[ァ-ヶー－]+\z/ }
-  #   validates :first_kana, format: { with:/\A[ァ-ヶー－]+\z/ }
+  #   with_options format: { with:/\A[一-龥ぁ-ん]/ } true do
+    #   validates :family
+    #   validates :first
+    # end
+    # with_options format: { with:/\A[ァ-ヶー－]+\z/ } true do
+    #   validates :family_kana
+    #   validates :first_kana
+    # end
   # end
 end
