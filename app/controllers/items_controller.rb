@@ -6,8 +6,17 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
+  # def create
+  #   Item.create(item_params)
+  # end
+
   def create
-    Item.create(item_params)
+    @item = Item.new(item_params)
+    if @item.save
+      redirect_to controller: :products, action: :index
+    else
+      render "new"
+    end
   end
 
   private
