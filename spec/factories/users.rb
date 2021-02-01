@@ -1,5 +1,4 @@
 FactoryBot.define do
-
   factory :user do
     nick_name             {"ニックネーム"}
     email                 {"kkk@gmail.com"}
@@ -11,15 +10,4 @@ FactoryBot.define do
     family_kana           {"サトウ"}
     first_kana            {"タロウ"}
   end
-
-  factory :address do
-    post_code              {"abe"}
-    prefecture_id          {1}
-    city                   {"高松テスト市"}
-    block_number           {"テスト町"}
-    building_name          {"テストアパート"}
-    tel                    {"000-0000-0000"}
-    user_id                    {"11"}
-  end
-
 end
