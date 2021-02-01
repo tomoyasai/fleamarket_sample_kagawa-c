@@ -12,7 +12,8 @@ class Address < ApplicationRecord
     # validates :user_id
   end
 
-  validates :tel, uniqueness: true, format: { with: /\A\d{10,11}\z/ }
+  validates :tel, uniqueness: true
+  # validates :tel, uniqueness: true, format: { with: /\A\d{10,11}\z/ }
   #  string型なのでto_sで文字列にすること
   # validates :building_name
   # end
