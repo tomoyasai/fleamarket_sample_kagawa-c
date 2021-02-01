@@ -9,7 +9,7 @@ class Address < ApplicationRecord
     validates :prefecture_id
     validates :city
     validates :block_number
-    validates :user_id
+    # validates :user_id
   end
 
   validates :tel, uniqueness: true, format: { with: /\A\d{10,11}\z/ }

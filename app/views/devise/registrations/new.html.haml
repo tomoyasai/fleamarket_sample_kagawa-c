@@ -21,7 +21,7 @@
           = f.label :パスワード
           %span
             必須
-          = f.password_field :password, autocomplete: "new-password" ,placeholder: '6文字以上の半角英数字'
+          = f.password_field :password, autocomplete: "new-password" ,placeholder: '7文字以上の半角英数字'
         .second
           = f.label :パスワード
           %span
@@ -101,8 +101,8 @@
 
           .second
             = m.label :電話番号
-            %span
-              必須
+            .span__two
+              任意
             = m.text_field :tel,autocomplete: "new-password" ,placeholder: '例）0878220111'
 
         .btn_aaa
