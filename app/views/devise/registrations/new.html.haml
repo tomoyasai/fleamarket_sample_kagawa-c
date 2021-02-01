@@ -1,6 +1,7 @@
 = render partial: 'devise/sessions/new_header'
 
 .up__main
+  = render "devise/shared/error_messages", resource: resource
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     .up__main__top
       .up__main__top--inner
