@@ -76,20 +76,22 @@ Things you may want to cover:
 |delivery_days_id|integer|null: false|
 |user_id|integer|null: false,foreign_key: true|
 |price|integer|null: false|
+|image|string|null: false|
+
 ### Association
 - belongs_to :user
 - has_one :buy_data
-- has_many :images
+<!-- - has_many :images -->
 - belongs_to :category
 - has_many :comments
 
-## imagesテーブル
+<!-- ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
 |item_id|integer|null: false,foreign_key: true|
 ### Association
-- belongs_to :item
+- belongs_to :item -->
 
 ## categoriesテーブル
 |Column|Type|Options|
