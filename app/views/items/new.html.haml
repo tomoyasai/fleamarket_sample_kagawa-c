@@ -2,6 +2,7 @@
 .base
   -# =form_with html:{class:'base__main'} do |f|
   =form_with model: [@item], html: {class: "base__main"}, local: true do |f|
+    = render 'layouts/error_messages', model: f.object
     .base__main__image
       %label 出品画像
       %span.base__main__image__mark 必須
@@ -19,7 +20,6 @@
         %label 商品名
         %span.base__main__list__item__mark 必須
         =f.text_field :name, class: "base__main__list__item__form", placeholder:"４０文字まで"
-        -# = render 'layouts/error_messages', model: f.object
       .base__main__list__info
         %label 商品の説明
         %span.base__main__list__info__mark 必須
