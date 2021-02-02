@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   with_options presence: true do
-    validates :name, uniqueness: true
+    validates :name
     validates :info
     validates :category
     validates :status_id
@@ -22,5 +22,5 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :status
-  
+
 end
