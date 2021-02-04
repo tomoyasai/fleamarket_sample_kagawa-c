@@ -3,7 +3,7 @@ FactoryBot.define do
     name { "aa" }
     info  { "bb" }             
     image { File.open("#{Rails.root}/public/images/test_image.jpg") }
-    category_id { 3}
+    category_id { 1 }
     status_id { 1 }
     delivery_fee_id { 1 }
     delivery_days_id { 1 }
