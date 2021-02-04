@@ -14,7 +14,7 @@ class Item < ApplicationRecord
     validates :delivery_fee_id
     validates :prefecture_id
     validates :delivery_days_id
-    validates :user_id
+    # validates :user_id
     validates :price
     validates :image
   end
