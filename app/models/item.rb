@@ -2,7 +2,7 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one :buy_data
   # has_many :images
-  has_many :category
+  belongs_to :category
   has_many :comments
   mount_uploader :image, ImageUploader
 
