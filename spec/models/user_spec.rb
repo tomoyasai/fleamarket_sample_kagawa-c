@@ -13,63 +13,63 @@ describe User do
     it "is invalid without a nickname" do
       user = build(:user, nick_name: nil)
       user.valid?
-      expect(user.errors[:nick_name]).to include("を入力してください")
+      expect(user.errors[:nick_name]).to include("can't be blank")
     end
 
     # 3. emailが空では登録できないこと
     it "is invalid without an email" do
       user = build(:user, email: nil)
       user.valid?
-      expect(user.errors[:email]).to include("は不正な値です", "を入力してください")
+      expect(user.errors[:email]).to include("can't be blank", "is invalid")
     end
 
     # 4. passwordが空では登録できないこと
     it "is invalid without a password" do
       user = build(:user, password: "")
       user.valid?
-      expect(user.errors[:password]).to include("を入力してください")
+      expect(user.errors[:password]).to include("can't be blank")
     end
 
     # 5. passwordが存在してもpassword_confirmationが空では登録できないこと
     it "is invalid without a password_confirmation" do
       user = build(:user, password_confirmation: "")
       user.valid?
-      expect(user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません")
+      expect(user.errors[:password_confirmation]).to include("doesn't match Password")
     end
 
     # 6. 誕生日が空では登録できないこと
     it "is invalid without a birthday" do
       user = build(:user, birthday: nil)
       user.valid?
-      expect(user.errors[:birthday]).to include("を入力してください")
+      expect(user.errors[:birthday]).to include("can't be blank")
     end
 
     # 7. 苗字が空では登録できないこと
     it "is invalid without a family" do
       user = build(:user, family: nil)
       user.valid?
-      expect(user.errors[:family]).to include("は不正な値です", "を入力してください")
+      expect(user.errors[:family]).to include("can't be blank", "is invalid")
     end
 
     # 8. 名前が空では登録できないこと
     it "is invalid without a first" do
       user = build(:user, first: nil)
       user.valid?
-      expect(user.errors[:first]).to include("は不正な値です", "を入力してください")
+      expect(user.errors[:first]).to include("can't be blank", "is invalid")
     end
 
     # 9. 苗字カタカナが空では登録できないこと
     it "is invalid without a family_kana" do
       user = build(:user, family_kana: nil)
       user.valid?
-      expect(user.errors[:family_kana]).to include("は不正な値です", "を入力してください")
+      expect(user.errors[:family_kana]).to include("can't be blank", "is invalid")
     end
 
     # 10. 名前カタカナが空では登録できないこと
     it "is invalid without a first_kana" do
       user = build(:user, first_kana: nil)
       user.valid?
-      expect(user.errors[:first_kana]).to include("は不正な値です", "を入力してください")
+      expect(user.errors[:first_kana]).to include("can't be blank", "is invalid")
     end
 
     # 11. 重複したemailが存在する場合登録できないこと
@@ -77,7 +77,7 @@ describe User do
       user = create(:user)
       another_user = build(:user, email: user.email)
       another_user.valid?
-      expect(another_user.errors[:email]).to include("はすでに存在します")
+      expect(another_user.errors[:email]).to include("has already been taken")
     end
 
     # 12. 重複したnick_nameが存在する場合登録できないこと
@@ -85,14 +85,14 @@ describe User do
       user = create(:user)
       another_user = build(:user, nick_name: user.nick_name)
       another_user.valid?
-      expect(another_user.errors[:nick_name]).to include("はすでに存在します")
+      expect(another_user.errors[:nick_name]).to include("has already been taken")
     end
 
     # 13. passwordが６文字以下であれば登録できないこと
     it "is invalid with a password that has less than 6 characters " do
       user = build(:user, password: 000000, password_confirmation: 000000)
       user.valid?
-      expect(user.errors[:password]).to include("は6文字以上で入力してください")
+      expect(user.errors[:password]).to include("is too short (minimum is 6 characters)")
     end
 
     # 14. 郵便番号、都道府県、市区町村、番地が存在すれば登録できること
@@ -105,28 +105,28 @@ describe User do
     it "is invalid without a post_code" do
       address = build(:address, post_code: "")
       address.valid?
-      expect(address.errors[:post_code]).to include("は不正な値です", "を入力してください")
+      expect(address.errors[:post_code]).to include("can't be blank", "is invalid")
     end
 
     # 16. 都道府県が空では登録できないこと
     it "is invalid without a prefecture_id" do
       address = build(:address, prefecture_id: "")
       address.valid?
-      expect(address.errors[:prefecture_id]).to include("を入力してください")
+      expect(address.errors[:prefecture_id]).to include("can't be blank")
     end
 
     # 17. 市区町村が空では登録できないこと
     it "is invalid without a city" do
       address = build(:address, city: "")
       address.valid?
-      expect(address.errors[:city]).to include("を入力してください")
+      expect(address.errors[:city]).to include("can't be blank")
     end
 
     # 18. 番地が空では登録できないこと
     it "is invalid without a block_number" do
       address = build(:address, block_number: "")
       address.valid?
-      expect(address.errors[:block_number]).to include("を入力してください")
+      expect(address.errors[:block_number]).to include("can't be blank")
     end
   end
 end

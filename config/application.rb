@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module FleamarketSampleKagawaC
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.i18n.default_locale = :ja
+    config.load_defaults 6.0
     config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
 
     # Settings in config/environments/* take precedence over those specified here.
