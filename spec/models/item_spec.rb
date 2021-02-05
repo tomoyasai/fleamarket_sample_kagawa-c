@@ -2,10 +2,6 @@ require 'rails_helper'
 
 RSpec.describe Item, type: :model do
   describe '#create' do
-    # before do
-    #   user = FactoryBot.create(:user)
-    #   item = FactoryBot.build(:item, user_id: user.id)
-    # end
     it "商品出品ができる時" do
       @item = build(:item)
       expect(@item).to be_valid

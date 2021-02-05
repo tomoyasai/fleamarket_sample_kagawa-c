@@ -1,7 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
   has_one :buy_data
-  # has_many :images
   belongs_to :category
   has_many :comments
   mount_uploader :image, ImageUploader
@@ -14,7 +13,6 @@ class Item < ApplicationRecord
     validates :delivery_fee_id
     validates :prefecture_id
     validates :delivery_days_id
-    # validates :user_id
     validates :price
     validates :image
   end

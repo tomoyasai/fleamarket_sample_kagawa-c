@@ -1,6 +1,5 @@
 .Header
 .base
-  -# =form_with html:{class:'base__main'} do |f|
   =form_with model: [@item], html: {class: "base__main"}, local: true do |f|
     = render 'layouts/error_messages', model: f.object
     .base__main__image
@@ -8,9 +7,6 @@
       %span.base__main__image__mark 必須
       %p.base__main__image__info 最大５枚までアップロードできます
       .base__main__image__file
-        -# .base__main__image__file__upload
-          -# %i.fas.fa-camera
-          -# %p= f.file_field :image, class: 'Hidden'
         = f.label :image, class: 'base__main__image__file__upload' do
           = icon('fas', 'camera', class: 'base__main__image__file__upload__icon')
           = f.file_field :image, class: 'base__main__image__file__upload__file'
@@ -31,7 +27,6 @@
       .base__main__detail__category
         %label カテゴリー
         %span.base__main__detail__category__mark 必須
-        -# =f.select :category_id, [1,"メンズ"],{include_blank:"選択してください"},{class: "base__main__detail__category__form",required: "required"}
         = f.collection_select :category_id, Category.all, :id, :name,{include_blank:"選択してください"},{class: "base__main__detail__category__form"}
       -# .base__main__detail__brand
       -#   %label ブランド
