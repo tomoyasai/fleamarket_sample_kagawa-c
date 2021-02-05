@@ -77,7 +77,7 @@
         position: relative;
         align-items: center;
         text-align: center;
-        background-image: url(mypage-pg.jpg);
+        background-image: image-url('mypage-pg.jpg');
         background-size: cover;
         &_inside {
           text-align: center;

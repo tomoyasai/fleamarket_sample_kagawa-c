@@ -2,6 +2,9 @@ class ItemsController < ApplicationController
   def index
   end
 
+  def show
+  end
+  
   def new
     @item = Item.new
   end
@@ -15,8 +18,14 @@ class ItemsController < ApplicationController
     end
   end
 
+  def buyconfirm
+  end
+end
+
   private
   def item_params
     params.require(:item).permit(:name, :info, :image,:category_id, :status_id, :delivery_fee_id, :delivery_days_id, :prefecture_id, :price).merge(user_id: 1)
   end
 end
+
+
