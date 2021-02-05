@@ -10,6 +10,5 @@ FactoryBot.define do
     family_kana           {"サトウ"}
     first_kana            {"タロウ"}
     address
-
   end
 end

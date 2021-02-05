@@ -5,9 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_one :address,dependent: :destroy
-  # has_one :address,dependent: :destroy
-  # dependent: :destroyは親モデルが消えると子モデルも消えるリレーションなので、
-  # あとで適用させておくこと→適用スミ
   accepts_nested_attributes_for :address
   
   has_one :card,dependent: :destroy

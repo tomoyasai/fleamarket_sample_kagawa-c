@@ -6,6 +6,6 @@ FactoryBot.define do
     block_number           {"テスト町"}
     building_name          {"テストアパート"}
     tel                    {"000-0000-0000"}
-    user_id                    {"10"}
+    user_id                {"10"}
   end
 end
