@@ -11,11 +11,12 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save
-      redirect_to controller: :items, action: :index
-    else
-      render "new"
+    unless @item.valid?
+      render :new and return
     end
+
+    @item.save
+    redirect_to root_path
   end
 
   def buyconfirm
