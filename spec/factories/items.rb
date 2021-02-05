@@ -11,5 +11,4 @@ FactoryBot.define do
     user
     category 
   end
-
 end
