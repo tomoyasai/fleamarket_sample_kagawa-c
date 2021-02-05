@@ -20,7 +20,7 @@ class ItemsController < ApplicationController
 
   def buyconfirm
   end
-end
+
 
   private
   def item_params

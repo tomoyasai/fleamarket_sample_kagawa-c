@@ -81,17 +81,8 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - has_one :buy_data
-<!-- - has_many :images -->
 - belongs_to :category
 - has_many :comments
-
-<!-- ## imagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|image|string|null: false|
-|item_id|integer|null: false,foreign_key: true|
-### Association
-- belongs_to :item -->
 
 ## categoriesテーブル
 |Column|Type|Options|
