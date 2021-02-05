@@ -3,8 +3,8 @@ require 'rails_helper'
 
 describe User do
   describe '#create' do
-    # 1. nicknameとemail、passwordとpassword_confirmation、birthday、family、first、family_kana、first_kanaが存在すれば登録できること
-    it "is valid with a nickname, email, password, password_confirmation" do
+    # 1. nickname、email、passwordとpassword_confirmation、birthday、family、first、family_kana、first_kanaが存在すれば登録できること
+    it "is valid with a nickname, email, password, password_confirmation,birthday、family、first、family_kana、first_kana" do
       user = build(:user)
       expect(user).to be_valid
     end
@@ -25,7 +25,7 @@ describe User do
 
     # 4. passwordが空では登録できないこと
     it "is invalid without a password" do
-      user = build(:user, password: nil)
+      user = build(:user, password: "")
       user.valid?
       expect(user.errors[:password]).to include("を入力してください")
     end
@@ -80,25 +80,53 @@ describe User do
       expect(another_user.errors[:email]).to include("はすでに存在します")
     end
 
-     # 12. 重複したnick_nameが存在する場合登録できないこと
-     it "is invalid with a duplicate nick_name address" do
+    # 12. 重複したnick_nameが存在する場合登録できないこと
+    it "is invalid with a duplicate nick_name address" do
       user = create(:user)
       another_user = build(:user, nick_name: user.nick_name)
       another_user.valid?
       expect(another_user.errors[:nick_name]).to include("はすでに存在します")
     end
 
-    # 13. passwordが７文字以上であれば登録できること
-    it "is valid with a password that has more than 7 characters " do
-      user = build(:user, password: "0000000", password_confirmation: "0000000")
-      expect(user).to be_valid
+    # 13. passwordが６文字以下であれば登録できないこと
+    it "is invalid with a password that has less than 6 characters " do
+      user = build(:user, password: 000000, password_confirmation: 000000)
+      user.valid?
+      expect(user.errors[:password]).to include("は6文字以上で入力してください")
     end
 
-    # 14. passwordが６文字以下であれば登録できないこと
-    it "is invalid with a password that has less than 6 characters " do
-      user = build(:user, password: "000000", password_confirmation: "000000")
-      user.valid?
-      expect(user.errors[:password]).to include("は7文字以上で入力してください")
+    # 14. 郵便番号、都道府県、市区町村、番地が存在すれば登録できること
+    it "is valid with a post_code, prefecture_id, city, block_number" do
+      address = build(:address)
+      expect(address).to be_valid
+    end
+
+    # 15. 郵便番号が空では登録できないこと
+    it "is invalid without a post_code" do
+      address = build(:address, post_code: "")
+      address.valid?
+      expect(address.errors[:post_code]).to include("は不正な値です", "を入力してください")
+    end
+
+    # 16. 都道府県が空では登録できないこと
+    it "is invalid without a prefecture_id" do
+      address = build(:address, prefecture_id: "")
+      address.valid?
+      expect(address.errors[:prefecture_id]).to include("を入力してください")
+    end
+
+    # 17. 市区町村が空では登録できないこと
+    it "is invalid without a city" do
+      address = build(:address, city: "")
+      address.valid?
+      expect(address.errors[:city]).to include("を入力してください")
+    end
+
+    # 18. 番地が空では登録できないこと
+    it "is invalid without a block_number" do
+      address = build(:address, block_number: "")
+      address.valid?
+      expect(address.errors[:block_number]).to include("を入力してください")
     end
   end
 end

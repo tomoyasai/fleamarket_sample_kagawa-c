@@ -9,9 +9,7 @@ FactoryBot.define do
     first                 {"太郎"}
     family_kana           {"サトウ"}
     first_kana            {"タロウ"}
+    address
 
-    # after(:build) do |user|
-    #   user.address << FactoryBot.build(:address,user: user)
-    # end
   end
 end
