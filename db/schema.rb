@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_01_27_082149) do
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-ActiveRecord::Schema.define(version: 2021_01_26_081230) do
+  end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false

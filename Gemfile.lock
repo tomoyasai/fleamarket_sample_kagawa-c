@@ -116,17 +116,14 @@ GEM
     diff-lcs (1.4.4)
     erubi (1.10.0)
     erubis (2.7.0)
-
+    excon (0.79.0)
     factory_bot (6.1.0)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.1.0)
       factory_bot (~> 6.1.0)
       railties (>= 5.0.0)
-
-    excon (0.79.0)
     faker (2.15.1)
       i18n (>= 1.6, < 2)
-
     ffi (1.14.2)
     fog-aws (3.8.0)
       fog-core (~> 2.1)
