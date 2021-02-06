@@ -16,7 +16,7 @@ class User < ApplicationRecord
   with_options presence: true do
     validates :email, uniqueness: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
     validates :encrypted_password, length: { minimum: 7 }
-    validates :nick_name, uniqueness: true
+    validates :nick_name
     validates :birthday
     validates :family,format: { with: /\A[一-龥ぁ-ん]/ }
     validates :first, format: { with: /\A[一-龥ぁ-ん]/ }

@@ -16,76 +16,75 @@ describe User do
       expect(user.errors[:nick_name]).to include("can't be blank")
     end
 
-    # 3. emailが空では登録できないこと
+    # 3. emailに@とドメインが含まれていないと登録できないこと
+    it 'is invalid without @ and . an email' do
+      user = build(:user, email: '@'+'.')
+      user.valid?
+      expect(user.errors[:email]).to include("is invalid")
+    end
+
+    # 4. emailが空では登録できないこと
     it "is invalid without an email" do
       user = build(:user, email: nil)
       user.valid?
       expect(user.errors[:email]).to include("can't be blank", "is invalid")
     end
 
-    # 4. passwordが空では登録できないこと
+    # 5. passwordが空では登録できないこと
     it "is invalid without a password" do
       user = build(:user, password: "")
       user.valid?
       expect(user.errors[:password]).to include("can't be blank")
     end
 
-    # 5. passwordが存在してもpassword_confirmationが空では登録できないこと
+    # 6. passwordが存在してもpassword_confirmationが空では登録できないこと
     it "is invalid without a password_confirmation" do
       user = build(:user, password_confirmation: "")
       user.valid?
       expect(user.errors[:password_confirmation]).to include("doesn't match Password")
     end
 
-    # 6. 誕生日が空では登録できないこと
+    # 7. 誕生日が空では登録できないこと
     it "is invalid without a birthday" do
       user = build(:user, birthday: nil)
       user.valid?
       expect(user.errors[:birthday]).to include("can't be blank")
     end
 
-    # 7. 苗字が空では登録できないこと
+    # 8. 苗字が空では登録できないこと
     it "is invalid without a family" do
       user = build(:user, family: nil)
       user.valid?
       expect(user.errors[:family]).to include("can't be blank", "is invalid")
     end
 
-    # 8. 名前が空では登録できないこと
+    # 9. 名前が空では登録できないこと
     it "is invalid without a first" do
       user = build(:user, first: nil)
       user.valid?
       expect(user.errors[:first]).to include("can't be blank", "is invalid")
     end
 
-    # 9. 苗字カタカナが空では登録できないこと
+    # 10. 苗字カタカナが空では登録できないこと
     it "is invalid without a family_kana" do
       user = build(:user, family_kana: nil)
       user.valid?
       expect(user.errors[:family_kana]).to include("can't be blank", "is invalid")
     end
 
-    # 10. 名前カタカナが空では登録できないこと
+    # 11. 名前カタカナが空では登録できないこと
     it "is invalid without a first_kana" do
       user = build(:user, first_kana: nil)
       user.valid?
       expect(user.errors[:first_kana]).to include("can't be blank", "is invalid")
     end
 
-    # 11. 重複したemailが存在する場合登録できないこと
+    # 12. 重複したemailが存在する場合登録できないこと
     it "is invalid with a duplicate email address" do
       user = create(:user)
       another_user = build(:user, email: user.email)
       another_user.valid?
       expect(another_user.errors[:email]).to include("has already been taken")
-    end
-
-    # 12. 重複したnick_nameが存在する場合登録できないこと
-    it "is invalid with a duplicate nick_name address" do
-      user = create(:user)
-      another_user = build(:user, nick_name: user.nick_name)
-      another_user.valid?
-      expect(another_user.errors[:nick_name]).to include("has already been taken")
     end
 
     # 13. passwordが６文字以下であれば登録できないこと

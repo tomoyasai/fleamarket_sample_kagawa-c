@@ -78,8 +78,6 @@
               必須
           .prefecture
             = m.collection_select :prefecture_id, Prefecture.all, :id, :name,{include_blank:"選択してください"},{class: "prefecture"}
-            -# -# = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "---"}, {class: ""}
-            -# = m.select :prefecture_id, [['北海道'], ['沖縄県']]
 
           .second
             = m.label :市区町村
