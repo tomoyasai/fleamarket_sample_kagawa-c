@@ -1,6 +1,8 @@
 = render partial: 'new_header'
 
 .in__main
+  = flash[:notice]
+  = flash[:alert]
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .in__main__top
       .in__main__top--inner
