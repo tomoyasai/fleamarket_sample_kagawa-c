@@ -96,7 +96,8 @@ describe User do
     end
 
     # 14. 郵便番号、都道府県、市区町村、番地が存在すれば登録できること
-    it "is valid with a post_code, prefecture_id, city, block_number" do
+    it "is valid with a post_code, prefecture_id, city, block_number, user_id" do
+      user = build(:user)
       address = build(:address)
       expect(address).to be_valid
     end
