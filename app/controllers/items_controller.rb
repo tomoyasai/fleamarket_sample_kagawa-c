@@ -22,7 +22,14 @@ class ItemsController < ApplicationController
   def buyconfirm
   end
 
-
+  def card_new
+    @years=[]
+    11.times do |index|
+      this_year=Date.today.year%100
+      @years.push(this_year+index)
+    end
+  end
+  
   private
   def item_params
     params.require(:item).permit(:name, :info, :image,:category_id, :status_id, :delivery_fee_id, :delivery_days_id, :prefecture_id, :price).merge(user_id: 1)
