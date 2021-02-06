@@ -1,23 +1,25 @@
 .Header
 .base
-  =form_with html:{class:'base__main'} do |f|
+  =form_with model: [@item], html: {class: "base__main"}, local: true do |f|
+    = render 'layouts/error_messages', model: f.object
     .base__main__image
       %label 出品画像
       %span.base__main__image__mark 必須
       %p.base__main__image__info 最大５枚までアップロードできます
       .base__main__image__file
-        .base__main__image__file__upload
-          %i.fas.fa-camera
+        = f.label :image, class: 'base__main__image__file__upload' do
+          = icon('fas', 'camera', class: 'base__main__image__file__upload__icon')
+          = f.file_field :image, class: 'base__main__image__file__upload__file'
           %p.base__main__image__file__upload__info クリックしてファイルをアップロード
     .base__main__list
       .base__main__list__item
         %label 商品名
         %span.base__main__list__item__mark 必須
-        =f.text_field :hoge, class: "base__main__list__item__form",required: "required", placeholder:"４０文字まで"
+        =f.text_field :name, class: "base__main__list__item__form", placeholder:"４０文字まで"
       .base__main__list__info
         %label 商品の説明
         %span.base__main__list__info__mark 必須
-        =f.text_area :text, class: "base__main__list__info__mark__text",required: "required", rows:'7', maxlength: '1000', placeholder: "商品の説明 （必須1,000文字以内)&#13;&#10;（色、素材、重さ、定価、注意点など）&#13;&#10;&#13;&#10;例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。".html_safe
+        =f.text_area :info, class: "base__main__list__info__mark__text", rows:'7', maxlength: '1000', placeholder: "商品の説明 （必須1,000文字以内)&#13;&#10;（色、素材、重さ、定価、注意点など）&#13;&#10;&#13;&#10;例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。".html_safe
         %p.base__main__list__info__count 0/1000
 
     .base__main__detail
@@ -25,15 +27,11 @@
       .base__main__detail__category
         %label カテゴリー
         %span.base__main__detail__category__mark 必須
-        =f.select :hoge, [],{include_blank:"選択してください"},{class: "base__main__detail__category__form",required: "required"}
-      .base__main__detail__brand
-        %label ブランド
-        %span.base__main__detail__brand__mark 任意
-        =f.text_field :hoge, class: "base__main__detail__brand__form",required: "required", placeholder:"例） シャネル"
+        = f.collection_select :category_id, Category.all, :id, :name,{include_blank:"選択してください"},{class: "base__main__detail__category__form"}
       .base__main__detail__status
         %label 商品の状態
         %span.base__main__detail__status__mark 必須
-        =f.select :hoge, [],{include_blank:"選択してください"},{class: "base__main__detail__status__form",required: "required"}
+        = f.collection_select :status_id, Status.all, :id, :name,{include_blank:"選択してください"},{class: "base__main__detail__status__form"}
     .base__main__delivery
       %p.base__main__delivery__title
         配送について
@@ -42,15 +40,15 @@
       .base__main__delivery__fee
         %label 配送料の負担
         %span.base__main__delivery__fee__mark 必須
-        =f.select :hoge, [],{include_blank:"選択してください"},{class: "base__main__delivery__fee__form",required: "required"}
+        = f.collection_select :delivery_fee_id, DeliveryFee.all, :id, :name,{include_blank:"選択してください"},{class: "base__main__delivery__fee__form"}
       .base__main__delivery__area
         %label 配送元の地域
         %span.base__main__delivery__area__mark 必須
-        =f.select :hoge, [],{include_blank:"選択してください"},{class: "base__main__delivery__area__form",required: "required"}
+        = f.collection_select :prefecture_id, Prefecture.all, :id, :name,{include_blank:"選択してください"},{class: "base__main__delivery__area__form"}
       .base__main__delivery__date
         %label 発送までの日数
         %span.base__main__delivery__date__mark 必須
-        =f.select :hoge, [],{include_blank:"選択してください"},{class: "base__main__delivery__date__form",required: "required"}
+        = f.collection_select :delivery_days_id, DeliveryDays.all, :id, :name,{include_blank:"選択してください"},{class: "base__main__delivery__date__form"}
     .base__main__price
       %p.base__main__price__title
         価格（￥300〜9,999,999)
@@ -60,7 +58,7 @@
         .base__main__price__box
           %label 販売価格
           %span.base__main__price__value__mark 必須
-        =f.text_field :hogehoge, class: "base__main__price__value__form",required: "required", placeholder:"0"
+        =f.text_field :price, class: "base__main__price__value__form",placeholder:"0"
       .base__main__price__fee 
         %label 販売手数料（10％）
         %span.base__main__price__fee__label ー

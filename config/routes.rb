@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
-  resources :items
+  resources :items, only: [:index, :new, :create]
+  get 'mypage',to: 'users#show'
   get '/show', to: 'items#show'
 
   get 'mypage',to: 'users#show'
