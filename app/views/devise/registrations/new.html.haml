@@ -1,6 +1,7 @@
 = render partial: 'devise/sessions/new_header'
 
 .up__main
+  = render "devise/shared/error_messages", resource: resource
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     .up__main__top
       .up__main__top--inner
@@ -10,7 +11,7 @@
         = f.label :ニックネーム
         %span
           必須
-        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: '例) フリマ太郎'
+        = f.text_field :nick_name, autofocus: true, autocomplete: "nickname", placeholder: '例) フリマ太郎'
         .second
           = f.label :メールアドレス
           %span
@@ -20,7 +21,7 @@
           = f.label :パスワード
           %span
             必須
-          = f.password_field :password, autocomplete: "new-password" ,placeholder: '6文字以上の半角英数字'
+          = f.password_field :password, autocomplete: "new-password" ,placeholder: '7文字以上の半角英数字'
         .second
           = f.label :パスワード
           %span
@@ -37,25 +38,25 @@
           %span
             必須
         .name
-          = f.text_field :email, autofocus: true, autocomplete: "email", placeholder: '例) 香川'
+          = f.text_field :family, autofocus: true, autocomplete: "name", placeholder: '例) 香川'
         .name
-          = f.text_field :email, autofocus: true, autocomplete: "email", placeholder: '例) 太郎'   
+          = f.text_field :first, autofocus: true, autocomplete: "name", placeholder: '例) 太郎'   
       
         .second
           = f.label :お名前カナ（全角）
           %span
             必須
         .name
-          = f.text_field :email, autofocus: true, autocomplete: "email", placeholder: '例) カガワ'
+          = f.text_field :family_kana, autofocus: true, autocomplete: "name", placeholder: '例) カガワ'
         .name
-          = f.text_field :email, autofocus: true, autocomplete: "email", placeholder: '例) タロウ'
+          = f.text_field :first_kana, autofocus: true, autocomplete: "name", placeholder: '例) タロウ'
 
         .second
           = f.label :生年月日
           %span
             必須
         .date
-          != sprintf(f.date_select(:password, with_css_classes:'XXXXX',prompt:"--",start_year:Time.now.year,end_year:Time.now.year-100,use_month_numbers:true, autocomplete: "new-password",date_separator:'%s'),'年','月')+'日'
+          != sprintf(f.date_select(:birthday,prompt:"--",start_year:Time.now.year,end_year:Time.now.year-100,use_month_numbers:true, autocomplete: "new-password",date_separator:'%s'),'年','月')+'日'
 
         .info
           ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
@@ -63,43 +64,44 @@
         .second
           %h2
             配送先住所
-        
-        .second
-          = f.label :郵便番号
-          %span
-            必須
-          = f.text_field :password, autocomplete: "new-password" ,placeholder: '例）760-0019'
+        .attri
+        = f.fields_for :address do |m|
+          .second
+            = m.label :郵便番号
+            %span
+              必須
+            = m.text_field :post_code, autocomplete: "postal-code" ,placeholder: '例）760-0019'
 
-        .second
-          = f.label :都道府県
-          %span
-            必須
-        .prefecture
-          = f.select :password, [['北海道'], ['沖縄県']]
+          .second
+            = m.label :都道府県
+            %span
+              必須
+          .prefecture
+            = m.collection_select :prefecture_id, Prefecture.all, :id, :name,{include_blank:"選択してください"},{class: "prefecture"}
 
-        .second
-          = f.label :市区町村
-          %span
-            必須
-          = f.text_field :password, autocomplete: "new-password" ,placeholder: '例）高松市'
+          .second
+            = m.label :市区町村
+            %span
+              必須
+            = m.text_field :city, autocomplete: "new-password" ,placeholder: '例）高松市'
 
-        .second
-          = f.label :番地
-          %span
-            必須
-          = f.text_field :password, autocomplete: "new-password" ,placeholder: '例）サンポート2-1'
+          .second
+            = m.label :番地
+            %span
+              必須
+            = m.text_field :block_number, autocomplete: "new-password" ,placeholder: '例）サンポート2-1'
 
-        .second
-          = f.label :建物名
-          .span__two
-            任意
-          = f.text_field :password, autocomplete: "new-password" ,placeholder: '例）高松シンボルタワー タワー棟4・5階'
+          .second
+            = m.label :建物名
+            .span__two
+              任意
+            = m.text_field :building_name, autocomplete: "new-password" ,placeholder: '例）高松シンボルタワー タワー棟4・5階'
 
-        .second
-          = f.label :電話番号
-          %span
-            必須
-          = f.text_field :password, autocomplete: "new-password" ,placeholder: '例）0878220111'
+          .second
+            = m.label :電話番号
+            .span__two
+              任意
+            = m.text_field :tel,autocomplete: "new-password" ,placeholder: '例）0878220111'
 
         .btn_aaa
           = f.submit "登録する"

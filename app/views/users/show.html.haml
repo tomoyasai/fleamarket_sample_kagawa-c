@@ -24,7 +24,8 @@
             %p >
         %li.Mypages_main_side_list
           .Mypages_main_side_list_name
-            %p ログアウト
+            %p
+              = link_to 'ログアウト', destroy_user_session_path, method: :delete
             %p >       
     .Mypages_right
       .Mypages_right_top
