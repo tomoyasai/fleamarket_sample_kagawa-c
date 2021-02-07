@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
+
+  before_action :set_categories, only: [:new, :create, :edit, :update]
+
   def index
-    @categories=Category.roots
   end
 
   def show
@@ -8,6 +10,12 @@ class ItemsController < ApplicationController
   
   def new
     @item = Item.new
+    @categories=Category.roots
+  end
+
+  def get_category
+    selected_category=Category.find(params[:category_id])
+    @categories=selected_category.children
   end
 
   def create
@@ -35,6 +43,11 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :info, :image,:category_id, :status_id, :delivery_fee_id, :delivery_days_id, :prefecture_id, :price).merge(user_id: 1)
   end
+
+  def set_categories
+    @categories = Category.all
+  end
+  
 end
 
 
