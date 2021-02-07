@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :new, :create]
   get 'mypage',to: 'users#show'
   get '/show', to: 'items#show'
+  get 'api/items/category',to: 'items#get_category'
 
   get 'mypage',to: 'users#show'
   get 'buyconfirm',to: 'items#buyconfirm'
