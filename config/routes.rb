@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :items, only: [:index, :new, :create, :show]
   get 'mypage',to: 'users#show'
-  
+
   get 'api/items/category',to: 'items#get_category'
 
   get 'mypage',to: 'users#show'

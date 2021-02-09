@@ -57,11 +57,33 @@
           margin-top: 7px;
         }
       }
-      &__btn {
+      &__btn1 {
         height: 50px;
         margin: 10px 0px;
         background-color: $main-color;
         border: 1px solid $main-color;
+        color: #fff;
+        border-radius: 4px;
+        font-size: 14px;
+        text-align: center;
+        line-height: 48px;
+      }
+      &__btn2 {
+        height: 50px;
+        margin: 10px 0px;
+        background-color: #CCCCCC;
+        border: 1px solid #CCCCCC;
+        color: #fff;
+        border-radius: 4px;
+        font-size: 14px;
+        text-align: center;
+        line-height: 48px;
+      }
+      &__btn3 {
+        height: 50px;
+        margin: 10px 0px;
+        background-color: #FF0000;
+        border: 1px solid #FF0000;
         color: #fff;
         border-radius: 4px;
         font-size: 14px;
