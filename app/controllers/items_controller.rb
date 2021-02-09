@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_categories, only: [:new, :create, :edit, :update]
 
   def index
+    @items=Item.all
   end
 
   def show

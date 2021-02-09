@@ -104,102 +104,27 @@
     .Pickup-box
       = link_to '新規登録商品', root_path, class: 'new-title'
       .itemlists
-        .itembrock
-          = link_to root_path, class: 'itemlist' do
-            .itemlist__image
-              = image_tag "sunrise.23822337000181.jpg", size: "100x150", class: 'itemlist__image__picture'
-            .itemlist__info
-              %h3.itemlist__info__name
-                バッグ1
-              .itemlist__info__detail
-                %ul.itemlist__info__detail__number
-                  %li 500円
-                  %li.itemlist__info__detail__number__icon
-                    = icon('far', 'star') 
-                    0
-                %p.itemlist__info__detail__yen
-                  (税込)
-
-        .itembrock
-          = link_to root_path, class: 'itemlist' do
-            .itemlist__image
-              = image_tag "sunrise.23822337000181.jpg", size: "148x150", class: 'itemlist__image__picture'
-            .itemlist__info
-              %h3.itemlist__info__name
-                バッグ1
-              .itemlist__info__detail
-                %ul.itemlist__info__detail__number
-                  %li 1000円
-                  %li.itemlist__info__detail__number__icon
-                    = icon('far', 'star') 
-                    0
-                %p.itemlist__info__detail__yen
-                  (税込)
-
-        .itembrock
-          = link_to root_path, class: 'itemlist' do
-            .itemlist__image
-              = image_tag "sunrise.23822337000181.jpg", size: "148x150", class: 'itemlist__image__picture'
-            .itemlist__info
-              %h3.itemlist__info__name
-                バッグ1
-              .itemlist__info__detail
-                %ul.itemlist__info__detail__number
-                  %li 500円
-                  %li.itemlist__info__detail__number__icon
-                    = icon('far', 'star') 
-                    0
-                %p.itemlist__info__detail__yen
-                  (税込)
-
-        .itembrock
-          = link_to root_path, class: 'itemlist' do
-            .itemlist__image
-              = image_tag "sunrise.23822337000181.jpg", size: "148x150", class: 'itemlist__image__picture'
-            .itemlist__info
-              %h3.itemlist__info__name
-                バッグ1
-              .itemlist__info__detail
-                %ul.itemlist__info__detail__number
-                  %li 500円
-                  %li.itemlist__info__detail__number__icon
-                    = icon('far', 'star') 
-                    0
-                %p.itemlist__info__detail__yen
-                  (税込)
-
-        .itembrock
-          = link_to root_path, class: 'itemlist' do
-            .itemlist__image
-              = image_tag "sunrise.23822337000181.jpg", size: "148x150", class: 'itemlist__image__picture'
-            .itemlist__info
-              %h3.itemlist__info__name
-                バッグ1
-              .itemlist__info__detail
-                %ul.itemlist__info__detail__number
-                  %li 500円
-                  %li.itemlist__info__detail__number__icon
-                    = icon('far', 'star') 
-                    0
-                %p.itemlist__info__detail__yen
-                  (税込)
-
-        .itembrock
-          = link_to root_path, class: 'itemlist' do
-            .itemlist__image
-              = image_tag "sunrise.23822337000181.jpg", size: "148x150", class: 'itemlist__image__picture'
-            .itemlist__info
-              %h3.itemlist__info__name
-                バッグ1
-              .itemlist__info__detail
-                %ul.itemlist__info__detail__number
-                  %li 500円
-                  %li.itemlist__info__detail__number__icon
-                    = icon('far', 'star') 
-                    0
-                %p.itemlist__info__detail__yen
-                  (税込)
-
+        - @items.each do |item|
+          .itembrock
+            = link_to item_path(item), class: 'itemlist' do
+              .itemlist__image
+                = image_tag item.image.url, size: "100x150", class: 'itemlist__image__picture'
+                .itemlist__image__sold
+                  %span.itemlist__image__sold__text
+                    SOLD
+              .itemlist__info
+                %h3.itemlist__info__name
+                  =item.name
+                .itemlist__info__detail
+                  %ul.itemlist__info__detail__number
+                    %li
+                      =item.price
+                    %li.itemlist__info__detail__number__icon
+                      = icon('far', 'star') 
+                      0
+                  %p.itemlist__info__detail__yen
+                    (税込)
+                    
   .six
     %h2.Pickup-brand
       ピックアップブランド
