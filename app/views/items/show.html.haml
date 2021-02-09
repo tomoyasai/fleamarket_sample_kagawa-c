@@ -22,7 +22,8 @@
       .base__main__top__table
         .base__main__top__table__box1
           .base__main__top__table__box1__left 商品者
-          .base__main__top__table__box1__right 太郎メルカリ
+          .base__main__top__table__box1__right
+            = @item.user.nick_name
         .base__main__top__table__box2
           .base__main__top__table__box2__left カテゴリー
           .base__main__top__table__box2__right
