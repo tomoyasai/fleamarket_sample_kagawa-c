@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
   }
   root 'items#index'
-  resources :items, only: [:index, :new, :create, :show, :edit]
+  resources :items, only: [:index, :new, :create, :show, :edit, :update]
   get 'mypage',to: 'users#show'
   get 'api/items/category',to: 'items#get_category'
 
