@@ -8,7 +8,7 @@
           .Cwhole_cardpage_form_detail_info_form1
             %label{:for => "Cwhole_cardpage_form_detail_info_form1_text"} カード番号
             %span.Cwhole_cardpage_form_detail_info_form1_mark 必須
-          =f.text_field :hoge,class:"Cwhole_cardpage_form_detail_info_form2",placeholder:"1234 5678 1234 5678"
+          =f.text_field :number,class:"Cwhole_cardpage_form_detail_info_form2",placeholder:"1234 5678 1234 5678"
           = image_tag "visa-logo.svg"
           = image_tag "master-logo.svg"
           = image_tag "saison-logo.svg"
@@ -21,15 +21,15 @@
             %label.Cwhole_cardpage_form_detail_expire_form3_text 有効期限
             %span.Cwhole_cardpage_form_detail_expire_form3_mark 必須
           .Cwhole_cardpage_form_detail_expire_form4
-            =f.select :hoge,["1","2","3","4","5","6","7","8","9","10","11","12"],{},{class:"Cwhole_cardpage_form_detail_expire_form4_month"}
+            =f.select :exp_month,["1","2","3","4","5","6","7","8","9","10","11","12"],{},{class:"Cwhole_cardpage_form_detail_expire_form4_month"}
             %span.Cwhole_cardpage_form_detail_expire_form4_text1 月
-            =f.select :hoge,@years,{},{class:"Cwhole_cardpage_form_detail_expire_form4_year"}
+            =f.select :exp_year,@years,{},{class:"Cwhole_cardpage_form_detail_expire_form4_year"}
             %span.Cwhole_cardpage_form_detail_expire_form4_text2 年
         .Cwhole_cardpage_form_detail_code
           .Cwhole_cardpage_form_detail_code_text
             %label{:for => "Cwhole_cardpage_form_detail_code_text_cecu"} セキュリティーコード
             %span.Cwhole_cardpage_form_detail_code_text_mark 必須
-          =f.text_field :hoge,class:"Cwhole_cardpage_form_detail_code_form5",placeholder:"カード背面４ケタもしくは３ケタの番号"
+          =f.text_field :cvc,class:"Cwhole_cardpage_form_detail_code_form5",placeholder:"カード背面４ケタもしくは３ケタの番号"
           .Cwhole_cardpage_form_detail_code_form6
             %span
               %i.fas.fa-question-circle
