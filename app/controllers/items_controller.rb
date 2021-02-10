@@ -31,6 +31,7 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    @categories=Category.roots
   end
 
   def update
