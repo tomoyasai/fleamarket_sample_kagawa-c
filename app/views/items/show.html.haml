@@ -15,8 +15,7 @@
       -if user_signed_in? && current_user.id != @item.user.id
         .base__main__top__btn1 購入画面へ進む
       - elsif user_signed_in? && current_user.id == @item.user.id
-        = link_to edit_item_path(@item.id), class: 'base__main__top__btn2' do
-          .base__main__top__btn2__letter 商品を編集する
+        = link_to '商品を編集する', edit_item_path(@item.id), class:"base__main__top__btn2"
         .base__main__top__btn3 商品を削除する
       .base__main__top__info
         = @item.info

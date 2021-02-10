@@ -69,18 +69,17 @@
         line-height: 48px;
       }
       &__btn2 {
+        height: 50px;
+        margin: 10px 0px;
+        background-color: #CCCCCC;
+        border: 1px solid #CCCCCC;
+        color: #fff;
+        border-radius: 4px;
+        font-size: 14px;
+        text-align: center;
+        line-height: 48px;
         text-decoration: none;
-        &__letter {
-          height: 50px;
-          margin: 10px 0px;
-          background-color: #CCCCCC;
-          border: 1px solid #CCCCCC;
-          color: #fff;
-          border-radius: 4px;
-          font-size: 14px;
-          text-align: center;
-          line-height: 48px;
-        }
+        display: block;
       }
       &__btn3 {
         height: 50px;
