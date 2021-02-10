@@ -16,7 +16,7 @@
         .base__main__top__btn1 購入画面へ進む
       - elsif user_signed_in? && current_user.id == @item.user.id
         .base__main__top__btn2 商品を編集する
-        .base__main__top__btn3 商品を削除する
+        = link_to '商品を削除する', item_path(@item), method: :delete, class:"base__main__top__btn3"
       .base__main__top__info
         = @item.info
       .base__main__top__table
