@@ -70,7 +70,6 @@
       .base__main__submit__listing
         = f.submit "編集する",class:"base__main__submit__listing__btn"
         .base__main__submit__listing__save 下書きに保存
-        -# .base__main__submit__listing__return もどる
         = link_to 'もどる', root_path, class: 'base__main__submit__listing__return'
     .base__main__info 禁止されている 行為 および 出品物 を必ずご確認ください。 偽ブランド品 や 盗品物 などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして 加盟店規約 に同意したことになります。
 = render "/devise/sessions/new_footer"
