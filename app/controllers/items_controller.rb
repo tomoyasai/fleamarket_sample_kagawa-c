@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :set_categories, only: [:new, :create, :edit, :update]
-  before_action :find_item, only: [:show, :edit, :update]
+  before_action :find_item, only: [:show, :edit, :update, :check_seller]
   before_action :check_seller, only: [:edit, :update]
   def index
     @items=Item.includes(:user)
@@ -77,8 +77,7 @@ class ItemsController < ApplicationController
   end
 
   def check_seller
-    item = Item.find(params[:id])
-    if item.user_id != current_user.id
+    if @item.user_id != current_user.id
       redirect_to action: :index
     end
   end
