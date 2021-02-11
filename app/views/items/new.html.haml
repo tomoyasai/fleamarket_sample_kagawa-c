@@ -27,7 +27,7 @@
       .base__main__detail__category
         %label カテゴリー
         %span.base__main__detail__category__mark 必須
-        = f.collection_select :category_id,@categories, :id, :name,{include_blank: "---"},{class:"base__main__detail__category__form"}
+        = f.collection_select :category_id,@categories, :id, :name,{include_blank: "---"},{class:"form-pull-down select-category"}
       .base__main__detail__status
         %label 商品の状態
         %span.base__main__detail__status__mark 必須
