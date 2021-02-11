@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_categories, only: [:new, :create, :edit, :update]
 
   def index
+    @items=Item.includes(:user)
   end
 
   def show
@@ -40,6 +41,16 @@ class ItemsController < ApplicationController
       redirect_to item_path(@item)
     else
       render :edit
+    end
+  end
+  
+  def destroy
+    item = Item.find(params[:id])
+    if current_user.id == item.user.id
+      item.destroy
+      redirect_to root_path
+    else 
+      redirect_to item_path(item.id)
     end
   end
 
