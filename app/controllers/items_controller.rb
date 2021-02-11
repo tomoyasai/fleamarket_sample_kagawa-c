@@ -1,13 +1,13 @@
 class ItemsController < ApplicationController
 
   before_action :set_categories, only: [:new, :create, :edit, :update]
+  before_action :find_item, only: [:show, :edit, :update]
 
   def index
     @items=Item.includes(:user)
   end
 
   def show
-    @item = Item.find(params[:id])
   end
   
   def new
@@ -31,12 +31,10 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
     @categories=Category.roots
   end
 
   def update
-    @item = Item.find(params[:id])
     if @item.update(item_params)
       redirect_to item_path(@item)
     else
@@ -72,6 +70,10 @@ class ItemsController < ApplicationController
 
   def set_categories
     @categories = Category.all
+  end
+
+  def find_item
+    @item = Item.find(params[:id])
   end
   
 end
