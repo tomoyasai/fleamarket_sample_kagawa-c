@@ -5,15 +5,15 @@
   font-size: 14px;
   padding: 16px 0px;
 }
-.base {
-  height: 3000px;
-  width: 912px;
-  background-color: whitesmoke;
+.show {
   padding: 40px;
+  margin: 0 auto;
+  background-color:#f8f8f8;
   &__main {
     height: 3000px;
     width: 700px;
     background-color: whitesmoke;
+    margin: 0 auto;
     &__top {
       height: 1294px;
       width: 100%;
@@ -78,6 +78,8 @@
         font-size: 14px;
         text-align: center;
         line-height: 48px;
+        text-decoration: none;
+        display: block;
       }
       &__btn3 {
         height: 50px;

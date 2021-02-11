@@ -1,75 +1,75 @@
 = render "header"
 .breadCrumbs フリマ ＞ テレワーク
-.base
-  .base__main
-    .base__main__top
-      .base__main__top__name
+.show
+  .show__main
+    .show__main__top
+      .show__main__top__name
         = @item.name
-      .base__main__top__photo
-        .base__main__top__photo__image
+      .show__main__top__photo
+        .show__main__top__photo__image
           =image_tag @item.image.url
-      .base__main__top__value
-        .base__main__top__value__price
+      .show__main__top__value
+        .show__main__top__value__price
           = "¥#{@item.price}"
-        .base__main__top__value__tax (税込) 送料込み
+        .show__main__top__value__tax (税込) 送料込み
       -if user_signed_in? && current_user.id != @item.user.id
-        .base__main__top__btn1 購入画面へ進む
+        .show__main__top__btn1 購入画面へ進む
       - elsif user_signed_in? && current_user.id == @item.user.id
-        .base__main__top__btn2 商品を編集する
-        = link_to '商品を削除する', item_path(@item), method: :delete, class:"base__main__top__btn3"
-      .base__main__top__info
+        = link_to '商品を編集する', edit_item_path(@item.id), class:"show__main__top__btn2"
+        = link_to '商品を削除する', item_path(@item), method: :delete, class:"show__main__top__btn3"
+      .show__main__top__info
         = @item.info
-      .base__main__top__table
-        .base__main__top__table__box1
-          .base__main__top__table__box1__left 商品者
-          .base__main__top__table__box1__right
+      .show__main__top__table
+        .show__main__top__table__box1
+          .show__main__top__table__box1__left 商品者
+          .show__main__top__table__box1__right
             = @item.user.nick_name
-        .base__main__top__table__box2
-          .base__main__top__table__box2__left カテゴリー
-          .base__main__top__table__box2__right
+        .show__main__top__table__box2
+          .show__main__top__table__box2__left カテゴリー
+          .show__main__top__table__box2__right
             = @item.category.name
-        .base__main__top__table__box3
-          .base__main__top__table__box3__left 商品の状態
-          .base__main__top__table__box3__right 
+        .show__main__top__table__box3
+          .show__main__top__table__box3__left 商品の状態
+          .show__main__top__table__box3__right 
             = @item.status.name
-        .base__main__top__table__box3
-          .base__main__top__table__box3__left 送料の負担
-          .base__main__top__table__box3__right 
+        .show__main__top__table__box3
+          .show__main__top__table__box3__left 送料の負担
+          .show__main__top__table__box3__right 
             = @item.delivery_fee.name
-        .base__main__top__table__box3
-          .base__main__top__table__box3__left 発送元の地域
-          .base__main__top__table__box3__right
+        .show__main__top__table__box3
+          .show__main__top__table__box3__left 発送元の地域
+          .show__main__top__table__box3__right
             = @item.prefecture.name
-        .base__main__top__table__box3
-          .base__main__top__table__box3__left 発送日の目安
-          .base__main__top__table__box3__right 
+        .show__main__top__table__box3
+          .show__main__top__table__box3__left 発送日の目安
+          .show__main__top__table__box3__right 
             = @item.delivery_days.name
-      .base__main__top__mark
-    .base__main__comment
-      %input.base__main__comment__text
-      %p.base__main__comment__info 相手のことを考え丁寧なコメントを心がけましょう。<br>不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      .base__main__comment__btn コメントする
-    .base__main__others
-      %a.base__main__others__title 太郎メルカリさんのその他の出品
-      .base__main__others__list
-        .base__main__others__list__image1
+      .show__main__top__mark
+    .show__main__comment
+      %input.show__main__comment__text
+      %p.show__main__comment__info 相手のことを考え丁寧なコメントを心がけましょう。<br>不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      .show__main__comment__btn コメントする
+    .show__main__others
+      %a.show__main__others__title 太郎メルカリさんのその他の出品
+      .show__main__others__list
+        .show__main__others__list__image1
           =image_tag "出品.png"
-        .base__main__others__list__image1
+        .show__main__others__list__image1
           =image_tag "出品.png"
-        .base__main__others__list__image1
+        .show__main__others__list__image1
           =image_tag "出品.png"
-        .base__main__others__list__image1
+        .show__main__others__list__image1
           =image_tag "出品.png"
-    .base__main__listing
-      %a.base__main__listing__title 画材（おもちゃ・ホビー・グッズ）その他の商品
-      .base__main__listing__list
-        .base__main__listing__list__image1
+    .show__main__listing
+      %a.show__main__listing__title 画材（おもちゃ・ホビー・グッズ）その他の商品
+      .show__main__listing__list
+        .show__main__listing__list__image1
           =image_tag "出品.png"
-        .base__main__listing__list__image1
+        .show__main__listing__list__image1
           =image_tag "出品.png"
-        .base__main__listing__list__image1
+        .show__main__listing__list__image1
           =image_tag "出品.png"
-        .base__main__listing__list__image1
+        .show__main__listing__list__image1
           =image_tag "出品.png"
 .eight
   .eight__box
