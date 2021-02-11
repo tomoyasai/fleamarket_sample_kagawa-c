@@ -182,16 +182,17 @@
           }
         }
         &_submit {
-          height: 50px;
-          width: 343px;
-          border: solid 1px #3ccace;
-          background-color: #3ccace;
-          color: #fff;
-          text-align: center;
-          border-radius: 4px;
-          margin-top: 32px;
-          padding-top: 13px;
-          cursor: pointer;
+          input {
+            height: 50px;
+            width: 343px;
+            border: solid 1px #3ccace;
+            background-color: #3ccace;
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            margin-top: 32px;
+            cursor: pointer;
+          }
         }
         &_return {
           height: 21px;
