@@ -26,6 +26,7 @@ class ItemsController < ApplicationController
       @item.save
       redirect_to root_path
     else
+      @categories=Category.roots
       render "new"
     end
   end
