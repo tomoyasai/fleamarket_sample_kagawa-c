@@ -1,11 +1,13 @@
 // DOM読み込みが完了したら実行
 document.addEventListener('DOMContentLoaded', (e) => {
   // payjp.jsの初期化
-  Payjp.setPublicKey('YOUR_PUBLIC_KEY');
+  Payjp.setPublicKey('pk_test_a4f2b232e8c3b15c9c648b03');
   
   // ボタンのイベントハンドリング
-  const btn = document.getElementById('token');
+  const btn = document.getElementById('card_submit');
+  // アロー関数を設定する方法
   btn.addEventListener('click', (e) => {
+    console.log('クリックされました！');
     e.preventDefault();
     
     // カード情報生成

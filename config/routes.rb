@@ -11,7 +11,15 @@ Rails.application.routes.draw do
   get 'buyconfirm',to: 'items#buyconfirm'
   
   get 'card_new',to: 'cards#card_new'
-  # resources :card, only: [:index, :new, :create, :show]
+  post 'card_new', to: 'cards#show'
+  
+  resources :card, only: [:new, :show] do
+    collection do
+      post 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
+    end
+  end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
