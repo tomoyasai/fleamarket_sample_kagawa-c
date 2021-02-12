@@ -22,7 +22,19 @@ document.addEventListener('DOMContentLoaded', (e) => {
     Payjp.createToken(card, (status, response) => {
       if (status === 200) {
         // 出力（本来はサーバへ送信）
+        $("#number").removeAttr("name");
+        $("#cvc").removeAttr("name");
+        $("#exp_month").removeAttr("name");
+        $("#exp_year").removeAttr("name"); 
+        // name属性を削除することにより、dataベースに送るのを防ぐ。
+        $("#card_token").append(
+          $('<input type="hidden" name="payjp-token">').val(response.id)
+          // <input type="hidden" name="payjp-token" value= response.id>が#card_tokenに追加される。
+        ); 
         document.getElementById('card_token').innerHTML = response.card.id;
+        alert("登録が完了しました"); 
+      } else {
+        alert("カード情報が正しくありません。");
       }
     });
   });

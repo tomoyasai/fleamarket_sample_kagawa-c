@@ -2,7 +2,7 @@
   %main.Cwhole_cardpage
     %section.Cwhole_cardpage_top
       %h2.Cwhole_cardpage_top_text 支払い方法
-    =form_with html:{class:"Cwhole_cardpage_form"},local: true do |f|
+    =form_with model: @card, url: cards_path, html:{class:"Cwhole_cardpage_form"},local: true do |f|
       .Cwhole_cardpage_form_detail
         .Cwhole_cardpage_form_detail_info
           .Cwhole_cardpage_form_detail_info_form1
