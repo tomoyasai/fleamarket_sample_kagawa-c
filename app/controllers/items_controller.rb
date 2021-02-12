@@ -62,7 +62,12 @@ class ItemsController < ApplicationController
       @years.push(this_year+index)
     end
   end
-  
+
+  def search
+    @items = Item.search(params[:keyword])
+
+  end
+
   private
   def item_params
     params.require(:item).permit(:name, :info, :image,:category_id, :status_id, :delivery_fee_id, :delivery_days_id, :prefecture_id, :price).merge(user_id: current_user.id)

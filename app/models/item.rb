@@ -23,4 +23,12 @@ class Item < ApplicationRecord
   belongs_to_active_hash :delivery_days
   belongs_to_active_hash :delivery_fee
 
+  def self.search(search)
+    if search != ""
+      Item.where('name LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
+  end
+
 end
