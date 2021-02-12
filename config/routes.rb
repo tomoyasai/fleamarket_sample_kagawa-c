@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'mypage',to: 'users#show'
   get 'buyconfirm',to: 'items#buyconfirm'
   
-  get 'card_new',to: 'cards#card_new'
+  get 'card_new',to: 'cards#new'
   post 'card_new', to: 'cards#show'
   
   resources :card, only: [:new, :show] do

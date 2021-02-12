@@ -1,17 +1,23 @@
 class CardsController < ApplicationController
   require "payjp"
 
-  def card_new
+  # def card_new
+  #   @years=[]
+  #   11.times do |index|
+  #     this_year=Date.today.year%100
+  #     @years.push(this_year+index)
+  #   end
+  # end
+
+  def new
     @years=[]
     11.times do |index|
       this_year=Date.today.year%100
       @years.push(this_year+index)
     end
-  end
-
-  def new
     @card = Card.where(user_id: current_user.id)
-    redirect_to action: "show" if card.exists?
+    # 以下、いったんコメントアウト
+    # redirect_to action: "show" if card.exists?
   end
 
   def pay #payjpとCardのデータベース作成を実施
