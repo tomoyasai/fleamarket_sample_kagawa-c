@@ -4,13 +4,13 @@ $(function(){
     let options='';
     categories.forEach(function (category) { 
       options += `
-                  <option value="${category.name}">${category.name}</option>
+                  <option value="${category.id}">${category.name}</option>
                  `;
     });
 
     
     const html=`
-      <select class="form-pull-down select-category"  name="category_id">
+      <select class="form-pull-down select-category"  name="item[category_id]">
         <option value="">---</option>
         ${options}
       </select>
@@ -20,8 +20,8 @@ $(function(){
 
 
 //changeイベント設定箇所
-  $('.base__main__detail__category').on('change','.select-category',function(){
-    alert('change!')
+  $('.base__main__detail__category').on('change','.form-pull-down',function(){
+    // alert('change!')
     $(this).nextAll().remove()  //選択された要素より下のformを一度リセット
     const category_id=$(this).val() //選択されたidを取得
 
@@ -33,8 +33,6 @@ $(function(){
       dataType: 'json'
     })
     .done(function(categories) {
-
-  
       if(categories.length==0){ //レスポンスでカテゴリーがない場合は処理を行わない
         return false
       }
