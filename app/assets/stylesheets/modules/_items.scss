@@ -180,7 +180,6 @@
       }
       &__category {
         width: 100%;
-        height: 83px;
         font-size: 14px;
         font-weight: 600;
         margin-top: 32px;
@@ -196,7 +195,7 @@
           line-height: 1.4em;
           margin-left: 8px;
         }
-        &__form {
+        .form-pull-down{
           width: 100%;
           height: 48px;
           font-size: 16px;
@@ -518,4 +517,5 @@
   height: 296px;
   background-color: white;
 }
+
 
