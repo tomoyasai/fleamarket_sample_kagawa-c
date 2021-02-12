@@ -118,7 +118,7 @@
                 .itemlist__info__detail
                   %ul.itemlist__info__detail__number
                     %li
-                      =item.price
+                      ="#{item.price.to_s(:delimited)}円"
                     %li.itemlist__info__detail__number__icon
                       = icon('far', 'star') 
                       0
