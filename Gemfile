@@ -82,3 +82,4 @@ gem 'fog-aws'
 gem 'seed-fu'
 
 gem 'payjp'
+gem 'jquery-rails'

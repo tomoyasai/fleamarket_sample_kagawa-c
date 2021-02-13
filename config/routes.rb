@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'card_new',to: 'cards#new'
   post 'card_new', to: 'cards#show'
   
-  resources :cards, only:[:index, :new, :create,:destroy,:show] do
+  resources :cards, only:[:index, :new, :create, :destroy, :show] do
     member do
       post 'pay'
     end

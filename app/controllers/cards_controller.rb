@@ -33,7 +33,7 @@ class CardsController < ApplicationController
   end
 
   def set_api_key
-    Payjp.api_key = Rails.application.credentials[:payjp][:PAYJP_PRIVATE_KEY]
+    Payjp.api_key = Rails.application.credentials[:payjp][:PUBLIC_KEY]
   end
 end
 
