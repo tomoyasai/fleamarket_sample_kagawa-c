@@ -31,38 +31,10 @@ class ItemsController < ApplicationController
     end
   end
 
-  # def edit
-  #   @categories=Category.roots
-  # end
   def edit
-    @category_grandchildren  = Category.where(id: @item.category_id)
-    @category_children     = Category.where(id: @category_grandchildren[0].parent)
-    @parent         = Category.where(ancestry: nil)
-    @parent_current = Category.find_by(id: @category_children[0].parent.id)
-
+    @categories=Category.roots
   end
-
-  # def edit
-  #   grandchild_category = @item.category
-  #   child_category = grandchild_category.parent
-
-  #   @category_parent_array = []
-  #   Category.where(ancestry: nil).each do |parent|
-  #     @category_parent_array << parent.name
-  #   end
-
-  #   @category_children_array = []
-  #   Category.where(ancestry: child_category.ancestry).each do |children|
-  #     @category_children_array << children
-  #   end
-
-  #   @category_grandchildren_array = []
-  #   Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
-  #     @category_grandchildren_array << grandchildren
-  #   end
   
-  # end
-
   def update
     if @item.update(item_params)
       redirect_to item_path(@item)

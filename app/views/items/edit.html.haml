@@ -24,26 +24,10 @@
 
     .base__main__detail
       %p.base__main__detail__title 商品の詳細
-      -# .base__main__detail__category
-      -#   %label カテゴリー
-      -#   %span.base__main__detail__category__mark 必須
-      -#   = f.collection_select :category_id,@categories, :id, :name,{include_blank: "---"},{class:"form-pull-down select-category"}
-
-      .wrapper.category-wrapper
-        = f.label :category_id , class: 'wrapper__label category-wrapper-label', id: "wrapper__label--category" do
-          カテゴリー：
-          %span.base__main__detail__category__mark 必須
-          -# %span.base__main__detail__category__mark.required ※必須
-          .base__main__detail__category
-            .category-wrapper-select
-              .category-wrapper-select__box
-                = f.select :parent_name, @category_parent_array, {selected:@item.category.parent.parent.name}, { class: 'category-wrapper__category form-pull-down', id: 'parent_category'}
-            .category-wrapper-select#children_wrapper
-              .category-wrapper-select__box
-                = f.select :child_id, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.parent.id}),{}, {class: 'category-wrapper__category form-pull-down', id: 'child_category'}
-            .category-wrapper-select#grandchildren_wrapper
-              .category-wrapper-select__box
-                = f.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.id}),{}, {class: 'category-wrapper__category form-pull-down', id: 'grandchild_category'}
+      .base__main__detail__category
+        %label カテゴリー
+        %span.base__main__detail__category__mark 必須
+        = f.collection_select :category_id,@categories, :id, :name,{include_blank: "---"},{class:"form-pull-down select-category"}
 
       .base__main__detail__status
         %label 商品の状態
