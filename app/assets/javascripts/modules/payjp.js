@@ -18,11 +18,11 @@ document.addEventListener('DOMContentLoaded', (e) => {
       exp_month: document.getElementById('exp_month').value,
       exp_year: 20 + document.getElementById('exp_year').value
     };
-    
-    debugger
 
     // トークン生成
     Payjp.createToken(card, (status, response) => {
+      console.log(card)
+      console.log(response)
       if (status === 200) {
         // 出力（本来はサーバへ送信）
         $("#number").removeAttr("name");
@@ -30,15 +30,12 @@ document.addEventListener('DOMContentLoaded', (e) => {
         $("#exp_month").removeAttr("name");
         $("#exp_year").removeAttr("name"); 
         // name属性を削除することにより、dataベースに送るのを防ぐ。
-        $("#card_token").append(
-          $('<input type="hidden" name="payjp-token">').val(response.id)
-          // <input type="hidden" name="payjp-token" value= response.id>が#card_tokenに追加される。
-        ); 
-        document.getElementById('card_token').innerHTML = response.card.id;
-        alert("登録が完了しました"); 
+        $("#card_token").append($('<input type="hidden" name="payjp-token">').val(response.id)); 
+        $("#card_token").submit();
       } else {
         alert("カード情報が正しくありません。");
       }
     });
   });
-}, false);
+}, 
+false);

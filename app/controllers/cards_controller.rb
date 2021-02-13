@@ -12,6 +12,7 @@ class CardsController < ApplicationController
   end
 
   def create
+    # binding.pry
     if params['payjp-token'].blank?
       redirect_to action: "new"
       # トークンが取得出来てなければループ
@@ -33,7 +34,7 @@ class CardsController < ApplicationController
   end
 
   def set_api_key
-    Payjp.api_key = Rails.application.credentials[:payjp][:PUBLIC_KEY]
+    Payjp.api_key = Rails.application.credentials[:payjp][:SECRET_KEY]
   end
 end
 
