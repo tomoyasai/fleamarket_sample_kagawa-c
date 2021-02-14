@@ -49,9 +49,22 @@
     border: 0;
     cursor: pointer;
     background-color: $main-color;
-    padding: 8px;
+    input {
+      width: 36px;
+      height: 36px;
+      display: block;
+      background-color: transparent;
+      border: none;
+      position: relative;
+      z-index: 10;
+    }
     &__image{
-      width: 100%;
+      width: 20px;
+      height: 20px;
+      position: relative;
+      top: -30px;
+      left: 8px;
+      z-index: 1;
     }
   }
 }

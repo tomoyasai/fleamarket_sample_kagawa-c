@@ -1,0 +1,28 @@
+=form_with url: search_items_path, method: :get, class: 'search-form', local: true do |f|
+  = f.text_field :keyword, class: 'search-form__name',placeholder: 'キーワードから探す'
+  .search-form__send
+    = f.submit ''
+    = image_tag "icon-search 1.png", class: 'search-form__send__image'
+
+%h2 検索結果
+.itemlists
+  - @items.each do |item|
+    .itembrock
+      = link_to item_path(item), class: 'itemlist' do
+        .itemlist__image
+          = image_tag item.image.url, class: 'itemlist__image__picture'
+          .itemlist__image__sold
+            %span.itemlist__image__sold__text
+              SOLD
+        .itemlist__info
+          %h3.itemlist__info__name
+            =item.name
+          .itemlist__info__detail
+            %ul.itemlist__info__detail__number
+              %li
+                =item.price
+              %li.itemlist__info__detail__number__icon
+                = icon('far', 'star') 
+                0
+            %p.itemlist__info__detail__yen
+              (税込)
