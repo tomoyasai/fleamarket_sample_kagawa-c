@@ -159,15 +159,16 @@ $bg-color: #ffffff;
       background-color: $bg-color;
       text-align: center;
       &_btn {
-        width: 343px;
-        height: 50px;
-        background-color: #3ccace;
-        margin: 40px auto;
-        border-radius: 4px;
-        font-size: 14px;
-        color: #f8f8f8;
-        border-top: solid 1px whitesmoke;
-        padding-top: 15px;
+        button {
+          width: 343px;
+          height: 50px;
+          background-color: #3ccace;
+          margin: 40px auto;
+          border-radius: 4px;
+          font-size: 14px;
+          color: #f8f8f8;
+          border: none;
+        }
       }
     }
   }
