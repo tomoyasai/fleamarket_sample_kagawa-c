@@ -21,7 +21,6 @@ $(function(){
 
 //changeイベント設定箇所
   $('.base__main__detail__category').on('change','.form-pull-down',function(){
-    // alert('change!')
     $(this).nextAll().remove()  //選択された要素より下のformを一度リセット
     const category_id=$(this).val() //選択されたidを取得
 
@@ -42,8 +41,5 @@ $(function(){
       target.append(select_form)
     
     })
-    .fail(function() {
-      alert('失敗')
-    });
   })
 });
