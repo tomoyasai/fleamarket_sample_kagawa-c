@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    member do
+      get 'buyconfirm',to: 'items#buyconfirm'
+    end
   end
 
   resources :items, only: [:index, :new, :create, :show, :destroy, :edit, :update]
@@ -17,7 +20,7 @@ Rails.application.routes.draw do
   get 'api/items/category',to: 'items#get_category'
 
   get 'mypage',to: 'users#show'
-  get 'buyconfirm',to: 'items#buyconfirm'
+  # get 'buyconfirm',to: 'items#buyconfirm'
   
   get 'card_new',to: 'cards#new'
   post 'card_new', to: 'cards#show'

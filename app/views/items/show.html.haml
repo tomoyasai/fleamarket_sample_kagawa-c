@@ -13,7 +13,9 @@
           = "¥#{@item.price}"
         .show__main__top__value__tax (税込) 送料込み
       -if user_signed_in? && current_user.id != @item.user.id
-        .show__main__top__btn1 購入画面へ進む
+        -# %button.show__main__top__btn1
+          -# = link_to "購入画面へ進む", buyconfirm_path
+        = link_to '購入画面へ進む', buyconfirm_item_path(@item.id), class:"show__main__top__btn1"
       - elsif user_signed_in? && current_user.id == @item.user.id
         = link_to '商品を編集する', edit_item_path(@item.id), class:"show__main__top__btn2"
         = link_to '商品を削除する', item_path(@item), method: :delete, class:"show__main__top__btn3"

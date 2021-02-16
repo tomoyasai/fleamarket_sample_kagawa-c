@@ -59,14 +59,16 @@
       }
       &__btn1 {
         height: 50px;
+        width: 620px;
         margin: 10px 0px;
         background-color: $main-color;
         border: 1px solid $main-color;
-        color: #fff;
         border-radius: 4px;
-        font-size: 14px;
         text-align: center;
+        color: #fff;
+        font-size: 14px;
         line-height: 48px;
+        text-decoration: none;
       }
       &__btn2 {
         height: 50px;

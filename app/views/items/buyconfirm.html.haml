@@ -6,20 +6,24 @@
     .Buypage_main_detail
       .Buypage_main_detail_info
         .Buypage_main_detail_info_photo
-          =image_tag "子猫.png"
+          = image_tag @item.image.url
+          -# =image_tag "子猫.png"
         .Buypage_main_detail_info_detail
           .Buypage_main_detail_info_detail_name
-            %p 子猫です
+            = @item.name
+            -# %p 子猫です
           .Buypage_main_detail_info_detail_Amount
             %span.Buypage_main_detail_info_detail_Amount_fee
               送料込み（税込）
             %span.Buypage_main_detail_info_detail_Amount_price
-              ¥686,892
+              = "¥#{@item.price.to_s}"
+              -# ¥686,892
     .Buypage_main_payamount
       .Buypage_main_payamount_total
         %p 支払い金額
       .Buypage_main_payamount_price
-        %p ¥686,892
+        = "¥#{@item.price.to_s}"
+        -# %p ¥686,892
     .Buypage_main_payment
       .Buypage_main_payment_method
         %p 支払い方法
