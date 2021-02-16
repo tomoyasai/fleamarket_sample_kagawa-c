@@ -27,7 +27,7 @@
         .show__main__top__table__box2
           .show__main__top__table__box2__left カテゴリー
           .show__main__top__table__box2__right
-            = @item.category.parent.parent.name
+            = @item.category.root.name
             %p= @item.category.parent.name
             %p= @item.category.name
         .show__main__top__table__box3
