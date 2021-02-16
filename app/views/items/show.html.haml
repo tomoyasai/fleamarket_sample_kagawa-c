@@ -1,5 +1,7 @@
 = render "header"
-.breadCrumbs フリマ ＞ テレワーク
+.breadCrumbs 
+  - breadcrumb :item
+  = breadcrumbs separator: " &gt; "
 .show
   .show__main
     .show__main__top

@@ -3,7 +3,8 @@
     FURIMA
 .Breadbar
   .Breadbar_info
-    フリマ ＞ マイページ
+    - breadcrumb :mypage
+    = breadcrumbs separator: " &gt; "
 .Mypages
   .Mypages_main
     %nav.Mypages_main_side
@@ -20,7 +21,7 @@
       %ul.Mypages_main_side__lists
         %li.Mypages_main_side_list
           .Mypages_main_side_list_name
-            %p 支払い方法
+            = link_to '支払い方法', card_new_path, class: 'Mypages_main_side_list_name'
             %p >
         %li.Mypages_main_side_list
           .Mypages_main_side_list_name

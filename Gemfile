@@ -80,3 +80,4 @@ gem 'mini_magick'
 gem 'fog-aws'
 
 gem 'seed-fu'
+gem 'gretel'
