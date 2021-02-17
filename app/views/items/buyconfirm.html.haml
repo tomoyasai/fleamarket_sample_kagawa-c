@@ -46,5 +46,9 @@
         
     .Buypage_main_buy
       .Buypage_main_buy_btn
-        = button_tag "購入する"
+        = form_with url:buy_card_path(@item) ,local:true do |f|
+          = f.submit "購入する"
+
+        -# = form_tag(action: :buy, method: :post) do
+        -# = button_tag "購入する"
         -# %p 購入する

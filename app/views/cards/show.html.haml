@@ -1,0 +1,54 @@
+.Header
+  .Header__logo
+    登録済カード情報確認画面
+.Breadbar
+  .Breadbar_info
+    フリマ ＞ マイページ ＞ カード登録情報
+.Mypages
+  .Mypages_main
+    %nav.Mypages_main_side
+      %ul.Mypages_main_side__lists
+        %li.Mypages_main_side_list
+          .Mypages_main_side_list_name
+            %p マイページ
+            %p >
+        %li.Mypages_main_side_list
+          .Mypages_main_side_list_name
+            %p 出品した商品 - 売却済み 
+            %p >
+      %p 設定      
+      %ul.Mypages_main_side__lists
+        %li.Mypages_main_side_list
+          .Mypages_main_side_list_name
+            %p 支払い方法
+            %p >
+        %li.Mypages_main_side_list
+          .Mypages_main_side_list_name
+            %p
+              = link_to 'ログアウト', destroy_user_session_path, method: :delete
+            %p >
+
+
+    .card-data
+      .card-data-title
+        %h2 支払い方法
+      .under-box 
+        .under-brock
+          .regist-card
+            %i.fas.fa-check-circle
+            .regist-card__info
+              %p ************4242
+              %p 有効期限 11 / 24
+              = image_tag "visa-logo.svg",class: 'visa-picture'
+            = link_to '削除する', mypage_path, method: :delete, class:"delete-card"
+        .footer-corner 
+          = link_to '#', class: 'method-payment' do
+            %span.method-payment__title
+              支払い方法について
+            %span
+            %i.fas.fa-angle-right
+
+
+         
+
+

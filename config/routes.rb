@@ -24,10 +24,12 @@ Rails.application.routes.draw do
   
   get 'card_new',to: 'cards#new'
   post 'card_new', to: 'cards#show'
+
+  get 'card_data', to: 'cards#show'
   
   resources :cards, only:[:index, :new, :create, :destroy, :show] do
     member do
-      post 'pay'
+      post 'buy'
     end
   end
   # resources :cards, only: [:new, :show] do

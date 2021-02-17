@@ -33,8 +33,20 @@ class CardsController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def set_api_key
     Payjp.api_key = Rails.application.credentials[:payjp][:SECRET_KEY]
+  end
+
+  def buy
+    # Payjp.api_key = Rails.application.credentials[:payjp][:SECRET_KEY]
+    charge = Payjp::Charge.create(
+      :amount => @item.price,
+      :card => @card.customer_id,
+      :currency => 'jpy',
+    )
   end
 end
 

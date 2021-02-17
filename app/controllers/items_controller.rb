@@ -31,7 +31,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @categories=Category.roots
+    @categories = Category.roots
   end
 
   def update
@@ -56,19 +56,16 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @address = Address.find(params[:id])
     @user = User.find(params[:id])
-  end
 
-  def card_new
-    @years=[]
-    11.times do |index|
-      this_year=Date.today.year%100
-      @years.push(this_year+index)
-    end
+    # Payjp.api_key = Rails.application.credentials[:payjp][:SECRET_KEY]
+    # charge = Payjp::Charge.create(
+    #   :amount => @item.price,
+    #   :card => @card.customer_id,
+    #   :currency => 'jpy'
   end
 
   def search
     @items = Item.search(params[:keyword])
-
   end
 
   private
