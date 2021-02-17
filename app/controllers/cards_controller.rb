@@ -41,11 +41,14 @@ class CardsController < ApplicationController
   end
 
   def buy
+    @item = Item.find(params[:id])
+    @card = Card.find_by(user_id: current_user.id)
+    binding.pry
     # Payjp.api_key = Rails.application.credentials[:payjp][:SECRET_KEY]
     charge = Payjp::Charge.create(
-      :amount => @item.price,
-      :card => @card.customer_id,
-      :currency => 'jpy',
+      amount: @item.price,
+      customer: @card.customer_id,
+      currency: 'jpy',
     )
   end
 end
