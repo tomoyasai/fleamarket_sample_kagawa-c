@@ -1,5 +1,4 @@
 .Buypage
-  
   .Buypage_main
     .Buypage_main_confirm
       %p 購入内容の確認
@@ -33,11 +32,17 @@
           %p 変更する >
       .Buypage_main_delivery_address
         .Buypage_main_delivery_address_info1
-          %p 〒761-1705
+          = @address.post_code
+          -# %p 〒761-1705
         .Buypage_main_delivery_address_info2
-          %p 香川県 高松市 香川町川東下411-1
+          = @address.city
+          = @address.block_number
+          = @address.building_name
+          -# %p 香川県 高松市 香川町川東下411-1
         .Buypage_main_delivery_address_info3
-          %p 小西 昌美
+          = @user.family
+          = @user.first
+          -# %p 小西 昌美
         
     .Buypage_main_buy
       .Buypage_main_buy_btn

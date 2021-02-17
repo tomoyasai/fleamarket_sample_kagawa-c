@@ -54,6 +54,8 @@ class ItemsController < ApplicationController
 
   def buyconfirm
     @item = Item.find(params[:id])
+    @address = Address.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def card_new
