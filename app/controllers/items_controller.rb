@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
 
-  before_action :set_categories, only: [:new, :create, :edit, :update]
   before_action :find_item, only: [:show, :edit, :update, :check_seller]
   before_action :check_seller, only: [:edit, :update]
   def index
@@ -26,18 +25,19 @@ class ItemsController < ApplicationController
       @item.save
       redirect_to root_path
     else
+      @categories=Category.roots
       render "new"
     end
   end
 
   def edit
-    @categories=Category.roots
   end
-
+  
   def update
     if @item.update(item_params)
       redirect_to item_path(@item)
     else
+      @categories=Category.roots
       render :edit
     end
   end
@@ -71,10 +71,6 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:name, :info, :image,:category_id, :status_id, :delivery_fee_id, :delivery_days_id, :prefecture_id, :price).merge(user_id: current_user.id)
-  end
-
-  def set_categories
-    @categories = Category.all
   end
 
   def find_item
