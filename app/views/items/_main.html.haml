@@ -109,9 +109,12 @@
             = link_to item_path(item), class: 'itemlist' do
               .itemlist__image
                 = image_tag item.image.url, class: 'itemlist__image__picture'
-                .itemlist__image__sold
-                  %span.itemlist__image__sold__text
-                    SOLD
+                -# .itemlist__image__sold
+                -#   %span.itemlist__image__sold__text
+                -#     SOLD
+                -# -if item.buy_data.present?
+                -#   .itemlist__image__sold
+                -#     .itemlist__image__sold__inner SOLD
               .itemlist__info
                 %h3.itemlist__info__name
                   =item.name
