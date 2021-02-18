@@ -60,7 +60,7 @@ class CardsController < ApplicationController
   end
 
   def set_card_information
-    @card_information = @customer.cards.retrieve(@card.card_id)
+    @card_information = @customer.cards.retrieve(@card.paycard_id)
   end
 
   def take_card

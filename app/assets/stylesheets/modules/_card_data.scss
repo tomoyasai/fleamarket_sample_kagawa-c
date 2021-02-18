@@ -42,6 +42,13 @@
   margin: 0px 16px;
 }
 
+.regist-card__info__box{
+  display: flex;
+  &__day{
+    margin-left: 10px;
+  }
+}
+
 .visa-picture{
   margin-top: 8px;
   max-height: 32px;
