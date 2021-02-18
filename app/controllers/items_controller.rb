@@ -55,7 +55,7 @@ class ItemsController < ApplicationController
   def buyconfirm
     @item = Item.find(params[:id])
     @address = Address.find(params[:id])
-    @user = User.find(params[:id])
+    @user = current_user
 
     # Payjp.api_key = Rails.application.credentials[:payjp][:SECRET_KEY]
     # charge = Payjp::Charge.create(
