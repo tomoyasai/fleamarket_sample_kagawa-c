@@ -105,29 +105,17 @@
             }
           }
           &_form4 {
-            height: 48px;
-            background-color: #fff;
             margin-top: 16px;
             box-sizing: border-box;
-            &_month {
+            select {
               width: 148px;
               height: 48px;
-              background-color: #fff;
               border-radius: 4px;
               border: solid 1px rgb(214, 211, 211);
               padding-left: 16px;
               font-size: 14px;
             }
             &_text1 {
-              font-size: 14px;
-            }
-            &_year {
-              width: 148px;
-              height: 48px;
-              background-color: #fff;
-              border-radius: 4px;
-              border: solid 1px rgb(214, 211, 211);
-              padding-left: 16px;
               font-size: 14px;
             }
             &_text2 {
