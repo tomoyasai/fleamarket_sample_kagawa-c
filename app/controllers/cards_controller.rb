@@ -72,6 +72,7 @@ class CardsController < ApplicationController
       customer: @card.customer_id,
       currency: 'jpy',
     )
+    redirect_to "/", flash[:notice] = '購入できました！'
   end
 
   def destroy
