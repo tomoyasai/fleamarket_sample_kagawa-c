@@ -46,22 +46,6 @@ class CardsController < ApplicationController
     # end
   end
 
-  def set_api_key
-    Payjp.api_key = Rails.application.credentials[:payjp][:SECRET_KEY]
-  end
-
-  def set_customer
-    @customer = Payjp::Customer.retrieve(@card.customer_id)
-  end
-
-  def set_card_information
-    @card_information = @customer.cards.retrieve(@card.paycard_id)
-  end
-
-  def take_card
-    @card = Card.find_by(user_id: current_user.id)
-  end
-
   def buy
     @item = Item.find(params[:id])
     @buy_data = BuyData.new
@@ -88,4 +72,23 @@ class CardsController < ApplicationController
     redirect_to "/"
     # end  
   end
+
+  private
+
+  def set_api_key
+    Payjp.api_key = Rails.application.credentials[:payjp][:SECRET_KEY]
+  end
+
+  def set_customer
+    @customer = Payjp::Customer.retrieve(@card.customer_id)
+  end
+
+  def set_card_information
+    @card_information = @customer.cards.retrieve(@card.paycard_id)
+  end
+
+  def take_card
+    @card = Card.find_by(user_id: current_user.id)
+  end
 end
+

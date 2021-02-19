@@ -6,10 +6,15 @@ class ItemsController < ApplicationController
   
   def index
     @items=Item.includes(:user)
+    # item = Item.find(params[:id])
+    # @buy_data = BuyData.find_by(item_id: item.id)
+
   end
 
   def show
     @card = Card.find_by(user_id: current_user.id)
+    item = Item.find(params[:id])
+    @buy_data = BuyData.find_by(item_id: item.id)
   end
   
   def new
