@@ -43,8 +43,6 @@
             - exp_month = @card_information.exp_month.to_s
             - exp_year = @card_information.exp_year.to_s.slice(2,3)
             = exp_month + " / " + exp_year
-        -# %p ************4242
-        -# %p 有効期限 11 / 24
         = image_tag "visa-logo.svg",class: 'visa-picture'
       = link_to '削除する', card_path(current_user.card), method: :delete, class:"delete-card"
   .footer-corner 

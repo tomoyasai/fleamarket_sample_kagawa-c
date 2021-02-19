@@ -33,22 +33,15 @@
       .Buypage_main_delivery_address
         .Buypage_main_delivery_address_info1
           = @address.post_code
-          -# %p 〒761-1705
         .Buypage_main_delivery_address_info2
           = @address.city
           = @address.block_number
           = @address.building_name
-          -# %p 香川県 高松市 香川町川東下411-1
         .Buypage_main_delivery_address_info3
           = @user.family
           = @user.first
-          -# %p 小西 昌美
         
     .Buypage_main_buy
       .Buypage_main_buy_btn
         = form_with url:buy_card_path(@item) ,local:true do |f|
           = f.submit "購入する"
-
-        -# = form_tag(action: :buy, method: :post) do
-        -# = button_tag "購入する"
-        -# %p 購入する

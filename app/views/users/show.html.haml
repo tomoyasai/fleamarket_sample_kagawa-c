@@ -20,10 +20,20 @@
       %p 設定      
       %ul.Mypages_main_side__lists
         %li.Mypages_main_side_list
-          .Mypages_main_side_list_name
-            %p 
-              = link_to '支払い方法', card_new_path
-            %p >
+
+        .Mypages_main_side_list_name
+        -if @card == nil
+
+          -# .Mypages_main_side_list_name
+          -# %p
+          %p
+            = link_to '支払い方法', card_new_path, class:"Mypages_main_side_list_name"
+          %p >
+          -# %p >
+        -else 
+          %p
+            = link_to '支払い方法', card_data_path, class:"Mypages_main_side_list_name"
+          %p >
         %li.Mypages_main_side_list
           .Mypages_main_side_list_name
             %p
