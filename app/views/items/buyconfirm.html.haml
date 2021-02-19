@@ -23,7 +23,21 @@
       .Buypage_main_payment_method
         %p 支払い方法
       .Buypage_main_payment_add
-        %span 登録してください
+        -# -if @user.blank?
+        -# %span 登録してください
+        .regist-card
+          %i.fas.fa-check-circle
+          .regist-card__info
+            = "**** **** **** " + @card_information.last4
+            .regist-card__info__box
+              %p 有効期限
+              .regist-card__info__box__day
+                - exp_month = @card_information.exp_month.to_s
+                - exp_year = @card_information.exp_year.to_s.slice(2,3)
+                = exp_month + " / " + exp_year
+      -# = image_tag "visa-logo.svg",class: 'visa-picture'
+        -# -else
+        -# %span 登録ができています
     .Buypage_main_delivery
       .Buypage_main_delivery_info
         .Buypage_main_delivery_info_place
@@ -32,7 +46,7 @@
           %p 変更する >
       .Buypage_main_delivery_address
         .Buypage_main_delivery_address_info1
-          = @address.post_code
+          = "〒#{@address.post_code}"
         .Buypage_main_delivery_address_info2
           = @address.city
           = @address.block_number

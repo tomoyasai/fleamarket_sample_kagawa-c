@@ -112,6 +112,24 @@ $bg-color: #ffffff;
         height: 21px;
         color: #0095ee;
         margin-top: 20px;
+        .regist-card {
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+        }
+        .fas.fa-check-circle {
+          color: #0095ee;
+        }
+        .regist-card__info {
+          flex: 1 1 0%;
+          margin: 0px 16px;
+        }
+        .regist-card__info__box {
+          display: flex;
+          &__day{
+            margin-left: 10px;
+          }
+        }
       }
     }
     &_delivery {

@@ -3,11 +3,13 @@ class ItemsController < ApplicationController
   before_action :set_categories, only: [:new, :create, :edit, :update]
   before_action :find_item, only: [:show, :edit, :update, :check_seller]
   before_action :check_seller, only: [:edit, :update]
+  
   def index
     @items=Item.includes(:user)
   end
 
   def show
+    @card = Card.find_by(user_id: current_user.id)
   end
   
   def new
@@ -63,6 +65,11 @@ class ItemsController < ApplicationController
     #   :amount => @item.price,
     #   :card => @card.customer_id,
     #   :currency => 'jpy'
+    @card = Card.find_by(user_id: current_user.id)
+    @customer = Payjp::Customer.retrieve(@card.customer_id)
+    @card_information = @customer.cards.retrieve(@card.paycard_id)
+
+
   end
 
   def search
