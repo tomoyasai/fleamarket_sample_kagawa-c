@@ -54,23 +54,36 @@ class ItemsController < ApplicationController
     end
   end
 
-
   def buyconfirm
+    @card = Card.find_by(user_id: current_user.id)
+    if @card == nil
+    redirect_to new_card_path, notice: 'カードを登録してください'
+      
+    else
     @item = Item.find(params[:id])
     @address = Address.find(params[:id])
     @user = current_user
 
-    # Payjp.api_key = Rails.application.credentials[:payjp][:SECRET_KEY]
-    # charge = Payjp::Charge.create(
-    #   :amount => @item.price,
-    #   :card => @card.customer_id,
-    #   :currency => 'jpy'
-    @card = Card.find_by(user_id: current_user.id)
+    # @card = Card.find_by(user_id: current_user.id)
     @customer = Payjp::Customer.retrieve(@card.customer_id)
     @card_information = @customer.cards.retrieve(@card.paycard_id)
-
+    end
+    # @mycard = Card.find_by(user_id: current_user.id)
 
   end
+
+  # def buyconfirm
+  #   @item = Item.find(params[:id])
+  #   @address = Address.find(params[:id])
+  #   @user = current_user
+
+  #   @card = Card.find_by(user_id: current_user.id)
+  #   @customer = Payjp::Customer.retrieve(@card.customer_id)
+  #   @card_information = @customer.cards.retrieve(@card.paycard_id)
+
+  #   @mycard = Card.find_by(user_id: current_user.id)
+
+  # end
 
   def search
     @items = Item.search(params[:keyword])

@@ -23,8 +23,6 @@
       .Buypage_main_payment_method
         %p 支払い方法
       .Buypage_main_payment_add
-        -# -if @user.blank?
-        -# %span 登録してください
         .regist-card
           %i.fas.fa-check-circle
           .regist-card__info
@@ -36,8 +34,6 @@
                 - exp_year = @card_information.exp_year.to_s.slice(2,3)
                 = exp_month + " / " + exp_year
       -# = image_tag "visa-logo.svg",class: 'visa-picture'
-        -# -else
-        -# %span 登録ができています
     .Buypage_main_delivery
       .Buypage_main_delivery_info
         .Buypage_main_delivery_info_place
