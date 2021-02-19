@@ -19,19 +19,22 @@ Rails.application.routes.draw do
 
   get 'api/items/category',to: 'items#get_category'
 
-  get 'mypage',to: 'users#show'
+  # get 'mypage',to: 'users#show'
   # get 'buyconfirm',to: 'items#buyconfirm'
   
-  get 'card_new',to: 'cards#new'
-  post 'card_new', to: 'cards#show'
+  # get 'card_new',to: 'cards#new'
 
-  get 'card_data', to: 'cards#show'
+  # get 'card_data', to: 'cards#show'
   
-  resources :cards, only:[:index, :new, :create, :destroy, :show] do
+  resources :cards, only:[:index, :new, :create, :destroy] do
     member do
       post 'buy'
     end
   end
+
+  get 'card_new',to: 'cards#new'
+
+  get 'card_data', to: 'cards#show'
   # resources :cards, only: [:new, :show] do
   #   collection do
   #     post 'show', to: 'card#show'

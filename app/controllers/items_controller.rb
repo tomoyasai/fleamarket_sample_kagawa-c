@@ -52,6 +52,7 @@ class ItemsController < ApplicationController
     end
   end
 
+
   def buyconfirm
     @item = Item.find(params[:id])
     @address = Address.find(params[:id])

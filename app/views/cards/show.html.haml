@@ -28,7 +28,6 @@
 -#               = link_to 'ログアウト', destroy_user_session_path, method: :delete
 -#             %p >
 
-
 -# .card-data
 .card-data-title
   %h2 支払い方法
@@ -47,7 +46,7 @@
         -# %p ************4242
         -# %p 有効期限 11 / 24
         = image_tag "visa-logo.svg",class: 'visa-picture'
-      = link_to '削除する', mypage_path, method: :delete, class:"delete-card"
+      = link_to '削除する', card_path(current_user.card), method: :delete, class:"delete-card"
   .footer-corner 
     = link_to '#', class: 'method-payment' do
       %span.method-payment__title

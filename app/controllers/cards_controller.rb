@@ -13,7 +13,6 @@ class CardsController < ApplicationController
   end
 
   def create
-    # binding.pry
     if params['payjp-token'].blank?
       redirect_to action: "new"
       # トークンが取得出来てなければループ
@@ -45,10 +44,6 @@ class CardsController < ApplicationController
       #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
       set_card_information
     end
-    # if current_user.address == nil
-    #     flash[:alert] = '購入前に住所登録してください'
-    #     redirect_to new_address_path
-    # end
   end
 
   def set_api_key
@@ -77,6 +72,18 @@ class CardsController < ApplicationController
       customer: @card.customer_id,
       currency: 'jpy',
     )
+  end
+
+  def destroy
+    card = Card.where(user_id: current_user.id).first
+    Payjp.api_key = Rails.application.credentials[:payjp][:SECRET_KEY]
+    customer = Payjp::Customer.retrieve(card.customer_id)
+    customer.delete
+     #ここでpay.jpの方を消している
+    card.delete
+     #ここでテーブルにあるcardデータを消している
+    redirect_to "/"
+    # end  
   end
 end
 
