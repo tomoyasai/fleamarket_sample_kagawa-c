@@ -64,6 +64,7 @@ class CardsController < ApplicationController
 
   def buy
     @item = Item.find(params[:id])
+    @buy_data = BuyData.new
     @card = Card.find_by(user_id: current_user.id)
     # binding.pry
     # Payjp.api_key = Rails.application.credentials[:payjp][:SECRET_KEY]
@@ -72,7 +73,10 @@ class CardsController < ApplicationController
       customer: @card.customer_id,
       currency: 'jpy',
     )
-    redirect_to "/", flash[:notice] = '購入できました！'
+    #  binding.pry
+
+    @buy_data.update(user_id: current_user.id, item_id: @item.id)
+    redirect_to "/", notice: '購入できました！'
   end
 
   def destroy

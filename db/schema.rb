@@ -25,10 +25,12 @@ ActiveRecord::Schema.define(version: 2021_02_18_062137) do
   end
 
   create_table "buy_data", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "item_id"
+    t.bigint "user_id"
+    t.bigint "item_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_buy_data_on_item_id"
+    t.index ["user_id"], name: "index_buy_data_on_user_id"
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -80,5 +82,7 @@ ActiveRecord::Schema.define(version: 2021_02_18_062137) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "buy_data", "items"
+  add_foreign_key "buy_data", "users"
   add_foreign_key "items", "categories"
 end
