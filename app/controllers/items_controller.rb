@@ -6,8 +6,6 @@ class ItemsController < ApplicationController
   
   def index
     @items = Item.includes(:user)
-    # item = Item.find(params[:id])
-    # @buy_data = BuyData.all
 
   end
 
@@ -68,27 +66,10 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @address = Address.find(current_user.id)
     @user = current_user
-
-    # @card = Card.find_by(user_id: current_user.id)
     @customer = Payjp::Customer.retrieve(@card.customer_id)
     @card_information = @customer.cards.retrieve(@card.paycard_id)
     end
-    # @mycard = Card.find_by(user_id: current_user.id)
-
   end
-
-  # def buyconfirm
-  #   @item = Item.find(params[:id])
-  #   @address = Address.find(params[:id])
-  #   @user = current_user
-
-  #   @card = Card.find_by(user_id: current_user.id)
-  #   @customer = Payjp::Customer.retrieve(@card.customer_id)
-  #   @card_information = @customer.cards.retrieve(@card.paycard_id)
-
-  #   @mycard = Card.find_by(user_id: current_user.id)
-
-  # end
 
   def search
     @items = Item.search(params[:keyword])
@@ -113,5 +94,3 @@ class ItemsController < ApplicationController
     end
   end
 end
-
-

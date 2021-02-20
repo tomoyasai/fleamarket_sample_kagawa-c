@@ -109,9 +109,6 @@
             = link_to item_path(item), class: 'itemlist' do
               .itemlist__image
                 = image_tag item.image.url, class: 'itemlist__image__picture'
-                -# .itemlist__image__sold
-                -#   %span.itemlist__image__sold__text
-                -#     SOL
                 -if item.buy_data.present?
                   .itemlist__image__sold
                     %span.itemlist__image__sold__inner

@@ -18,13 +18,6 @@ Rails.application.routes.draw do
   get 'mypage',to: 'users#show'
 
   get 'api/items/category',to: 'items#get_category'
-
-  # get 'mypage',to: 'users#show'
-  # get 'buyconfirm',to: 'items#buyconfirm'
-  
-  # get 'card_new',to: 'cards#new'
-
-  # get 'card_data', to: 'cards#show'
   
   resources :cards, only:[:index, :new, :create, :destroy] do
     member do
@@ -35,13 +28,6 @@ Rails.application.routes.draw do
   get 'card_new',to: 'cards#new'
 
   get 'card_data', to: 'cards#show'
-  # resources :cards, only: [:new, :show] do
-  #   collection do
-  #     post 'show', to: 'card#show'
-  #     post 'pay', to: 'card#pay'
-  #     post 'delete', to: 'card#delete'
-  #   end
-  # end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
