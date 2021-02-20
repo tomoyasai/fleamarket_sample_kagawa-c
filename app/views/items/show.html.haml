@@ -22,14 +22,22 @@
       -# - elsif user_signed_in? && current_user.id == @item.user.id
       -#   = link_to '商品を編集する', edit_item_path(@item.id), class:"show__main__top__btn2"
       -#   = link_to '商品を削除する', item_path(@item), method: :delete, class:"show__main__top__btn3"
-     
-      - if user_signed_in? && current_user.id == @item.user.id
+      
+      - if @buy_data.present?
+        .show__main__top__btn4 売り切れました
+      - elsif user_signed_in? && current_user.id == @item.user.id
         = link_to '商品を編集する', edit_item_path(@item.id), class:"show__main__top__btn2"
         = link_to '商品を削除する', item_path(@item), method: :delete, class:"show__main__top__btn3"
-      - elsif @buy_data.present?
-        .show__main__top__btn4 売り切れました
       - else
         = link_to "購入画面に進む", buyconfirm_item_path(@item.id),class:"show__main__top__btn1"
+
+      -# - if user_signed_in? && current_user.id == @item.user.id
+      -#   = link_to '商品を編集する', edit_item_path(@item.id), class:"show__main__top__btn2"
+      -#   = link_to '商品を削除する', item_path(@item), method: :delete, class:"show__main__top__btn3"
+      -# - elsif @buy_data.present?
+      -#   .show__main__top__btn4 売り切れました
+      -# - else
+      -#   = link_to "購入画面に進む", buyconfirm_item_path(@item.id),class:"show__main__top__btn1"
 
       .show__main__top__info
         = @item.info

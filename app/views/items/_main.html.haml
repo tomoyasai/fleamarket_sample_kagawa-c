@@ -112,9 +112,10 @@
                 -# .itemlist__image__sold
                 -#   %span.itemlist__image__sold__text
                 -#     SOL
-                -if @buy_data.present?
+                -if item.buy_data.present?
                   .itemlist__image__sold
-                    .itemlist__image__sold__inner SOLD
+                    %span.itemlist__image__sold__inner
+                      SOLD
               .itemlist__info
                 %h3.itemlist__info__name
                   =item.name

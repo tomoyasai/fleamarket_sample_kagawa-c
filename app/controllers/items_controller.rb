@@ -5,9 +5,9 @@ class ItemsController < ApplicationController
   before_action :check_seller, only: [:edit, :update]
   
   def index
-    @items=Item.includes(:user)
+    @items = Item.includes(:user)
     # item = Item.find(params[:id])
-    # @buy_data = BuyData.find_by(item_id: item.id)
+    # @buy_data = BuyData.all
 
   end
 
@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
   end
 
   def get_category
-    selected_category=Category.find(params[:category_id])
+    selected_category = Category.find(params[:category_id])
     @categories=selected_category.children
   end
 
