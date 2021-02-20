@@ -24,10 +24,10 @@ class CardsController < ApplicationController
       ) 
       @card = Card.new(user_id: user_id, customer_id: customer.id, paycard_id: customer.default_card)
       if @card.save
-        flash[:notice] = '登録しました'
+        flash[:notice] = 'クレジットカードを登録しました'
         redirect_to "/"
       else
-        flash[:alert] = '登録できませんでした'
+        flash[:alert] = 'クレジットカードを登録できませんでした'
         redirect_to action: "new"
       end
     end
@@ -56,9 +56,13 @@ class CardsController < ApplicationController
       customer: @card.customer_id,
       currency: 'jpy',
     )
-
-    @buy_data.update(user_id: current_user.id, item_id: @item.id)
-    redirect_to "/", notice: '購入できました！'
+    if @buy_data.update(user_id: current_user.id, item_id: @item.id)
+      flash[:notice] = '購入できました！'
+      redirect_to "/"
+    else
+      flash[:alert] = '購入できませんでした・・・'
+      redirect_to action: "/"
+    end
   end
 
   def destroy
@@ -69,6 +73,7 @@ class CardsController < ApplicationController
      #ここでpay.jpの方を消している
     card.delete
      #ここでテーブルにあるcardデータを消している
+    flash[:notice] = 'カード情報を削除しました'
     redirect_to "/"
     # end  
   end

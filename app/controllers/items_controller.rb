@@ -66,7 +66,7 @@ class ItemsController < ApplicationController
       
     else
     @item = Item.find(params[:id])
-    @address = Address.find(params[:id])
+    @address = Address.find(current_user.id)
     @user = current_user
 
     # @card = Card.find_by(user_id: current_user.id)
