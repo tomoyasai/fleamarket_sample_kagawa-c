@@ -1,7 +1,9 @@
 class ItemsController < ApplicationController
 
+  before_action :authenticate_user!, only: [:new, :edit, :buyconfirm]
   before_action :find_item, only: [:show, :edit, :update, :check_seller, :buyconfirm]
   before_action :check_seller, only: [:edit, :update]
+
   
   def index
     @items = Item.includes(:user)
@@ -9,7 +11,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @card = Card.find_by(user_id: current_user.id)
     @buy_data = BuyData.find_by(item_id: @item.id)
   end
   
