@@ -52,5 +52,4 @@
         
     .Buypage_main_buy
       .Buypage_main_buy_btn
-        = form_with url:buy_card_path(@item) ,local:true do |f|
-          = f.submit "購入する"
+        = link_to "購入する", buy_card_path(@item), method: :post,class: 'Buypage_main_buy_btn_box'

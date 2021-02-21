@@ -25,7 +25,7 @@ class CardsController < ApplicationController
       @card = Card.new(user_id: user_id, customer_id: customer.id, paycard_id: customer.default_card)
       if @card.save
         flash[:notice] = 'クレジットカードを登録しました'
-        redirect_to "/"
+        redirect_to root_path
       else
         flash[:alert] = 'クレジットカードを登録できませんでした'
         redirect_to action: "new"
@@ -51,10 +51,10 @@ class CardsController < ApplicationController
     )
     if @buy_data.update(user_id: current_user.id, item_id: @item.id)
       flash[:notice] = '購入できました！'
-      redirect_to "/"
+      redirect_to root_path
     else
       flash[:alert] = '購入できませんでした・・・'
-      redirect_to action: "/"
+      redirect_to root_path
     end
   end
 
@@ -62,12 +62,16 @@ class CardsController < ApplicationController
     card = Card.where(user_id: current_user.id).first
     Payjp.api_key = Rails.application.credentials[:payjp][:SECRET_KEY]
     customer = Payjp::Customer.retrieve(card.customer_id)
-    customer.delete
+    if customer.delete
      #ここでpay.jpの方を消している
     card.delete
      #ここでテーブルにあるcardデータを消している
     flash[:notice] = 'カード情報を削除しました'
-    redirect_to "/"
+    redirect_to root_path
+    else
+    flash[:notice] = 'カード情報を削除できませんでした・・・'
+    redirect_to root_path
+    end
   end
 
   private
@@ -88,4 +92,3 @@ class CardsController < ApplicationController
     @card = Card.find_by(user_id: current_user.id)
   end
 end
-

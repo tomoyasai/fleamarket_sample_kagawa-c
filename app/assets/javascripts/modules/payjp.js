@@ -21,8 +21,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
     // トークン生成
     Payjp.createToken(card, (status, response) => {
-      console.log(card)
-      console.log(response)
       if (status === 200) {
         // 出力（本来はサーバへ送信）
         $("#number").removeAttr("name");

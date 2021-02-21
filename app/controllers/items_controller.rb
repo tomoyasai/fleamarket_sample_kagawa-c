@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  before_action :find_item, only: [:show, :edit, :update, :check_seller]
+  before_action :find_item, only: [:show, :edit, :update, :check_seller, :buyconfirm]
   before_action :check_seller, only: [:edit, :update]
   
   def index
@@ -10,8 +10,7 @@ class ItemsController < ApplicationController
 
   def show
     @card = Card.find_by(user_id: current_user.id)
-    item = Item.find(params[:id])
-    @buy_data = BuyData.find_by(item_id: item.id)
+    @buy_data = BuyData.find_by(item_id: @item.id)
   end
   
   def new
@@ -64,7 +63,6 @@ class ItemsController < ApplicationController
     redirect_to new_card_path, notice: 'カードを登録してください'
       
     else
-    @item = Item.find(params[:id])
     @address = Address.find(current_user.id)
     @user = current_user
     @customer = Payjp::Customer.retrieve(@card.customer_id)
