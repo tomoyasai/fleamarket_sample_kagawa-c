@@ -28,13 +28,13 @@
       height: 1294px;
       width: 100%;
       padding: 24px 40px 40px;
-      background-color: $bg-white;
+      background-color: $bg-color;
       &__name {
         height: 36px;
         font-size: 24px;
         text-align: center;
         font-weight: bold;
-        background-color: $bg-white;
+        background-color: $bg-color;
       }
       &__photo {
         height: 360px;
@@ -46,6 +46,29 @@
           img {
             height: 100%;
             width: 100%;
+            &__sold{
+              width: 0;
+              height: 0;
+              border-width: 90px 90px 0 0;
+              border-color: salmon transparent transparent transparent;
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 0;
+              z-index: 1;
+              border-style: solid;
+              &__inner{
+                top: -75px;
+                font-size: 20px;
+                position: absolute;
+                left: 0;
+                z-index: 2;
+                color: #fff;
+                transform: rotate(-45deg);
+                letter-spacing: 2px;
+                font-weight: 900;
+              }
+            }
           }
         }
       }
@@ -69,14 +92,17 @@
       }
       &__btn1 {
         height: 50px;
+        width: 620px;
         margin: 10px 0px;
         background-color: $main-color;
         border: 1px solid $main-color;
-        color: #fff;
         border-radius: 4px;
-        font-size: 14px;
         text-align: center;
+        color: #fff;
+        font-size: 14px;
         line-height: 48px;
+        text-decoration: none;
+        display: block;
       }
       &__btn2 {
         height: 50px;
@@ -104,6 +130,19 @@
         display: block;
         text-decoration: none;
       }
+
+      &__btn4 {
+        text-align: center;
+        margin: 16px 0 0;
+        background: #888888;
+        color: #fff;
+        display: block;
+        width: 100%;
+        font-size: 24px;
+        line-height: 60px;
+        cursor: not-allowed;
+      }
+
       &__info {
         height: 81px;
         margin: 0px 0px 30px;
@@ -117,7 +156,7 @@
           &__left {
             width: 152px;
             padding: 15px 15px;
-            background-color: $bg-white;
+            background-color: $bg-color;
             border: 1px solid #dedede;
             font-weight: 400;
             font-size: 14px;
@@ -129,7 +168,7 @@
             border: 1px solid #dedede;
             font-size: 14px;
             color: #0099e8;
-            background-color: $bg-white;
+            background-color: $bg-color;
           }
         }
         &__box2 {
@@ -138,7 +177,7 @@
           &__left {
             width: 152px;
             padding: 40px 40px;
-            background-color: $bg-white;
+            background-color: $bg-color;
             border: 1px solid #dedede;
             font-weight: 400;
             font-size: 14px;
@@ -150,7 +189,7 @@
             border: 1px solid #dedede;
             font-size: 14px;
             color: #0099e8;
-            background-color:$bg-white;
+            background-color:$bg-color;
           }
         }
         &__box3 {
@@ -159,7 +198,7 @@
           &__left {
             width: 152px;
             padding: 15px 15px;
-            background-color: $bg-white;
+            background-color: $bg-color;
             border: 1px solid #dedede;
             font-weight: 400;
             font-size: 14px;
@@ -170,7 +209,7 @@
             padding: 15px 15px;
             border: 1px solid #dedede;
             font-size: 14px;
-            background-color: $bg-white;
+            background-color: $bg-color;
           }
         }
       }
@@ -183,7 +222,7 @@
       height: 300px;
       width: 100%;
       padding: 24px;
-      background-color: $bg-white;
+      background-color: $bg-color;
       margin-top: 10px;
       &__text {
         width: 100%;
@@ -196,7 +235,7 @@
         font-size: 14px;
         padding: 8px;
         margin: 15px 0px 25px 0px;
-        background-color: $bg-white;
+        background-color: $bg-color;
       }
       &__btn {
         width: 60%;
@@ -272,14 +311,14 @@
 .eight {
   width: 100%;
   height: 360px;
-  background-image: image-url('bg-appBanner-pict.jpg');
+  background-image: image-url('bg-colornner-pict.jpg');
   background-size:  cover;
   position: relative;
   padding: 100px 40px;
   display: flex;
   background-position: center;
   &__box{
-    color: $bg-white;
+    color: $bg-color;
     text-align: center;
     width: 100%;
     &__top{

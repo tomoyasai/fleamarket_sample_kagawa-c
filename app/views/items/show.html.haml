@@ -10,15 +10,22 @@
       .show__main__top__photo
         .show__main__top__photo__image
           =image_tag @item.image.url
+          -if @buy_data.present?
+            .show__main__top__photo__image__sold
+              .show__main__top__photo__image__sold__inner SOLD
       .show__main__top__value
         .show__main__top__value__price
           = "¥#{@item.price}"
         .show__main__top__value__tax (税込) 送料込み
-      -if user_signed_in? && current_user.id != @item.user.id
-        .show__main__top__btn1 購入画面へ進む
+    
+      - if @buy_data.present?
+        .show__main__top__btn4 売り切れました
       - elsif user_signed_in? && current_user.id == @item.user.id
         = link_to '商品を編集する', edit_item_path(@item.id), class:"show__main__top__btn2"
         = link_to '商品を削除する', item_path(@item), method: :delete, class:"show__main__top__btn3"
+      - else
+        = link_to "購入画面に進む", buyconfirm_item_path(@item.id),class:"show__main__top__btn1"
+
       .show__main__top__info
         = @item.info
       .show__main__top__table

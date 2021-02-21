@@ -9,23 +9,30 @@
       %ul.Mypages_main_side__lists
         %li.Mypages_main_side_list
           .Mypages_main_side_list_name
-            %p マイページ
-            %p >
+            %p
+              = link_to 'マイページ', card_data_path
+            %p
         %li.Mypages_main_side_list
           .Mypages_main_side_list_name
             %p 出品した商品 - 売却済み 
-            %p >
+            %p
       %p 設定      
       %ul.Mypages_main_side__lists
         %li.Mypages_main_side_list
           .Mypages_main_side_list_name
-            = link_to '支払い方法', card_new_path, class: 'Mypages_main_side_list_name'
-            %p >
+            -if @card == nil
+              %p
+                = link_to '支払い方法', card_new_path
+              %p 
+            -else 
+              %p
+                = link_to '支払い方法', card_data_path
+              %p 
         %li.Mypages_main_side_list
           .Mypages_main_side_list_name
             %p
               = link_to 'ログアウト', destroy_user_session_path, method: :delete
-            %p >       
+            %p
     .Mypages_right
       .Mypages_right_top
         .Mypages_right_top_inside

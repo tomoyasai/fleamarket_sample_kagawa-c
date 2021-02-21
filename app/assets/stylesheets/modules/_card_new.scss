@@ -1,7 +1,7 @@
 .Breadcrumbs {
   height: 54px;
   width: 100%;
-  background-color: #fff;
+  background-color: $white-color;
   font-size: 14px;
   line-height: 54px;
   margin-left: 130px;
@@ -22,7 +22,8 @@
   &_cardpage {
     width: 700px;
     height: 662px;
-    background-color: #fff;
+    background-color: $white-color;
+    font-size: 14px;
     margin: 0 auto;
     &_top {
       height: 99px;
@@ -42,16 +43,19 @@
     &_form {
       width: 375px;
       height: 563px;
-      background-color: #fff;
+      background-color: $white-color;
+      font-size: 14px;
       margin: 0 auto;
       padding: 32px 16px 32px 16px;
       &_detail {
-        background-color: #fff;
+        background-color: $white-color;
+        font-size: 14px;
         height: 225px;
         &_info {
           width: 343px;
           height: 113px;
-          background-color: #fff;
+          background-color: $white-color;
+          font-size: 14px;
           &_form1 {
             height: 19px;
             font-weight: 600;
@@ -67,7 +71,8 @@
               height: 16px;
               width: 32px;
               background-color: #ff0221;
-              color: #fff;
+              color: $white-color;
+              font-size: 14px;
               margin-left: 8px;
               font-size: 12px;
               padding: 1px 4px;
@@ -80,7 +85,8 @@
             height: 48px;
             width: inherit;
             margin-top: 16px;
-            background-color: #fff;
+            background-color: $white-color;
+            font-size: 14px;
             border: solid 1px rgb(214, 211, 211);
             border-radius: 4px;
             display: block;
@@ -97,7 +103,8 @@
         }
         &_expire {
           height: 83px;
-          background-color: #fff;
+          background-color: $white-color;
+          font-size: 14px;
           margin-top: 28px;
           &_form3 {
             height: 19px;
@@ -113,7 +120,8 @@
               height: 16px;
               width: 32px;
               background-color: #ff0221;
-              color: #fff;
+              color: $white-color;
+              font-size: 14px;
               margin-left: 8px;
               font-size: 12px;
               padding: 1px 4px;
@@ -123,29 +131,17 @@
             }
           }
           &_form4 {
-            height: 48px;
-            background-color: #fff;
             margin-top: 16px;
             box-sizing: border-box;
-            &_month {
+            select {
               width: 148px;
               height: 48px;
-              background-color: #fff;
               border-radius: 4px;
               border: solid 1px rgb(214, 211, 211);
               padding-left: 16px;
               font-size: 14px;
             }
             &_text1 {
-              font-size: 14px;
-            }
-            &_year {
-              width: 148px;
-              height: 48px;
-              background-color: #fff;
-              border-radius: 4px;
-              border: solid 1px rgb(214, 211, 211);
-              padding-left: 16px;
               font-size: 14px;
             }
             &_text2 {
@@ -155,7 +151,8 @@
         }
         &_code {
           height: 112px;
-          background-color: #fff;
+          background-color: $white-color;
+          font-size: 14px;
           padding-top: 16px;
           &_text {
             height: 19px;
@@ -169,7 +166,8 @@
               height: 16px;
               width: 32px;
               background-color: #ff0221;
-              color: #fff;
+              color: $white-color;
+              font-size: 14px;
               margin-left: 8px;
               font-size: 12px;
               padding: 1px 4px;
@@ -181,7 +179,8 @@
           &_form5 {
             height: 48px;
             width: 343px;
-            background-color:#fff;
+            background-color: $white-color;
+            font-size: 14px;
             border: solid 1px rgb(214, 211, 211);
             border-radius: 4px;
             margin-top: 16px;
@@ -191,7 +190,8 @@
           &_form6 {
             height: 21px;
             width: 343px;
-            background-color: #fff;
+            background-color: $white-color;
+            font-size: 14px;
             margin-top: 8px;
             font-size: 14px;
             text-align: right;
@@ -200,16 +200,19 @@
           }
         }
         &_submit {
-          height: 50px;
-          width: 343px;
-          border: solid 1px #3ccace;
-          background-color: #3ccace;
-          color: #fff;
-          text-align: center;
-          border-radius: 4px;
-          margin-top: 32px;
-          padding-top: 13px;
-          cursor: pointer;
+          input {
+            height: 50px;
+            width: 343px;
+            font-size: 14px;
+            border: solid 1px $main-color;
+            background-color: $main-color;
+            color: $white-color;
+            font-size: 14px;
+            text-align: center;
+            border-radius: 4px;
+            margin-top: 32px;
+            cursor: pointer;
+          }
         }
         &_return {
           height: 21px;

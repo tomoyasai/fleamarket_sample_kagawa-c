@@ -81,8 +81,6 @@ gem 'fog-aws'
 
 gem 'seed-fu'
 
-gem 'gretel'
-
-
+gem 'payjp'
 gem 'jquery-rails'
-
+gem 'gretel'

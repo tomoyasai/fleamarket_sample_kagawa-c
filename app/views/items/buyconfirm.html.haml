@@ -1,30 +1,38 @@
 .Buypage
-  
   .Buypage_main
     .Buypage_main_confirm
       %p 購入内容の確認
     .Buypage_main_detail
       .Buypage_main_detail_info
         .Buypage_main_detail_info_photo
-          =image_tag "子猫.png"
+          = image_tag @item.image.url
         .Buypage_main_detail_info_detail
           .Buypage_main_detail_info_detail_name
-            %p 子猫です
+            = @item.name
           .Buypage_main_detail_info_detail_Amount
             %span.Buypage_main_detail_info_detail_Amount_fee
               送料込み（税込）
             %span.Buypage_main_detail_info_detail_Amount_price
-              ¥686,892
+              = "¥#{@item.price.to_s}"
     .Buypage_main_payamount
       .Buypage_main_payamount_total
         %p 支払い金額
       .Buypage_main_payamount_price
-        %p ¥686,892
+        = "¥#{@item.price.to_s}"
     .Buypage_main_payment
       .Buypage_main_payment_method
         %p 支払い方法
       .Buypage_main_payment_add
-        %span 登録してください
+        .regist-card
+          %i.fas.fa-check-circle
+          .regist-card__info
+            = "**** **** **** " + @card_information.last4
+            .regist-card__info__box
+              %p 有効期限
+              .regist-card__info__box__day
+                - exp_month = @card_information.exp_month.to_s
+                - exp_year = @card_information.exp_year.to_s.slice(2,3)
+                = exp_month + " / " + exp_year
     .Buypage_main_delivery
       .Buypage_main_delivery_info
         .Buypage_main_delivery_info_place
@@ -33,12 +41,15 @@
           %p 変更する >
       .Buypage_main_delivery_address
         .Buypage_main_delivery_address_info1
-          %p 〒761-1705
+          = "〒#{@address.post_code}"
         .Buypage_main_delivery_address_info2
-          %p 香川県 高松市 香川町川東下411-1
+          = @address.city
+          = @address.block_number
+          = @address.building_name
         .Buypage_main_delivery_address_info3
-          %p 小西 昌美
+          = @user.family
+          = @user.first
         
     .Buypage_main_buy
       .Buypage_main_buy_btn
-        %p 購入する
+        = link_to "購入する",buy_card_path(@item), method: :post, class: 'Buypage_main_buy_btn_box'

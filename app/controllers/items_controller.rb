@@ -1,12 +1,16 @@
 class ItemsController < ApplicationController
 
-  before_action :find_item, only: [:show, :edit, :update, :check_seller]
+  before_action :find_item, only: [:show, :edit, :update, :check_seller, :buyconfirm]
   before_action :check_seller, only: [:edit, :update]
+  
   def index
-    @items=Item.includes(:user)
+    @items = Item.includes(:user)
+
   end
 
   def show
+    @card = Card.find_by(user_id: current_user.id)
+    @buy_data = BuyData.find_by(item_id: @item.id)
   end
   
   def new
@@ -15,7 +19,7 @@ class ItemsController < ApplicationController
   end
 
   def get_category
-    selected_category=Category.find(params[:category_id])
+    selected_category = Category.find(params[:category_id])
     @categories=selected_category.children
   end
 
@@ -31,6 +35,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @categories = Category.roots
   end
   
   def update
@@ -53,19 +58,20 @@ class ItemsController < ApplicationController
   end
 
   def buyconfirm
-  end
-
-  def card_new
-    @years=[]
-    11.times do |index|
-      this_year=Date.today.year%100
-      @years.push(this_year+index)
+    @card = Card.find_by(user_id: current_user.id)
+    if @card == nil
+    redirect_to new_card_path, notice: 'カードを登録してください'
+      
+    else
+    @address = Address.find(current_user.id)
+    @user = current_user
+    @customer = Payjp::Customer.retrieve(@card.customer_id)
+    @card_information = @customer.cards.retrieve(@card.paycard_id)
     end
   end
 
   def search
     @items = Item.search(params[:keyword])
-
   end
 
   private
@@ -82,7 +88,4 @@ class ItemsController < ApplicationController
       redirect_to action: :index
     end
   end
-  
 end
-
-
