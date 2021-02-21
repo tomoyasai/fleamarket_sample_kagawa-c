@@ -12,14 +12,14 @@ RSpec.describe BuyData, type: :model do
     it "is invalid without a user_id" do
       buy_data = build(:buy_data, user_id: nil)
       buy_data.valid?
-      expect(buy_data.errors[:user_id]).to include("can't be blank")
+      expect(buy_data.errors[:user]).to include("must exist")
     end
 
     # 3. item_idが空では登録できないこと
     it "is invalid without a item_id" do
       buy_data = build(:buy_data, item_id: nil)
       buy_data.valid?
-      expect(buy_data.errors[:item_id]).to include("can't be blank")
+      expect(buy_data.errors[:item]).to include("must exist")
     end
   end
   # pending "add some examples to (or delete) #{__FILE__}"
