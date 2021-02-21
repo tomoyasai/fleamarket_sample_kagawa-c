@@ -1,5 +1,3 @@
-$bg-color: #ffffff;
-
 .Buypage {
   width: 100%;
   height: 1100px;
@@ -179,13 +177,15 @@ $bg-color: #ffffff;
       &_btn {
         &_box {
           width: 343px;
-          height: 50px;
-          background-color: #3ccace;
+          background-color: $main-color;
           margin: 40px auto;
           border-radius: 4px;
           font-size: 14px;
           color: #f8f8f8;
           border: none;
+          display: block;
+          text-decoration: none;
+          line-height: 48px;
         }
       }
     }
