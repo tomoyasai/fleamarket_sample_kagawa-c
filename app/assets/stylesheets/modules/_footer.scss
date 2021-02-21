@@ -1,6 +1,6 @@
 .footer {
   padding: 60px 0;
-  color: #fff;
+  color: $white-color;
   background-color: #272727;
   text-align: center;
 }
@@ -27,12 +27,12 @@
 .info-box__point{
   list-style: none;
   li{
-    color: #fff;
+    color: $white-color;
     text-decoration: none;
     font-size: 12px;
     line-height: 32px;
     a{
-      color: #fff;
+      color: $white-color;
       text-decoration: none;
     }
   }

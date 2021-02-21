@@ -5,7 +5,7 @@
 
   
   &_main {
-    background-color: $bg-color;
+    background-color: $white-color;
     width: 700px;
     height: 752px;
     margin: 0 auto;
@@ -72,7 +72,7 @@
     &_payamount {
       width: 375px;
       height: 117px;
-      background-color: $bg-color;
+      background-color: $white-color;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -95,7 +95,7 @@
     &_payment {
       width: 375px;
       height: 123px;
-      background-color: $bg-color;
+      background-color: $white-color;
       border-top: solid 1px whitesmoke;
       font-size: 14px;
       margin: 0 auto;
@@ -133,7 +133,7 @@
     &_delivery {
       width: 375px;
       height: 159px;
-      background-color: $bg-color;
+      background-color: $white-color;
       border-top: solid 1px whitesmoke;
       margin: 0 auto;
       padding: 32px 0;
@@ -172,7 +172,7 @@
       height: 139px;
       border-top: solid 1px whitesmoke;
       margin: 0 auto;
-      background-color: $bg-color;
+      background-color: $white-color;
       text-align: center;
       &_btn {
         &_box {
@@ -181,7 +181,7 @@
           margin: 40px auto;
           border-radius: 4px;
           font-size: 14px;
-          color: #f8f8f8;
+          color: $back-color;
           border: none;
           display: block;
           text-decoration: none;

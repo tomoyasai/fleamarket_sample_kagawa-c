@@ -9,7 +9,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @card = Card.find_by(user_id: current_user.id)
     @buy_data = BuyData.find_by(item_id: @item.id)
   end
   

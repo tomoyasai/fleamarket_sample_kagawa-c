@@ -109,7 +109,7 @@
     color: #333;
     padding-left: 16px;
     &__login{
-      background-color: white;
+      background-color: $white-color;
       border: 1px solid #0095ee;
       border-radius: 4px;
       color: #0095ee;
@@ -123,7 +123,7 @@
       background-color: $main-color;
       border: 1px solid $main-color;
       border-radius: 4px;
-      color: white;
+      color: $white-color;
       display: block;
       font-size: 14px;
       padding: 5px 10px;
