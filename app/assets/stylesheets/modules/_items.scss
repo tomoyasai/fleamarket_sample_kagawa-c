@@ -12,7 +12,7 @@
   margin: 0 auto;
   &__main {
     width: 700px;
-    background-color: white;
+    background-color: $white-color;
     margin: 0 auto;
     padding-bottom: 30px;
     &__image {
@@ -21,11 +21,11 @@
       font-size: 14px;
       font-weight: 600;
       padding: 40px;
-      background-color: #fff;
+      background-color: $white-color;
       border-bottom: 1px solid #efefef;
       &__mark {
         background-color: #ff0211;
-        color: #fff;
+        color: $white-color;
         font-size: 12px;
         padding: 0 4px;
         border-radius: 2px;
@@ -86,7 +86,7 @@
     &__list {
       width: 700px;
       height: 419px;
-      background-color: #fff;
+      background-color: $white-color;
       padding: 40px;
       border-bottom: 1px solid #efefef;
       &__item {
@@ -96,7 +96,7 @@
         font-weight: 600;
         &__mark {
           background-color: #ff0211;
-          color: #fff;
+          color: $white-color;
           font-size: 12px;
           padding: 0 4px;
           border-radius: 2px;
@@ -128,7 +128,7 @@
         margin-top: 32px;
         &__mark {
           background-color: #ff0211;
-          color: #fff;
+          color: $white-color;
           font-size: 12px;
           padding: 0 4px;
           border-radius: 2px;
@@ -163,7 +163,7 @@
     &__detail {
       width: 700px;
       height: 444px;
-      background-color: #fff;
+      background-color: $white-color;
       padding: 40px;
       border-bottom: 1px solid #efefef;
       &__title {
@@ -180,7 +180,7 @@
         margin-top: 32px;
         &__mark {
           background-color: #ff0211;
-          color: #fff;
+          color: $white-color;
           font-size: 12px;
           padding: 0 4px;
           border-radius: 2px;
@@ -212,7 +212,7 @@
         margin-top: 32px;
         &__mark {
           background-color: #bfbfbf;
-          color: #fff;
+          color: $white-color;
           font-size: 12px;
           padding: 0 4px;
           border-radius: 2px;
@@ -244,7 +244,7 @@
         margin-top: 32px;
         &__mark {
           background-color: #ff0211;
-          color: #fff;
+          color: $white-color;
           font-size: 12px;
           padding: 0 4px;
           border-radius: 2px;
@@ -272,7 +272,7 @@
     &__delivery {
       width: 700px;
       height: 444px;
-      background-color: #fff;
+      background-color: $white-color;
       padding: 40px;
       border-bottom: 1px solid #efefef;
       a {
@@ -294,7 +294,7 @@
         margin-top: 32px;
         &__mark {
           background-color: #ff0211;
-          color: #fff;
+          color: $white-color;
           font-size: 12px;
           padding: 0 4px;
           border-radius: 2px;
@@ -326,7 +326,7 @@
         margin-top: 32px;
         &__mark {
           background-color: #ff0211;
-          color: #fff;
+          color: $white-color;
           font-size: 12px;
           padding: 0 4px;
           border-radius: 2px;
@@ -358,7 +358,7 @@
         margin-top: 32px;
         &__mark {
           background-color: #ff0211;
-          color: #fff;
+          color: $white-color;
           font-size: 12px;
           padding: 0 4px;
           border-radius: 2px;
@@ -386,7 +386,7 @@
     &__price {
       width: 700px;
       height: 310px;
-      background-color: #fff;
+      background-color: $white-color;
       padding: 40px;
       a {
         color: #0099e8;
@@ -409,7 +409,7 @@
         align-items: center;
         &__mark {
           background-color: #ff0211;
-          color: #fff;
+          color: $white-color;
           font-size: 12px;
           padding: 0 4px;
           border-radius: 2px;
@@ -456,7 +456,7 @@
     &__submit {
       width: 700px;
       height: 198px;
-      background-color: #FFFFFF;
+      background-color: $white-color;
       padding: 0px 0px 32px;
       &__listing {
         width: 360px;
@@ -467,9 +467,9 @@
         &__btn {
           width: 100%;
           height: 50px;
-          background: #3CCACE;
-          border: 1px solid #3CCACE;
-          color: #fff;
+          background: $main-color;
+          border: 1px solid $main-color;
+          color: $white-color;
           font-size: 17px;
           min-height: 48px;
           padding: 0 24px;
@@ -502,7 +502,7 @@
       height: 48px;
       width: 700px;
       font-size: 12px;
-      background-color: white;
+      background-color: $white-color;
       padding: 0 40px;
     }
   }
