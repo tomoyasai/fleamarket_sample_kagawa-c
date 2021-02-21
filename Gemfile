@@ -83,3 +83,4 @@ gem 'seed-fu'
 
 gem 'payjp'
 gem 'jquery-rails'
+gem 'gretel'

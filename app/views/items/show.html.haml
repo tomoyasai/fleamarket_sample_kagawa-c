@@ -1,5 +1,7 @@
 = render "header"
-.breadCrumbs フリマ ＞ テレワーク
+.breadCrumbs 
+  - breadcrumb :item
+  = breadcrumbs separator: " &gt; "
 .show
   .show__main
     .show__main__top
@@ -34,7 +36,9 @@
         .show__main__top__table__box2
           .show__main__top__table__box2__left カテゴリー
           .show__main__top__table__box2__right
-            = @item.category.name
+            %p= @item.category.root.name
+            %p= @item.category.parent.name
+            %p= @item.category.name
         .show__main__top__table__box3
           .show__main__top__table__box3__left 商品の状態
           .show__main__top__table__box3__right 

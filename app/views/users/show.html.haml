@@ -1,9 +1,8 @@
-.Header
-  .Header__logo
-    FURIMA
+= render "items/header"
 .Breadbar
   .Breadbar_info
-    フリマ ＞ マイページ
+    - breadcrumb :mypage
+    = breadcrumbs separator: " &gt; "
 .Mypages
   .Mypages_main
     %nav.Mypages_main_side
@@ -40,7 +39,7 @@
           .Mypages_right_top_inside_face
             =image_tag "member_photo_noimage_thumb.png"
           .Mypages_right_top_inside_name
-            %p Masami
+            =@user.nick_name
           .Mypages_right_top_inside_count
             %p 評価 ２  出品数 ２
 
@@ -64,7 +63,14 @@
           .Mypages_right_bottom_tabs_tab4
             %p 過去の取引
         .Mypages_right_bottom_box
-
+.seven
+  .seven__box
+    %h2.seven__box__top
+      だれでもかんたん、人生を変えるフリマアプリ
+    %p.seven__box__middle
+      今すぐ無料ダウンロード！
+    .seven__box__bottom        
+= render "items/footer"
 
 
 
