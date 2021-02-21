@@ -12,7 +12,7 @@ crumb :card_new do
   parent :mypage
 end
 
-crumb :item do
-  link "商品詳細", item_path
+crumb :item do |item|
+  link "#{item.name}", item_path
   parent :root
 end
