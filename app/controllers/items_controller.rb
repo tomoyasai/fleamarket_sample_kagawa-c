@@ -1,7 +1,9 @@
 class ItemsController < ApplicationController
 
+  before_action :authenticate_user!, only: [:new, :edit, :buyconfirm]
   before_action :find_item, only: [:show, :edit, :update, :check_seller, :buyconfirm]
   before_action :check_seller, only: [:edit, :update]
+
   
   def index
     @items = Item.includes(:user)

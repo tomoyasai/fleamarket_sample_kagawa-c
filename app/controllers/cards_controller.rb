@@ -1,6 +1,6 @@
 class CardsController < ApplicationController
   require 'payjp'
-
+  before_action :authenticate_user!, only: [:new]
   before_action :set_api_key
   before_action :take_card, only:[:show,:buy]
 
