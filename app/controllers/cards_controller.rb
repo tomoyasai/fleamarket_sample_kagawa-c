@@ -7,7 +7,7 @@ class CardsController < ApplicationController
   def new
     @years=[]
     11.times do |index|
-      this_year=Date.today.year%100
+      this_year = Date.today.year%100
       @years.push(this_year+index)
     end
   end
