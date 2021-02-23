@@ -60,7 +60,7 @@ class ItemsController < ApplicationController
 
   def buyconfirm
     unless @item.user_id != current_user.id
-      redirect_to root_path
+      redirect_to item_path
     end
       
     @card = Card.find_by(user_id: current_user.id)
