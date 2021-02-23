@@ -36,9 +36,13 @@
         .show__main__top__table__box2
           .show__main__top__table__box2__left カテゴリー
           .show__main__top__table__box2__right
-            %p= @item.category.root.name
-            %p= @item.category.parent.name
-            %p= @item.category.name
+            - if @item.category.root == @item.category.parent
+              %p= @item.category.root.name
+              %p= @item.category.name
+            - else
+              %p= @item.category.root.name
+              %p= @item.category.parent.name
+              %p= @item.category.name
         .show__main__top__table__box3
           .show__main__top__table__box3__left 商品の状態
           .show__main__top__table__box3__right 
