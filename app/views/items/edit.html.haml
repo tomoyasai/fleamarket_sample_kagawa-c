@@ -28,9 +28,13 @@
         %label カテゴリー
         %span.base__main__detail__category__mark 必須
         -if @item.category!=nil
-          = f.collection_select :category_id, @item.category.root.siblings, :id, :name,{include_blank:true,selected:@item.category.root.id}, class:"form-pull-down select-category"
-          = f.collection_select :category_id, @item.category.parent.siblings, :id, :name, {include_blank:true,selected: @item.category.parent.id}, class:"form-pull-down select-category"
-          = f.collection_select :category_id, @item.category.siblings, :id, :name,{include_blank:true,selected: @item.category.id}, class:"form-pull-down select-category"
+          - if @item.category.root == @item.category.parent
+            = f.collection_select :category_id, @item.category.root.siblings, :id, :name,{include_blank:true,selected:@item.category.root.id}, class:"form-pull-down select-category"
+            = f.collection_select :category_id, @item.category.siblings, :id, :name,{include_blank:true,selected: @item.category.id}, class:"form-pull-down select-category"
+          - else
+            = f.collection_select :category_id, @item.category.root.siblings, :id, :name,{include_blank:true,selected:@item.category.root.id}, class:"form-pull-down select-category"
+            = f.collection_select :category_id, @item.category.parent.siblings, :id, :name, {include_blank:true,selected: @item.category.parent.id}, class:"form-pull-down select-category"
+            = f.collection_select :category_id, @item.category.siblings, :id, :name,{include_blank:true,selected: @item.category.id}, class:"form-pull-down select-category"
         - else
           = f.collection_select :category_id,@categories, :id, :name,{include_blank: "---"},{class:"form-pull-down select-category"}
           
