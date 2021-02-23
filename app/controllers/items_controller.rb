@@ -59,6 +59,10 @@ class ItemsController < ApplicationController
   end
 
   def buyconfirm
+    unless @item.user_id != current_user.id
+      redirect_to item_path
+    end
+      
     @card = Card.find_by(user_id: current_user.id)
     if @card == nil
     redirect_to new_card_path, notice: 'カードを登録してください'
@@ -77,7 +81,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :info, :image,:category_id, :status_id, :delivery_fee_id, :delivery_days_id, :prefecture_id, :price).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :info, :image, :category_id, :status_id, :delivery_fee_id, :delivery_days_id, :prefecture_id, :price).merge(user_id: current_user.id)
   end
 
   def find_item
